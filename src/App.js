@@ -8,20 +8,26 @@ import Navbar from './Navbar';
 import Home from './Home';
 import Sidebar from './Sidebar';
 import Cart from './Cart';
+import FoodCard from './FoodCard';
+import Register from './Register';
+import Login from './Login';
 
 
 function App() {
   return (
     <BrowserRouter>
     <div className="App">
-      <header className='position-fixed top-0 w-100'>
+      <header className=''>
         <Navbar></Navbar>
-        <Sidebar></Sidebar>
+        {/* <Sidebar></Sidebar> */}
       </header>
-      <main className='main-content mt-5'>
+      <main className=''>
       <Routes>
+        <Route path="/register" element={<Register/>}></Route>
+        <Route path="/login" element={<Login/>}></Route>
         <Route path="/home" element={<Home/>}></Route>
         <Route path="/cart" element={<Cart/>}></Route>
+        <Route path="/category" element={<FoodCard/>}></Route>
       </Routes>
       </main>
       <footer></footer>

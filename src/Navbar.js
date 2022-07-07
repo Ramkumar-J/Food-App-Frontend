@@ -11,11 +11,27 @@ function Navbar(){
             </button>
                 <div className="collapse navbar-collapse" id="myNav">
                     <div className="btn-group ms-auto">
-                    <a className="nav-link" href="#"><button className="btn btn-success">Login</button></a>
-                    <a className="nav-link" href="#"><button className="btn btn-primary">Signup</button></a>
+                    <Link className="nav-link" to="/login"><button className="btn btn-success">Login</button></Link>
+                    <Link className="nav-link" to="/register"><button className="btn btn-primary">Register</button></Link>
                     <a className="nav-link" href="#"><button className="btn btn-danger">Logout</button></a>
                     </div>
                 </div>
+                {/* <aside className="d-flex flex-column flex-shrink sidebar"> */}
+                <ul className="navbar-nav ms-2 fs-5 text-dark">
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/home"><i class="bi bi-house-door-fill"></i><span className="ms-2">Home</span></Link>
+                    </li>
+                    <hr className="mt-0 mb-0"></hr>
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/cart"><i class="bi bi-cart-plus-fill"></i><span className="ms-2">Cart</span></Link>
+                    </li>
+                    <hr className="mt-0 mb-0"></hr>
+                    <li className="nav-item">
+                        <a className="nav-link" href="#"><i class="bi bi-heart-fill"></i><span className="ms-2">Wishlist</span></a>
+                    </li>
+                    <hr className="mt-0 mb-0"></hr>
+                </ul> 
+                {/* </aside> */}
             {/* </div> */}
         </nav>
     )

@@ -1,30 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
 *{
   padding:0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Oleo Script', cursive;
 }
 .sidebar{
-  position: fixed;
+  position: fixed; 
   left:0;
-  top:75px;
-  width:200px;
+  top:200px;
+  width:90px;
   background-color: rgb(219, 219, 219);
-  height: 100vh;
+  height: auto;
 }
-.main-content{
+/* .main-content{
   margin-left: 250px;
   position: none;
-  /* top:150px; */
+  top:150px;
   width:100%;
   height:100%;
   padding-right: 400px;
   padding-left: 250px;
   margin-top: 150px;
-}
+} */
 
 .slide-image{
-  width:500px;
-  height: 400px;
-  margin-top: 150px;
-  position: relative;
+  /* margin-left: 50px; */
+  width:100%;
+  height: 350px !important;
+  /* margin-top: 80px; */
+}
+
+
+/* Food Card page - Categories */
+.cardsize{
+  height: auto;
+  width:350px  !important;
+  margin-right:20px;
+  font-family: 'Oleo Script', cursive;
+  background-image: url("https://i.pinimg.com/736x/60/11/20/60112018573a25fc933638ee1891efa4.jpg");
+  background-size: cover;
+}
+.burgersize{
+  height:200px !important;
+  margin-left: 50px;
+  width:200px;
+  transition: transform .2s;
+}
+.burgersize:hover {
+  transform: scale(1.1);
+  cursor:pointer;
+}
+.card-btn:hover{
+  background-color: rgb(47, 124, 47) !important;
+  transform: .1s;
+}
+
+/* Cart page */
+.cartitem-bg{
+  /* background-image: url("https://photo-cdn2.icons8.com/0Xwps5EvlW6uwXqTNTnszurw6RQst2pQXdKOxqDPM8E/rs:fit:288:192/czM6Ly9pY29uczgu/bW9vc2UtcHJvZC5l/eHRlcm5hbC9hMmE0/Mi9jOTQzMWI5MjZm/ZDU0ZWExYTIxMjM4/OTcyNWY3OWY2MC5q/cGc.jpg");
+  background-repeat: no-repeat;
+  background-size: cover; */
+  /* background-color: rgb(122, 24, 44); */
+  /* color: rgb(122, 8, 145); */
+  /* width: 500px; */
+}
+
+/* Register page */
+.register{
+  width:350px !important;
+  /* margin-top: 100px !important; */
 }
