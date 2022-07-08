@@ -1,63 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Cartitem from './Cartitem'
 
 function Cart() {
+  let[cartitems,setNewcartitems]=useState([]);
+  let RemoveToCart=(item) => {
+    let remove=cartitems.findIndex(obj => item.id===obj.id);
+    cartitems.splice(remove,1);
+    setNewcartitems([...cartitems]);
+    // setTotal(Total - item.price);
+  }
   return (
     <div className='container'>
       <div className='row mt-5'>
         <div className='col-sm-12 col-md-6 col-lg-6'>
-        <div class="card mb-3 cartitem-bg">
-  <div class="row g-0">
-    <div class="col-sm-4 col-md-4 col-lg-4">
-      <img src="https://pngpress.com/wp-content/uploads/2020/08/uploads_burger_sandwich_burger_sandwich_PNG4135.png" class="img-fluid rounded-start" alt="..."/>
-    </div>
-    <div class="col-sm-8 col-md-8 col-lg-8">
-      <div class="card-body">
-        <h3 class="card-title fw-bold">Chicken Burger</h3>
-        <p class="card-text fs-4 fw-bold">₹250</p>
-        <button className='btn btn-secondary btn-sm fs-5 me-2'>-</button>
-        <span className='ms-2'>1</span>
-        <button className='btn btn-secondary btn-sm ms-3 fs-5'>+</button>
-        {/* <div className='border border-2 border-dark d-flex justify-content-between align-items-center w-50'>
-        <button className='btn btn-danger fw-bold text-white'>-</button>
-        <span className=''>1</span>
-        <button className='btn btn-success fw-bold text-white'>+</button>
-        </div> */}
-      </div>
-    </div>
-  </div>
-</div>
-<div class="card mb-3 cartitem-bg" >
-  <div class="row g-0">
-    <div class="col-sm-4 col-md-4 col-lg-4">
-      <img src="https://pngpress.com/wp-content/uploads/2020/08/uploads_burger_sandwich_burger_sandwich_PNG4135.png" class="img-fluid rounded-start" alt="..."/>
-    </div>
-    <div class="col-sm-8 col-md-8 col-lg-8">
-      <div class="card-body">
-        <h3 class="card-title fw-bold">Chicken Burger</h3>
-        <p class="card-text fs-4 fw-bold">₹250</p>
-        <button className='btn btn-secondary btn-sm fs-5 me-2'>-</button>
-        <span className='ms-2'>1</span>
-        <button className='btn btn-secondary btn-sm ms-3 fs-5'>+</button>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="card mb-3 cartitem-bg" >
-  <div class="row g-0">
-    <div class="col-sm-4 col-md-4 col-lg-4">
-      <img src="https://pngpress.com/wp-content/uploads/2020/08/uploads_burger_sandwich_burger_sandwich_PNG4135.png" class="img-fluid rounded-start" alt="..."/>
-    </div>
-    <div class="col-sm-8 col-md-8 col-lg-8">
-      <div class="card-body">
-        <h3 class="card-title fw-bold">Chicken Burger</h3>
-        <p class="card-text fs-4 fw-bold">₹250</p>
-        <button className='btn btn-secondary btn-sm fs-5 me-2'>-</button>
-        <span className='ms-2'>1</span>
-        <button className='btn btn-secondary btn-sm ms-3 fs-5'>+</button>
-      </div>
-    </div>
-  </div>
-</div>     
+          {
+            cartitems.map((cartitem) => {
+              return(
+                <Cartitem Cartitems={cartitem} Removecart={RemoveToCart}></Cartitem>
+              )
+            })
+          }
+        {/* <Cartitem></Cartitem> */}
         </div>
         <div className='col-sm-12 col-md-6 col-lg-6'>
           <div class="row">

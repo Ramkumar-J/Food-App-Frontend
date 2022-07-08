@@ -11,6 +11,7 @@ import Cart from './Cart';
 import FoodCard from './FoodCard';
 import Register from './Register';
 import Login from './Login';
+import AddFoods from './AddFood';
 
 
 function App() {
@@ -27,7 +28,8 @@ function App() {
         <Route path="/login" element={<Login/>}></Route>
         <Route path="/home" element={<Home/>}></Route>
         <Route path="/cart" element={<Cart/>}></Route>
-        <Route path="/category" element={<FoodCard/>}></Route>
+        <Route path="/burgeritems" element={<FoodCard/>}></Route>
+        <Route path="/burger" element={<AddFoods/>}></Route>
       </Routes>
       </main>
       <footer></footer>
