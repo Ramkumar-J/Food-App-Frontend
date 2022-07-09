@@ -1,25 +1,42 @@
-import React, { useState } from 'react'
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 import Cartitem from './Cartitem'
 
 function Cart() {
+  let[foodItems,setFoodItems]=useState([]);
   let[cartitems,setNewcartitems]=useState([]);
-  let RemoveToCart=(item) => {
-    let remove=cartitems.findIndex(obj => item.id===obj.id);
-    cartitems.splice(remove,1);
-    setNewcartitems([...cartitems]);
-    // setTotal(Total - item.price);
+  useEffect(() => {
+      async function getFooditems(){
+          try {
+              let foods=await axios.get("http://localhost:3005/burger");
+              setFoodItems(foods.data);
+          } catch (error) {
+              console.log("error");
+          }
+      }
+      getFooditems();
+  },[])
+
+  let AddtoCart=(item) => {
+      setNewcartitems([...cartitems,item]);
   }
+  let RemoveToCart=(item) => {
+      let remove=cartitems.findIndex(obj => item.id===obj.id);
+      cartitems.splice(remove,1);
+      setNewcartitems([...cartitems]);
+      // setTotal(Total - item.price);
+    }
   return (
     <div className='container'>
       <div className='row mt-5'>
         <div className='col-sm-12 col-md-6 col-lg-6'>
-          {
-            cartitems.map((cartitem) => {
-              return(
-                <Cartitem Cartitems={cartitem} Removecart={RemoveToCart}></Cartitem>
-              )
-            })
-          }
+         {
+          cartitems.map((cart) => {
+            return(
+              <Cartitem cartitems={cart} Removecart={RemoveToCart}></Cartitem>
+            )
+          })
+         }
         {/* <Cartitem></Cartitem> */}
         </div>
         <div className='col-sm-12 col-md-6 col-lg-6'>

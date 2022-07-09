@@ -18,16 +18,22 @@ function FoodCard(){
         getFooditems();
     },[])
 
-    let AddtoCart=(items) => {
-        setNewcartitems([...cartitems,items]);
+    let AddtoCart=(item) => {
+        setNewcartitems([...cartitems,item]);
     }
+    let RemoveToCart=(item) => {
+        let remove=cartitems.findIndex(obj => item.id===obj.id);
+        cartitems.splice(remove,1);
+        setNewcartitems([...cartitems]);
+        // setTotal(Total - item.price);
+      }
     return(
         <div class="container">
              <div class="row">
             {
                 foodItems.map((fooditem) => {
                     return(       
-                        <Card FoodItems={fooditem} AddCartitems={AddtoCart}></Card>    
+                        <Card FoodItems={fooditem} AddCartitems={AddtoCart} Removecart={RemoveToCart}></Card>    
             // <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4 mt-3 cardsize">
             //    <h1 class="text-center mt-1 text-danger">{fooditem.foodname}</h1>
             //    <p class="text-center fs-3 text-white">₹{fooditem.foodprice}</p>
