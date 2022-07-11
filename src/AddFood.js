@@ -7,6 +7,7 @@ function AddFoods(){
     let navigate=useNavigate();
     let formik=useFormik({
         initialValues:{
+            category:"",
             foodname:"",
             foodprice:"",
             foodimage:"",
@@ -14,7 +15,10 @@ function AddFoods(){
         },
         validate:(values) => {
             const errors={};
-            if(!values.firtname){
+            if(!values.category){
+                errors.category="Food Category is Required";
+            }
+            if(!values.foodname){
                 errors.foodname="Food Name is Required";
             }
             if(!values.foodprice){
@@ -30,8 +34,8 @@ function AddFoods(){
         },
         onSubmit:async(values) => {
             try {
-                await axios.post("http://localhost:3005/burger",values);
-                navigate("/burgeritems");
+                await axios.post("http://localhost:3005/foodmenu",values);
+                navigate("/foodmenu");
             } catch (error) {
                 
             }
@@ -42,7 +46,22 @@ function AddFoods(){
             <div className="row addfood-bg">
                 <div className="col-lg-12">
                     <form onSubmit={formik.handleSubmit}>
-                <div className="row mt-5">
+                    <div className="row mt-5">
+                <div className="col-lg-12">
+                    <label for="category">Category</label>
+                    <select className="form-control" id="category" type={"text"} name="category" onChange={formik.handleChange} value={formik.values.category}>
+                        <option>Burger</option>
+                        <option>Pizza</option>
+                        <option>Juice</option>
+                        <option>Cakes</option>
+                        <option>Ice creams</option>
+                    </select>
+                    {
+                        formik.touched.category && formik.errors.category ? (<span className="text-danger">{formik.errors.category}</span>) : null
+                    }
+                </div>
+                </div>
+                <div className="row mt-3">
                 <div className="col-lg-12">
                     <label for="foodname">Food Name</label>
                     <input className="form-control" id="foodname" type={"text"} name="foodname" onChange={formik.handleChange} value={formik.values.foodname}></input>

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Card from "./Card";
 import Cartitem from "./Cartitem";
 
-function FoodCard(props){
+function FoodMenu(props){
     // let[foodItems,setFoodItems]=useState([]);
     // let[cartitems,setNewcartitems]=useState([]);
     // useEffect(() => {
@@ -113,4 +113,4 @@ function FoodCard(props){
     )
 }
 
-export default FoodCard;
+export default FoodMenu;
