@@ -15,6 +15,7 @@ import AddFoods from './AddFood';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import ViewMenu from './ViewMenu';
+import Wishlist from './Wishlist';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
   // let[foodmenu,setFoodmenu]=useState([]);
   let[cartitems,setNewcartitems]=useState([]);
   let[total,setTotal]=useState(0);
+  let[wishList,setNewwishList]=useState([]);
   useEffect(() => {
       async function getFooditems(){
           try {
@@ -72,6 +74,17 @@ let RemoveFromCart=(item) => {
   setNewcartitems([...cartitems]);
  setTotal(total - parseInt(item.foodprice));
 }
+
+let Addwishlist=(list) => {
+  setNewwishList([...wishList,list]);
+}
+
+let Removewishlist=(list) => {
+  let index=wishList.findIndex(obj => obj._id === list._id);
+  wishList.splice(index,1);
+  setNewwishList([...wishList])
+}
+
   return (
     <BrowserRouter>
     <div className="App">
@@ -83,12 +96,13 @@ let RemoveFromCart=(item) => {
       <Routes>
         <Route path="/register" element={<Register/>}></Route>
         <Route path="/login" element={<Login/>}></Route>
-        <Route path="/home" element={<Home Fooditems={foodItems} Addcart={Addtocart}/>}></Route>
+        <Route path="/home" element={<Home Fooditems={foodItems} Addcart={Addtocart} Addwishlist={Addwishlist}/>}></Route>
         <Route path="/cart" element={<Cart Addcartitems={cartitems} Removecartitems={RemoveFromCart} Total={total}/>}></Route>
         <Route path="/foodmenu" element={<FoodMenu Fooditems={foodItems} Addcart={Addtocart}/>}></Route>
-        <Route path="/foodmenu/:category" element={<FoodMenu/>}></Route>
+        {/* <Route path="/foodmenu/:category" element={<ViewMenu/>}></Route> */}
         {/* <Route path="/foodmenu/juice" element={<ViewMenu Addedcart={Addtocart}/>}></Route> */}
         <Route path="/addmenu" element={<AddFoods/>}></Route>
+        <Route path="/wishlist" element={<Wishlist addwish={wishList} Removewishlist={Removewishlist}/>}></Route>
       </Routes>
       </main>
       <footer></footer>

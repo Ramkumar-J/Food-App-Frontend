@@ -27,7 +27,7 @@ function Navbar(){
                     </li>
                     <hr className="mt-0 mb-0"></hr>
                     <li className="nav-item">
-                        <a className="nav-link" href="#"><i class="bi bi-heart-fill"></i><span className="ms-2">Wishlist</span></a>
+                        <Link className="nav-link" to="/wishlist"><i class="bi bi-heart-fill"></i><span className="ms-2">Wishlist</span></Link>
                     </li>
                     <hr className="mt-0 mb-0"></hr>
                 </ul> 

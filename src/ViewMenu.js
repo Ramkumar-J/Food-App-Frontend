@@ -29,7 +29,7 @@ function ViewMenu(props) {
                    <hr class="border-danger border border-1 mt-0 mb-0"/>
                        <img class="img-fluid burgersize" src={menu.foodimage} alt="Image" />
                        <p class="text-warning fs-1 mt-0 mb-1 text-center">{menu.foodinfo}</p>
-                       <button class="offset-3 col-6 offset-3 btn btn-primary fs-5 mb-3 card-btn" onClick={() => {props.Addedcart(menu)}}>Order Now</button>
+                       {/* <button class="offset-3 col-6 offset-3 btn btn-primary fs-5 mb-3 card-btn" onClick={() => {props.Addedcart(menu)}}>Order Now</button> */}
                 </div>
                )
            })

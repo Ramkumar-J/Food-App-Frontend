@@ -41,6 +41,24 @@ function AddFoods(){
             }
         }
     });
+
+    // dropContainer.ondragover = dropContainer.ondragenter = function(evt) {
+    //     evt.preventDefault();
+    //   };
+      
+    //   dropContainer.ondrop = function(evt) {
+    //     // pretty simple -- but not for IE :(
+    //     fileInput.files = evt.dataTransfer.files;
+      
+    //     // If you want to use some of the dropped files
+    //     const dT = new DataTransfer();
+    //     dT.items.add(evt.dataTransfer.files[0]);
+    //     dT.items.add(evt.dataTransfer.files[3]);
+    //     fileInput.files = dT.files;
+      
+    //     evt.preventDefault();
+    //   };
+
     return(
         <div className="container add-food">
             <div className="row addfood-bg">
@@ -81,11 +99,15 @@ function AddFoods(){
                 </div>
                 <div className="row mt-3">
                 <div className="col-lg-12">
-                    <label for="foodimage">Food Image <span className="text-secondary">(Paste the Image link)</span></label>
-                    <input className="form-control" id="foodimage" type={"text"} name="foodimage" onChange={formik.handleChange} value={formik.values.foodimage}></input>
+                    <label>Food Image <span className="text-secondary">(Paste the Image link)</span></label>
+                    {/* <div id="dropContainer" style={{border:"1px solid black",height:"100px"}}>
+   Drop Here
+</div> */}
+                    <input className="form-control" id="fileInput" type={"file"} name="foodimage" onChange={formik.handleChange} value={formik.values.foodimage}></input>
                     {
                         formik.touched.foodimage && formik.errors.foodimage ? (<span className="text-danger">{formik.errors.foodimage}</span>) : null
                     }
+                    
                 </div>
                 </div>
                 <div className="row mt-3">

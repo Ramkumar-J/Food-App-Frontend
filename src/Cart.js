@@ -85,7 +85,6 @@ function Cart(props) {
               <p className='fs-5'>Taxes</p>
               <hr></hr>
               <p className='fs-4 fw-bold'>Grand Total</p>
-              <button className='btn btn-primary btn-lg'>Check out</button>
             </div>
             <div className='col-5 col-sm-5 col-md-5 col-lg-5'>
               <p className='fs-5'>₹{props.Total}</p>
@@ -95,10 +94,33 @@ function Cart(props) {
               <p className='fs-4 fw-bold'>₹{props.Total+22.00+13.00}</p>
             </div>
           </div>
+          <div class="row">
+            <div className='col-12 col-sm-12 col-md-12 col-lg-12'>
+            <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
+            </div>
+            </div>
+            <div class="row">
+            <div className='col-12 col-sm-12 col-md-12 col-lg-12'>
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <img src="https://pngpress.com/wp-content/uploads/2020/08/uploads_burger_sandwich_burger_sandwich_PNG4135.png" class="rounded me-2" alt="..."/>
+      <strong class="me-auto">Bootstrap</strong>
+      <small>11 mins ago</small>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+      Hello, world! This is a toast message.
+    </div>
+  </div>
+</div>
+
+            </div>
+            </div>
         </div>
       </div>
     </div>
   )
 }
 
-export default Cart
+export default Cart;
