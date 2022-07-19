@@ -58,7 +58,9 @@ function AddFoods(){
       
     //     evt.preventDefault();
     //   };
-
+    // var path = "C:\\fakepath\\example.doc";
+    // var filename = path.replace(/^.*\\/, "");
+    // console.log(filename);
     return(
         <div className="container add-food">
             <div className="row addfood-bg">
@@ -99,12 +101,16 @@ function AddFoods(){
                 </div>
                 <div className="row mt-3">
                 <div className="col-lg-12">
-                    <label>Food Image <span className="text-secondary">(Paste the Image link)</span></label>
+                    <label for="foodimage">Food Image <span className="text-secondary">(Paste the Image link)</span></label>
                     {/* <div id="dropContainer" style={{border:"1px solid black",height:"100px"}}>
    Drop Here
 </div> */}
-                    <input className="form-control" id="fileInput" type={"file"} name="foodimage" onChange={formik.handleChange} value={formik.values.foodimage}></input>
+                    <input className="form-control" id="foodimage" type={"file"} name="foodimage" accept="image/*" onChange={formik.handleChange} value={formik.values.foodimage} ></input>
+                    {/* {
+                         value.replace(/^.*\\/, "")
+                    } */}
                     {
+                       
                         formik.touched.foodimage && formik.errors.foodimage ? (<span className="text-danger">{formik.errors.foodimage}</span>) : null
                     }
                     
