@@ -58,59 +58,68 @@ function Home(props){
     <img className='img-fluid rounded-circle h-50 w-100' src="https://b.zmtcdn.com/data/dish_images/ccb7dc2ba2b054419f805da7f05704471634886169.png"></img>
     <p className='fs-5 fw-bold text-center text-dark mb-0'>All</p>
     </button>
-    <Link className='' to="/addmenu"><button className='btn btn-primary mt-0 ms-5 mb-5'>Add</button></Link>
+    
     </div>
     <div className='col-6 col-sm-6 col-md-4 col-lg-2'>
-    <button className='btn btn-transparent' onClick={() => filterProduct("burger")}> 
+    <button className='btn btn-transparent' onClick={() => filterProduct("Burger")}> 
     <img className='img-fluid rounded-circle h-50 w-100' src="https://b.zmtcdn.com/data/dish_images/ccb7dc2ba2b054419f805da7f05704471634886169.png"></img>
     <p className='fs-5 fw-bold text-center text-dark mb-0'>Burger</p>
     </button>
-    <Link className='' to="/burger"><button className='btn btn-primary mt-0 ms-5 mb-5'>Add</button></Link>
     </div>
     <div className='col-6 col-sm-6 col-md-4 col-lg-2'>
-    <button className='btn btn-transparent' onClick={() => filterProduct("pizza")}>
+    <button className='btn btn-transparent' onClick={() => filterProduct("Pizza")}>
     <img className='img-fluid rounded-circle h-50 w-100' src="https://b.zmtcdn.com/data/o2_assets/d0bd7c9405ac87f6aa65e31fe55800941632716575.png"></img>
     <p className='fs-5 fw-bold text-center text-dark mb-0'>Pizza</p>
     </button>
-    <Link className='' to="/burger"><button className='btn btn-primary mt-0 ms-5 '>Add</button></Link>
     </div>
     <div className='col-6 col-sm-6 col-md-4 col-lg-2'>
     <button className='btn btn-transparent' onClick={() => filterProduct("Juice")}>
     <img className='img-fluid rounded-circle h-50 w-100' src="https://b.zmtcdn.com/data/o2_assets/e6c74944b4d15017b51c07d5a97b34961648972347.png"></img>
     <p className='fs-5 fw-bold text-center text-dark mb-0'>Juice</p>
     </button>
-    <Link className='' to="/burger"><button className='btn btn-primary mt-0 ms-5 '>Add</button></Link>
     </div>
     <div className='col-6 col-sm-6 col-md-4 col-lg-2'>
-    <button className='btn btn-transparent' onClick={() => filterProduct("cakes")}>
+    <button className='btn btn-transparent' onClick={() => filterProduct("Cakes")}>
     <img className='img-fluid rounded-circle h-50 w-100' src="https://b.zmtcdn.com/data/dish_photos/bfe/60290489131b268904260f6983acebfe.png?fit=around|130:130&crop=130:130;*,*"></img>
     <p className='fs-5 fw-bold text-center text-dark mb-0'>Cakes</p>
     </button>
-    <Link className='' to="/burger"><button className='btn btn-primary mt-0 ms-5 '>Add</button></Link>
     </div>
     <div className='col-6 col-sm-6 col-md-4 col-lg-2'>
-    <button className='btn btn-transparent' onClick={() => filterProduct("ice creams")}>
+    <button className='btn btn-transparent' onClick={() => filterProduct("Ice creams")}>
     <img className='img-fluid rounded-circle h-50 w-100' src="https://b.zmtcdn.com/data/o2_assets/4c7697178c268c50e1b1641fca205c231634401116.png"></img>
     <p className='fs-5 fw-bold text-center text-dark mb-0'>Ice creams</p>
     </button>
-    <Link className='' to="/burger"><button className='btn btn-primary mt-0 ms-5 '>Add</button></Link>
     </div>
   </div>
+  <div className='row mt-2'>
+      <div className='col-lg-12'>
+      <Link className='' to="/addmenu"><button className='btn btn-primary mt-3 mb-3 w-25 mx-auto'>Add Foods</button></Link>
+        </div>
+        </div>
   <div class="row">
                 {
                     datafilter.map((food) => {
                         return(
-                            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4 mt-3 cardsize">
-                            <h1 class="text-center mt-2 text-danger">{food.foodname}</h1>
-                            <p class="text-center fs-3 text-dark">₹{food.foodprice}</p>
+                            <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-4 mt-3 p-0 ">
+                            {/* <h1 class="text-center mt-2 text-danger">{food.foodname}</h1>
+                            <p class="text-center fs-3 text-dark mb-0">₹{food.foodprice}</p>
                             <hr class="border-danger border border-1 mt-0 mb-0"/>
-                                <img class="img-fluid mt-2 mb-2 burgersize" src={food.foodimage} alt="Image" />
-                                <hr class="border-danger border border-1 mt-0 mb-0"/>
-                                <p class="text-warning fs-1 mt-0 mb-1 text-center">{food.foodinfo}</p>
-                                <div className='d-flex flex-row mb-3'>
+                                <img class="img-fluid mt-0 mb-0 burgersize" src={food.foodimage} alt="Image" />
+                                <hr class="border-danger border border-1 mt-0 mb-0"/> */}
+                                {/* <p class="text-warning fs-1 mt-0 mb-1 text-center">{food.foodinfo}</p> */}
+                                {/* <div className='d-flex flex-row mt-3 mb-3'>
                                 <button class="offset-3 col-6  btn btn-primary btn-sm fs-5  card-btn" onClick={() => {props.Addcart(food)}}>Order Now</button>
-                                <button className='btn btn-danger btn-sm ms-5 h-50 mt-0' onClick={() =>props.Addwishlist(food)}><i class="bi bi-suit-heart"></i></button>
-                                </div>
+                                <button className='btn btn-transparent btn-sm ms-5 h-100 mt-0' onClick={() =>props.Addwishlist(food)}><i class="bi bi-suit-heart"></i></button>
+                                </div> */}
+                                <div class="card cardsize">
+  <img src={food.foodimage} class="card-img-top burgersize" alt="Image"/>
+  <hr class="border-danger border border-1 mt-0 mb-0"/>
+  <div class="card-body">
+    <h2 class="card-title text-center mt-0 text-danger">{food.foodname}</h2>
+    <p class="card-text text-center fs-5 text-dark mb-0">₹{food.foodprice}</p>
+    <button class="offset-3 col-6  btn btn-primary btn-sm fs-5 mt-2 card-btn" onClick={() => {props.Addcart(food)}}>Order Now</button>
+  </div>
+</div>
                          </div>
                         )
                     })

@@ -35,7 +35,7 @@ function AddFoods(){
         onSubmit:async(values) => {
             try {
                 await axios.post("http://localhost:3005/foodmenu",values);
-                navigate("/foodmenu");
+                navigate("/home");
             } catch (error) {
                 
             }
@@ -70,6 +70,7 @@ function AddFoods(){
                 <div className="col-lg-12">
                     <label for="category">Category</label>
                     <select className="form-control" id="category" type={"text"} name="category" onChange={formik.handleChange} value={formik.values.category}>
+                        <option>Choose a Category</option>
                         <option>Burger</option>
                         <option>Pizza</option>
                         <option>Juice</option>
@@ -105,7 +106,7 @@ function AddFoods(){
                     {/* <div id="dropContainer" style={{border:"1px solid black",height:"100px"}}>
    Drop Here
 </div> */}
-                    <input className="form-control" id="foodimage" type={"file"} name="foodimage" accept="image/*" onChange={formik.handleChange} value={formik.values.foodimage.replace(/^.*\\/, "")} ></input>
+                    <input className="form-control" id="foodimage" type={"text"} name="foodimage" accept="image/*" onChange={formik.handleChange} value={formik.values.foodimage} ></input>
                     {/* {
                          value.replace(/^.*\\/, "")
                     } */}

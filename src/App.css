@@ -34,16 +34,21 @@
 
 /* Food Card page - Categories */
 .cardsize{
-  height: auto;
-  width:360px  !important;
+  /* height: auto;
+  width:360px  !important; */
   margin-right:20px;
   font-family: 'Oleo Script', cursive;
   /* background-image: url("https://i.pinimg.com/736x/60/11/20/60112018573a25fc933638ee1891efa4.jpg");
   background-size: cover; */
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(253, 253, 253);
+  /* border: 5px solid rgb(197, 141, 141); */
+  box-shadow: 10px 10px 10px rgb(99, 98, 98);
+  border-radius: 20px;
 }
 .burgersize{
   height:200px !important;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
   /* margin-left: 50px; */
   width:100%;
   transition: transform .2s;
