@@ -104,7 +104,7 @@ function Home(props){
                             <h1 class="text-center mt-2 text-danger">{food.foodname}</h1>
                             <p class="text-center fs-3 text-dark">₹{food.foodprice}</p>
                             <hr class="border-danger border border-1 mt-0 mb-0"/>
-                                <img class="img-fluid mt-2 mb-2 burgersize" src={food.foodimage.replace(/^.*\\/, "")} alt="Image" />
+                                <img class="img-fluid mt-2 mb-2 burgersize" src={food.foodimage} alt="Image" />
                                 <hr class="border-danger border border-1 mt-0 mb-0"/>
                                 <p class="text-warning fs-1 mt-0 mb-1 text-center">{food.foodinfo}</p>
                                 <div className='d-flex flex-row mb-3'>

@@ -105,7 +105,7 @@ function AddFoods(){
                     {/* <div id="dropContainer" style={{border:"1px solid black",height:"100px"}}>
    Drop Here
 </div> */}
-                    <input className="form-control" id="foodimage" type={"file"} name="foodimage" accept="image/*" onChange={formik.handleChange} value={formik.values.foodimage} ></input>
+                    <input className="form-control" id="foodimage" type={"file"} name="foodimage" accept="image/*" onChange={formik.handleChange} value={formik.values.foodimage.replace(/^.*\\/, "")} ></input>
                     {/* {
                          value.replace(/^.*\\/, "")
                     } */}
