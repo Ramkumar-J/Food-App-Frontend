@@ -117,3 +117,8 @@
   padding: 10px;
   border: 1px solid #aaaaaa;
 }
+
+.login-image{
+  height: 350px !important;
+  width: 100%;
+}

@@ -16,6 +16,8 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import ViewMenu from './ViewMenu';
 import Wishlist from './Wishlist';
+import Admin from './Admin';
+import Editfood from './Editfood';
 
 
 function App() {
@@ -103,6 +105,8 @@ let Removewishlist=(list) => {
         {/* <Route path="/foodmenu/juice" element={<ViewMenu Addedcart={Addtocart}/>}></Route> */}
         <Route path="/addmenu" element={<AddFoods/>}></Route>
         <Route path="/wishlist" element={<Wishlist addwish={wishList} Removewishlist={Removewishlist}/>}></Route>
+        <Route path="/admin" element={<Admin/>}></Route>
+        <Route path="/editfood/:id" element={<Editfood/>}></Route>
       </Routes>
       </main>
       <footer></footer>
