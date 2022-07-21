@@ -91,7 +91,7 @@ let Removewishlist=(list) => {
     <BrowserRouter>
     <div className="App">
       <header className=''>
-        <Navbar></Navbar>
+        <Navbar Addcartitems={cartitems}></Navbar>
         {/* <Sidebar></Sidebar> */}
       </header>
       <main className=''>

@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import Cartitem from './Cartitem'
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Cart(props) {
   let[count,setcount]=useState(1);
@@ -9,6 +11,16 @@ function Cart(props) {
   }
   let decrement=() => {
     setcount(count-1);
+  }
+let OrderToast=() => {
+  return(
+    <div>
+      <img className='img-fluid w-25' src="https://st3.depositphotos.com/15870672/36104/v/380/depositphotos_361046324-stock-illustration-cartoon-character-food-delivery-man.jpg?forcejpeg=true"></img><span className='text-secondary'>Order Placed Food is on the Way</span>
+    </div>
+  )
+}
+  let handleToast=() => {
+    toast.success(<OrderToast></OrderToast>,{position:toast.POSITION.TOP_RIGHT});
   }
   return (
     <div className='container'>
@@ -96,25 +108,8 @@ function Cart(props) {
           </div>
           <div class="row">
             <div className='col-12 col-sm-12 col-md-12 col-lg-12'>
-            <button type="button" class="btn btn-primary" id="liveToastBtn">Show live toast</button>
-            </div>
-            </div>
-            <div class="row">
-            <div className='col-12 col-sm-12 col-md-12 col-lg-12'>
-<div class="toast-container position-fixed bottom-0 end-0 p-3">
-  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-    <div class="toast-header">
-      <img src="https://pngpress.com/wp-content/uploads/2020/08/uploads_burger_sandwich_burger_sandwich_PNG4135.png" class="rounded me-2" alt="..."/>
-      <strong class="me-auto">Bootstrap</strong>
-      <small>11 mins ago</small>
-      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-    </div>
-    <div class="toast-body">
-      Hello, world! This is a toast message.
-    </div>
-  </div>
-</div>
-
+               <button className='btn btn-success' onClick={handleToast}>Place Order</button>
+               <ToastContainer />
             </div>
             </div>
         </div>

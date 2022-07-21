@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function Navbar(){
+function Navbar(props){
     return(
         <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
             <a className="navbar-brand fw-bold fs-2 ms-5 text-danger fst-italic" href="#">San🍔Burg</a>
@@ -23,7 +23,8 @@ function Navbar(){
                     </li>
                     <hr className="mt-0 mb-0"></hr>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/cart"><i class="bi bi-cart-plus-fill"></i><span className="ms-2">Cart</span></Link>
+                        <Link className="nav-link position-relative" to="/cart"><i class="bi bi-cart-plus-fill"></i><span  class="badge position-absolute top-2 start-100 translate-middle bg-danger p-2 rounded-circle countcart">{props.Addcartitems.length}</span></Link>
+                       
                     </li>
                     <hr className="mt-0 mb-0"></hr>
                     <li className="nav-item">
@@ -31,7 +32,7 @@ function Navbar(){
                     </li>
                     <hr className="mt-0 mb-0"></hr>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/admin"><i class="bi bi-heart-fill"></i><span className="ms-2">Admin</span></Link>
+                        <Link className="nav-link" to="/admin"><i class="bi bi-shield-lock-fill"></i><span className="ms-2">Admin</span></Link>
                     </li>
                 </ul> 
                 {/* </aside> */}

@@ -58,7 +58,6 @@ function Home(props){
     <img className='img-fluid rounded-circle h-50 w-100' src="https://b.zmtcdn.com/data/dish_images/ccb7dc2ba2b054419f805da7f05704471634886169.png"></img>
     <p className='fs-5 fw-bold text-center text-dark mb-0'>All</p>
     </button>
-    
     </div>
     <div className='col-6 col-sm-6 col-md-4 col-lg-2'>
     <button className='btn btn-transparent' onClick={() => filterProduct("Burger")}> 
@@ -91,11 +90,11 @@ function Home(props){
     </button>
     </div>
   </div>
-  <div className='row mt-2'>
+  {/* <div className='row mt-2'>
       <div className='col-lg-12'>
       <Link className='' to="/addmenu"><button className='btn btn-primary mt-3 mb-3 w-25 mx-auto'>Add Foods</button></Link>
         </div>
-        </div>
+        </div> */}
   <div class="row">
                 {
                     datafilter.map((food) => {
@@ -112,12 +111,15 @@ function Home(props){
                                 <button className='btn btn-transparent btn-sm ms-5 h-100 mt-0' onClick={() =>props.Addwishlist(food)}><i class="bi bi-suit-heart"></i></button>
                                 </div> */}
                                 <div class="card cardsize">
-  <img src={food.foodimage} class="card-img-top burgersize" alt="Image"/>
+  <img src={food.foodimage} class="card-img-top bg-secondary burgersize" alt="Image"/>
   <hr class="border-danger border border-1 mt-0 mb-0"/>
   <div class="card-body">
     <h2 class="card-title text-center mt-0 text-danger">{food.foodname}</h2>
     <p class="card-text text-center fs-5 text-dark mb-0">₹{food.foodprice}</p>
+    {/* <p class="card-text text-warning fs-1 mt-0 mb-1 text-center">{food.foodinfo}</p> */}
     <button class="offset-3 col-6  btn btn-primary btn-sm fs-5 mt-2 card-btn" onClick={() => {props.Addcart(food)}}>Order Now</button>
+    {/* <button className='card-btn btn btn-transparent btn-sm ms-5 mt-0' onClick={() =>props.Addwishlist(food)}> */}
+    <i class="bi bi-heart-fill fs-4 wish" onClick={() =>props.Addwishlist(food)}></i>
   </div>
 </div>
                          </div>

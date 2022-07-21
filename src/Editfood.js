@@ -46,9 +46,10 @@ function Editfood() {
     useEffect(() => {
         async function editFooditem(){
             try {
-                let food=await axios.get(`http://localhost:3005/${params.id}`);
+                let food=await axios.get(`http://localhost:3005/foodmenu/${params.id}`);
                 console.log(food.data);
-                formik.setValues(food.data);
+                let foodData=food.data;
+                formik.setValues(foodData);
             } catch (error) {
                 console.log("error");
             }
