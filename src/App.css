@@ -7,11 +7,15 @@
 }
 .sidebar{
   position: fixed; 
-  left:0;
+  left:-50px;
   top:200px;
   width:90px;
   background-color: rgb(219, 219, 219);
   height: auto;
+}
+
+.sidebar:hover{
+  left:0;
 }
 /* .main-content{
   margin-left: 250px;
@@ -137,4 +141,8 @@
 
 .countcart{
   font-size: 10px !important;
+}
+
+.side-icon{
+  /* margin-left:-50px; */
 }

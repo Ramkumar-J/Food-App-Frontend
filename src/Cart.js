@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Cartitem from './Cartitem'
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Link } from 'react-router-dom';
 
 function Cart(props) {
   let[count,setcount]=useState(1);
@@ -15,7 +16,7 @@ function Cart(props) {
 let OrderToast=() => {
   return(
     <div>
-      <img className='img-fluid w-25' src="https://st3.depositphotos.com/15870672/36104/v/380/depositphotos_361046324-stock-illustration-cartoon-character-food-delivery-man.jpg?forcejpeg=true"></img><span className='text-secondary'>Order Placed Food is on the Way</span>
+      <img className='img-fluid w-25' src="https://st3.depositphotos.com/15870672/36104/v/380/depositphotos_361046324-stock-illustration-cartoon-character-food-delivery-man.jpg?forcejpeg=true"></img><span className='text-secondary ms-0'>Order Placed Successfully</span>
     </div>
   )
 }
@@ -108,8 +109,45 @@ let OrderToast=() => {
           </div>
           <div class="row">
             <div className='col-12 col-sm-12 col-md-12 col-lg-12'>
-               <button className='btn btn-success' onClick={handleToast}>Place Order</button>
-               <ToastContainer />
+               {/* <button className='btn btn-success' onClick={handleToast}>Place Order</button>
+               <ToastContainer /> */}
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Check out
+</button>
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Delivery Information</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          {/* <label>Name</label>
+       <input className='form-control' type={"text"}></input> */}
+       <label>Mobile Number</label>
+       <input className='form-control' type={"number"}></input>
+       {/* <label>Email</label>
+       <input className='form-control' type={"email"}></input> */}
+       <label>Delivery Address</label>
+       <textarea className='form-control' type={"text"}></textarea>
+       <label>Paymant method</label><br></br>
+       <input type="radio" id="cash" name="payment"/>
+  <label for="cash">Cash on Delivery</label><br/>
+  <input type="radio" id="card" name="payment"/>
+  <label for="card">Card</label><br/>
+  <input className='form-control mt-2' type={"number"} placeholder="Card number"></input>
+       </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        <input type={"submit"} class="btn btn-success" value="Place Order" onClick={handleToast}></input>
+        <ToastContainer />
+      </div>
+    </div>
+  </div>
+</div>
+
             </div>
             </div>
         </div>

@@ -94,6 +94,7 @@ let Removewishlist=(list) => {
         <Navbar Addcartitems={cartitems}></Navbar>
         {/* <Sidebar></Sidebar> */}
       </header>
+      {/* <Sidebar></Sidebar> */}
       <main className=''>
       <Routes>
         <Route path="/register" element={<Register/>}></Route>
