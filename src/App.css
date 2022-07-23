@@ -146,3 +146,8 @@
 .side-icon{
   /* margin-left:-50px; */
 }
+
+.cartImage{
+  height: 180px !important;
+  width: 180px !important;
+}

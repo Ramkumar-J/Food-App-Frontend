@@ -4,8 +4,38 @@ import Cartitem from './Cartitem'
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from 'react-router-dom';
+import { useFormik } from "formik";
 
 function Cart(props) {
+  let formik=useFormik({
+    initialValues:{
+      mobilenumber:"",
+      address:"",
+      paymentmethod:"",
+      cardnumber:"",
+    },
+    validate:(values) => {
+      const errors={};
+      if(!values.mobilenumber){
+        errors.mobilenumber="Required";
+      }
+      if(!values.address){
+        errors.address="Required";
+      }
+      if(!values.paymentmethod){
+        errors.paymentmethod="Required";
+      }
+      return errors;
+    },
+    onSubmit:async (values) => {
+      try {
+        await axios.post("http://localhost:3005/checkout",values)
+        console.log(values);
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  })
   let[count,setcount]=useState(1);
   let increment=() => {
     setcount(count+1);
@@ -34,7 +64,7 @@ let OrderToast=() => {
               <div class="card mb-3 cartitem-bg">
    <div class="row g-0">
      <div class="col-sm-4 col-md-4 col-lg-4">
-      <img src={addcartitem.foodimage} class="img-fluid rounded-start" alt="..."/>
+      <img src={addcartitem.foodimage} class="img-fluid rounded-start cartImage" alt="..."/>
     </div>    
     <div class="col-sm-8 col-md-8 col-lg-8">     
     <div class="card-body">
@@ -118,32 +148,46 @@ let OrderToast=() => {
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Delivery Information</h5>
+        <h3 class="modal-title text-info" id="staticBackdropLabel">Delivery Information</h3>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      
       <div class="modal-body">
-        <form>
+      <form onSubmit={formik.handleSubmit}>
           {/* <label>Name</label>
        <input className='form-control' type={"text"}></input> */}
        <label>Mobile Number</label>
-       <input className='form-control' type={"number"}></input>
+       <input className='form-control mt-1 mb-1' type={"number"} name="mobilenumber" onChange={formik.handleChange} value={formik.values.mobilenumber}></input>
+       {
+        formik.touched.mobilenumber && formik.errors.mobilenumber ? (<div className='text-danger'>{formik.errors.mobilenumber}</div>) : null
+       }
        {/* <label>Email</label>
        <input className='form-control' type={"email"}></input> */}
        <label>Delivery Address</label>
-       <textarea className='form-control' type={"text"}></textarea>
-       <label>Paymant method</label><br></br>
-       <input type="radio" id="cash" name="payment"/>
-  <label for="cash">Cash on Delivery</label><br/>
-  <input type="radio" id="card" name="payment"/>
-  <label for="card">Card</label><br/>
-  <input className='form-control mt-2' type={"number"} placeholder="Card number"></input>
-       </form>
+       <textarea className='form-control mt-1 mb-1' type={"text"} name="address" onChange={formik.handleChange} value={formik.values.address}></textarea>
+       {
+        formik.touched.address && formik.errors.address ? (<div className='text-danger'>{formik.errors.address}</div>) : null
+       }
+       <label>Payment method</label>
+       <select className='form-control mt-2 mb-1' type={"checkbox"} name="paymentmethod" onChange={formik.handleChange} value={formik.values.paymentmethod}>
+       {/* <option>Select a Payment method</option> */}
+       <option>Cash On Delivery</option>
+       <option>Card</option>
+       </select>
+       {
+        formik.touched.paymentmethod && formik.errors.paymentmethod ? (<div className='text-danger'>{formik.errors.paymentmethod}</div>) : null
+       }     
+  <input className='form-control mt-2 mb-1' type={"number"} placeholder="Card number" name="cardnumber" onChange={formik.handleChange} value={formik.values.cardnumber}></input>
+  {/* <div class="modal-footer"> */}
+        {/* <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button> */}
+        <input type={"submit"} class="btn btn-success" value="Submit"></input>
+        {/* <ToastContainer /> */}
+      {/* </div> */}
+      </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-        <input type={"submit"} class="btn btn-success" value="Place Order" onClick={handleToast}></input>
-        <ToastContainer />
-      </div>
+    
+      
+      
     </div>
   </div>
 </div>
