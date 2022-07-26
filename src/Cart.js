@@ -170,7 +170,7 @@ let OrderToast=() => {
        }
        <label>Payment method</label>
        <select className='form-control mt-2 mb-1' type={"checkbox"} name="paymentmethod" onChange={formik.handleChange} value={formik.values.paymentmethod}>
-       {/* <option>Select a Payment method</option> */}
+       <option>Select a Payment method</option>
        <option>Cash On Delivery</option>
        <option>Card</option>
        </select>
@@ -178,11 +178,11 @@ let OrderToast=() => {
         formik.touched.paymentmethod && formik.errors.paymentmethod ? (<div className='text-danger'>{formik.errors.paymentmethod}</div>) : null
        }     
   <input className='form-control mt-2 mb-1' type={"number"} placeholder="Card number" name="cardnumber" onChange={formik.handleChange} value={formik.values.cardnumber}></input>
-  {/* <div class="modal-footer"> */}
-        {/* <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button> */}
-        <input type={"submit"} class="btn btn-success" value="Submit"></input>
-        {/* <ToastContainer /> */}
-      {/* </div> */}
+  <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        <input type={"submit"} class="btn btn-success" value="Submit" onClick={handleToast}></input>
+        <ToastContainer />
+      </div>
       </form>
       </div>
     
