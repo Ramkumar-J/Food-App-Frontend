@@ -81,44 +81,6 @@ let OrderToast=() => {
             )
           }) : <h1 className='mt-2 text-info fw-bold'>No Items in Cart</h1>
         }
-        {/* {
-          props.Addcartitems.map((addcartitem) => {
-            return(
-              <div class="card mb-3 cartitem-bg" >
-   <div class="row g-0">
-     <div class="col-sm-4 col-md-4 col-lg-4">
-      <img src={addcartitem.foodimage} class="img-fluid rounded-start" alt="..."/>
-    </div>    
-    <div class="col-sm-8 col-md-8 col-lg-8">     
-    <div class="card-body">
-      <h3 class="card-title fw-bold">{addcartitem.foodname}</h3>       
-       <p class="card-text fs-4 fw-bold">₹{addcartitem.foodprice}</p>
-        <button className='btn btn-secondary btn-sm fs-5 me-2'>-</button>
-        <span className='ms-2'>1</span>
-        <button className='btn btn-secondary btn-sm ms-3 fs-5 me-5'>+</button>
-        <button class="btn btn-primary bg-primary rounded-pill ms-5 position-absolute top-1" onClick={() => {props.Removecartitems(addcartitem)}}>Remove</button>
-      </div>
-    </div>
-  </div>
-</div>
-            )
-          })
-        } */}
-        {/* <div class="card mb-3 cartitem-bg" >
-   <div class="row g-0">
-     <div class="col-sm-4 col-md-4 col-lg-4">
-      <img src="https://pngpress.com/wp-content/uploads/2020/08/uploads_burger_sandwich_burger_sandwich_PNG4135.png" class="img-fluid rounded-start" alt="..."/>
-    </div>    <div class="col-sm-8 col-md-8 col-lg-8">     <div class="card-body">
-      <h3 class="card-title fw-bold">Big Burger</h3>       
-       <p class="card-text fs-4 fw-bold">₹300</p>
-        <button className='btn btn-secondary btn-sm fs-5 me-2'>-</button>
-        <span className='ms-2'>1</span>
-        <button className='btn btn-secondary btn-sm ms-3 fs-5 me-5'>+</button>
-        <button class="btn btn-primary bg-primary rounded-pill ms-5 position-absolute top-1">Remove</button>
-      </div>
-    </div>
-  </div>
-</div> */}
         </div>
         <div className='col-sm-12 col-md-6 col-lg-6'>
           <div class="row">
