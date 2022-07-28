@@ -21,9 +21,6 @@ function App() {
   let[foodItems,setFoodItems]=useState([]);
   let[cartitems,setNewcartitems]=useState([]);
   let[total,setTotal]=useState(0);
-
-
-  ```
   let[wishList,setNewwishList]=useState([]);
   useEffect(() => {
       async function getFooditems(){
