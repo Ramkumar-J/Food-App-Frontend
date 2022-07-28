@@ -8,7 +8,11 @@ function ViewMenu(props) {
     useEffect(() => {
         async function getFooditem(){
             try {
-                let foodsdata=await axios.get(`http://localhost:3005/foodmenu/${params.category}`);
+                let foodsdata=await axios.get(`http://localhost:3005/foodmenu/${params.category}`,{
+                    headers:{
+                      Authorization:window.localStorage.getItem("foodapptoken"),
+              },
+                  });
                 console.log(foodsdata);
                 setFoodmenu(foodsdata.data);
             } catch (error) {

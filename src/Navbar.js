@@ -1,7 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Navbar(props){
+    let navigate=useNavigate()
+    let handleLogout=() => {
+        window.localStorage.removeItem("foodapptoken");
+        navigate("/login");
+    }
     return(
         <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
             <a className="navbar-brand fw-bold fs-2 ms-5 text-danger fst-italic" href="#">San🍔Burg</a>
@@ -40,7 +45,7 @@ function Navbar(props){
                             {/* <Link className="dropdown-item" to="/admin"><i class="bi bi-shield-lock-fill"></i><span className="ms-1">Admin</span></Link> */}
                             </li>
                             <li className="">
-                            <button className="dropdown-item btn btn-danger">Logout</button>
+                            <button className="dropdown-item btn btn-danger" onClick={handleLogout}>Logout</button>
                             </li>
                         </ul>
                         {/* <Link className="nav-link" to="/admin"><i class="bi bi-shield-lock-fill"></i><span className="ms-1">Admin</span></Link> */}

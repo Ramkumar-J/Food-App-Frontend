@@ -27,7 +27,8 @@ function Login() {
         },
         onSubmit:async (values) => {
             try {
-                await axios.post("http://localhost:3005/login",values);
+               let signin= await axios.post("http://localhost:3005/login",values);
+               window.localStorage.setItem("foodapptoken",signin.data.token);
                 navigate("/home");
             } catch (error) {
                 alert("Credential not found");

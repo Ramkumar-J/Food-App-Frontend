@@ -5,7 +5,7 @@
   box-sizing: border-box;
   font-family: 'Oleo Script', cursive;
 }
-.sidebar{
+/* .sidebar{
   position: fixed; 
   left:-50px;
   top:200px;
@@ -16,7 +16,7 @@
 
 .sidebar:hover{
   left:0;
-}
+} */
 /* .main-content{
   margin-left: 250px;
   position: none;
@@ -98,7 +98,7 @@
 
 
 /* Add Food Page */
-.add-food{
+/* .add-food{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -113,7 +113,7 @@
   border-radius: 20px;
   width:400px;
   box-shadow: 20px 20px 15px rgb(190, 190, 190);
-}
+} */
 
 
 
@@ -137,15 +137,16 @@
   border: 1px solid black circle; */
   color: rgb(175, 26, 56);
   cursor: pointer;
+  border-radius: 30%;
 }
 
 .countcart{
   font-size: 10px !important;
 }
 
-.side-icon{
-  /* margin-left:-50px; */
-}
+/* .side-icon{
+  margin-left:-50px;
+} */
 
 .cartImage{
   height: 180px !important;

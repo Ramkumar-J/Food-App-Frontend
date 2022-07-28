@@ -118,8 +118,11 @@ function Home(props){
     <p class="card-text text-center fs-5 text-dark mb-0">₹{food.foodprice}</p>
     {/* <p class="card-text text-warning fs-1 mt-0 mb-1 text-center">{food.foodinfo}</p> */}
     <button class="offset-3 col-6  btn btn-primary btn-sm fs-5 mt-2 card-btn" onClick={() => {props.Addcart(food)}}>Order Now</button>
-    {/* <button className='card-btn btn btn-transparent btn-sm ms-5 mt-0' onClick={() =>props.Addwishlist(food)}> */}
-    <i class="bi bi-heart-fill fs-4 wish" onClick={() =>props.Addwishlist(food)}></i>
+    <button className='btn btn-danger btn-sm rounded-circle wish' onClick={() =>props.Addwishlist(food)}  disabled={props.addwish.some(
+                      (obj) => obj._id === food._id
+                    )}>
+    <i class="bi bi-heart-fill"></i>
+    </button>
   </div>
 </div>
                          </div>

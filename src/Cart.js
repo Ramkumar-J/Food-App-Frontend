@@ -29,7 +29,11 @@ function Cart(props) {
     },
     onSubmit:async (values) => {
       try {
-        await axios.post("http://localhost:3005/checkout",values)
+        await axios.post("http://localhost:3005/checkout",values,{
+          headers:{
+            Authorization:window.localStorage.getItem("foodapptoken"),
+    },
+        })
         console.log(values);
       } catch (error) {
         console.log(error);
