@@ -98,7 +98,7 @@
 
 
 /* Add Food Page */
-/* .add-food{
+.add-food{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -113,7 +113,7 @@
   border-radius: 20px;
   width:400px;
   box-shadow: 20px 20px 15px rgb(190, 190, 190);
-} */
+}
 
 
 
