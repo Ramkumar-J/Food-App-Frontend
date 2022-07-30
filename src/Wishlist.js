@@ -16,7 +16,9 @@ function Wishlist(props) {
     <p class="card-text text-center fs-5 text-dark mb-0">₹{wish.foodprice}</p>
                                 <div className='d-flex flex-row mt-3'>
                                 <button class="offset-3 col-6  btn btn-primary btn-sm fs-5  card-btn" onClick={() => {props.Addcart(wish)}}>Order Now</button>
-                                <button className='btn btn-danger btn-sm ms-5 h-50 mt-0' onClick={() =>props.Removewishlist(wish)}><i class="bi bi-x-lg"></i></button>
+                                <button className='btn btn-danger btn-sm ms-5 h-50 mt-0' onClick={() =>{props.Removewishlist(wish)}}>
+                                  {/* <i class="bi bi-x-lg"></i> */} X
+                                  </button>
                                 </div>
                          </div>
                          </div>

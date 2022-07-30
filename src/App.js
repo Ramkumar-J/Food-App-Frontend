@@ -33,16 +33,19 @@ function reducer(state,action){
         cartitems:[...removeCartitem],
     total:state.total - parseInt(action.item.foodprice)
         }
-        case "Add_To_Wishlist":
-          return{
-          ...state,wishList:[...state.wishList,action.list]
-          }
-      case "Remove_From_Wishlist":
-           let removeList=state.wishList.filter(e => action.list._id !== e._id);
-        // state.cartitems.splice(remove,1);
-        return{
-          wishList:[...removeList]
-          }
+        // case "Add_To_Wishlist":
+        //   return{
+        //   ...state,wishList:[...state.wishList,action.list]
+        //   }
+  //     case "Remove_From_Wishlist":
+  // //         let index=state.wishList.findIndex(obj => obj._id === action.list._id);
+  // // state.wishList.splice(index,1);
+  //          let updated=state.wishList.filter(obj => action.list._id !== obj._id);
+  //          console.log(updated);
+  //       // state.cartitems.splice(remove,1);
+  //       return{
+  //         wishList:[...updated]
+  //         } 
      }
      return state;
 }
@@ -53,7 +56,7 @@ function App() {
   let[foodItems,setFoodItems]=useState([]);
   // let[cartitems,setNewcartitems]=useState([]);
   // let[total,setTotal]=useState(0);
-  // let[wishList,setNewwishList]=useState([]);
+  let[wishList,setNewwishList]=useState([]);
   useEffect(() => {
       async function getFooditems(){
           try {
@@ -70,7 +73,7 @@ function App() {
       }
       getFooditems();
   },[])
-  let[state,dispatch]=useReducer(reducer,{cartitems:[],total:0,wishList:[]})
+  let[state,dispatch]=useReducer(reducer,{cartitems:[],total:0})
   let Addtocart=(item) => {
    dispatch({type:"Add_To_Cart",item})
     // setNewcartitems([...cartitems,item]);
@@ -85,13 +88,13 @@ function App() {
     //  setTotal(total - parseInt(item.foodprice));
     }
     
-    let Addwishlist=(list) => {
-      dispatch({type:"Add_To_Wishlist",list})
-    }
+    // let Addwishlist=(list) => {
+    //   dispatch({type:"Add_To_Wishlist",list})
+    // }
     
-    let Removewishlist=(list) => {
-      dispatch({type:"Remove_From_Wishlist",list})
-    }
+    // let Removewishlist=(list) => {
+    //   dispatch({type:"Remove_From_Wishlist",list})
+    // }
 
 
 // let Addtocart=(item) => {
@@ -106,15 +109,15 @@ function App() {
 //  setTotal(total - parseInt(item.foodprice));
 // }
 
-// let Addwishlist=(list) => {
-//   setNewwishList([...wishList,list]);
-// }
+let Addwishlist=(list) => {
+  setNewwishList([...wishList,list]);
+}
 
-// let Removewishlist=(list) => {
-//   let index=wishList.findIndex(obj => obj._id === list._id);
-//   wishList.splice(index,1);
-//   setNewwishList([...wishList])
-// }
+let Removewishlist=(list) => {
+  let index=wishList.findIndex(obj => obj._id === list._id);
+  wishList.splice(index,1);
+  setNewwishList([...wishList])
+}
 
   return (
     <BrowserRouter>
@@ -126,11 +129,11 @@ function App() {
       <Routes>
         <Route path="/register" element={<Register/>}></Route>
         <Route path="/login" element={<Login/>}></Route>
-        <Route path="/home" element={<Home Fooditems={foodItems} Addcart={Addtocart} Addwishlist={Addwishlist} addwish={state.wishList}/>}></Route>
+        <Route path="/home" element={<Home Fooditems={foodItems} Addcart={Addtocart} Addwishlist={Addwishlist} addwish={wishList}/>}></Route>
         <Route path="/cart" element={<Cart Addcartitems={state.cartitems} Removecartitems={RemoveFromCart} Total={state.total}/>}></Route>
         <Route path="/foodmenu" element={<FoodMenu Fooditems={foodItems} Addcart={Addtocart}/>}></Route>
         <Route path="/addmenu" element={<AddFoods/>}></Route>
-        <Route path="/wishlist" element={<Wishlist addwish={state.wishList} Addcart={Addtocart} Removewishlist={Removewishlist}/>}></Route>
+        <Route path="/wishlist" element={<Wishlist addwish={wishList} Addcart={Addtocart} Removewishlist={Removewishlist}/>}></Route>
         <Route path="/admin" element={<Admin/>}></Route>
         <Route path="/editfood/:id" element={<Editfood/>}></Route>
       </Routes>

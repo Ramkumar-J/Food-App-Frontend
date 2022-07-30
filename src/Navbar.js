@@ -28,11 +28,15 @@ function Navbar(props){
                     </li>
                     <hr className="mt-0 mb-0"></hr>
                     <li className="nav-item ms-2">
-                        <Link className="nav-link position-relative" to="/cart"><i class="bi bi-cart-plus-fill fs-5"></i><span className="fs-4 ms-1">Cart</span><span class="badge position-absolute top-2 start-25 translate-middle bg-danger p-2 rounded-circle mt-1 countcart">{props.Addcartitems.length}</span></Link>
+                        <Link className="nav-link position-relative" to="/cart"><i class="bi bi-cart-plus-fill fs-5"></i><span className="fs-4 ms-1">Cart</span>
+                        <span class="badge position-absolute top-2 start-25 translate-middle bg-danger p-2 rounded-circle mt-1 countcart">{props.Addcartitems.length}</span>
+                        </Link>
                     </li>
                     <hr className="mt-0 mb-0"></hr>
                     <li className="nav-item ms-2">
-                        <Link className="nav-link fs-4" to="/wishlist"><i class="bi bi-heart-fill fs-5"></i><span className="fs-4 ms-1">Wishlist</span></Link>
+                        <Link className="nav-link fs-4 position-relative" to="/wishlist"><i class="bi bi-heart-fill fs-5"></i><span className="fs-4 ms-1">Wishlist</span>
+                        {/* <span class="badge position-absolute top-2 start-25 translate-middle bg-danger p-2 rounded-circle mt-1 countcart">{props.addwish.length}</span> */}
+                        </Link>
                     </li>
                     <hr className="mt-0 mb-0"></hr>
                     <li className="nav-item dropdown ms-2">

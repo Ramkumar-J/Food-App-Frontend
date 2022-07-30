@@ -120,15 +120,11 @@ let OrderToast=() => {
       
       <div class="modal-body">
       <form onSubmit={formik.handleSubmit}>
-          {/* <label>Name</label>
-       <input className='form-control' type={"text"}></input> */}
        <label>Mobile Number</label>
        <input className='form-control mt-1 mb-1' type={"number"} name="mobilenumber" onChange={formik.handleChange} value={formik.values.mobilenumber}></input>
        {
         formik.touched.mobilenumber && formik.errors.mobilenumber ? (<div className='text-danger'>{formik.errors.mobilenumber}</div>) : null
        }
-       {/* <label>Email</label>
-       <input className='form-control' type={"email"}></input> */}
        <label>Delivery Address</label>
        <textarea className='form-control mt-1 mb-1' type={"text"} name="address" onChange={formik.handleChange} value={formik.values.address}></textarea>
        {
