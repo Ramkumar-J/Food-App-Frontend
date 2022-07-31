@@ -3,20 +3,6 @@ import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
 
 function Categories(props) {
-// let params=useParams();
-//     let[foodmenu,setFoodmenu]=useState([]);
-//     useEffect(() => {
-//         async function getFooditem(){
-//             try {
-//                 let foodsdata=await axios.get(`http://localhost:3005/foodmenu/${params.category}`);
-//                 console.log(foodsdata);
-//                 setFoodmenu(foodsdata.data);
-//             } catch (error) {
-//                 console.log("error");
-//             }
-//         }
-//         getFooditem();
-//     },[])
   return (
     <div className='row mt-2'>
       <div className='col-6 col-sm-6 col-md-4 col-lg-2'>

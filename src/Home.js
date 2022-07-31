@@ -33,9 +33,9 @@ function Home(props){
       </div>
 
     </div>
-    <div class="carousel-item">
+    <div class="carousel-item ">
     <img src="assets/131333-food-desktop-wallpaper.jpg" class="d-block img-fluid slide-image" alt="..."/>
-    <div class="carousel-caption d-none d-sm-block">
+    <div class="carousel-caption d-flex justify-content-center align-items-center flex-column">
         <h5 className='fs-1 text-dark'>YUMMY PIZZA</h5>
         <p>Starts from Rs,150</p>
       </div>

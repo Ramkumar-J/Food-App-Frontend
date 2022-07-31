@@ -24,7 +24,7 @@ function Card(props) {
     {
       foodItems.map(food => {
         return(
-        <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-4 mt-3 p-0 ">
+        // <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-4 mt-3 p-0 ">
         <div class="card cardsize">
     <img src={food.foodimage} class="card-img-top bg-secondary burgersize" alt="Image"/>
     <hr class="border-danger border border-1 mt-0 mb-0"/>
@@ -40,7 +40,7 @@ function Card(props) {
       </button>
     </div>
   </div>
-      </div>
+      // </div>
         )
       })
     }
