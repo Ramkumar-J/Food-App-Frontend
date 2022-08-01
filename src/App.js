@@ -15,6 +15,7 @@ import axios from 'axios';
 import Wishlist from './Wishlist';
 import Admin from './Admin';
 import Editfood from './Editfood';
+import Footer from './Footer';
 
 function reducer(state,action){
   console.log(action)
@@ -138,7 +139,9 @@ let Removewishlist=(list) => {
         <Route path="/editfood/:id" element={<Editfood/>}></Route>
       </Routes>
       </main>
-      <footer></footer>
+      <footer>
+        <Footer></Footer>
+      </footer>
     </div>
     </BrowserRouter>
   );
