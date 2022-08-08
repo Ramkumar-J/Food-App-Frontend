@@ -139,7 +139,7 @@ let Removewishlist=(list) => {
         <Route path="/editfood/:id" element={<Editfood/>}></Route>
       </Routes>
       </main>
-      <hr></hr>
+      {/* <hr></hr> */}
       <footer>
         <Footer></Footer>
       </footer>

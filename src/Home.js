@@ -123,7 +123,7 @@ function Home(props){
   <img src={food.foodimage} class="card-img-top bg-secondary burgersize" alt="Image"/>
   <hr class="border-danger border border-1 mt-0 mb-0"/>
   <div class="card-body">
-    <h2 class="card-title text-center mt-0 text-danger">{food.foodname}</h2>
+    <h2 class="card-title text-center mt-0 title">{food.foodname}</h2>
     <p class="card-text text-center fs-5 text-dark mb-0">₹{food.foodprice}</p>
     {/* <p class="card-text text-warning fs-1 mt-0 mb-1 text-center">{food.foodinfo}</p> */}
     <button class="offset-3 col-6  btn btn-primary btn-sm fs-5 mt-2 card-btn" onClick={() => {props.Addcart(food)}}>Order Now</button>
