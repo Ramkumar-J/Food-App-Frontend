@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom';
+import Carousel from './Carousel';
 import Categories from './Categories';
 import FoodMenu from './FoodMenu';
 
@@ -15,10 +16,11 @@ function Home(props){
   }
   return (
     <>
-    <div className='container'>
-      <div className='row mt-3'>
-        <div className='col-lg-12'>
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+    {/* <div className='container'> */}
+      {/* <div className='row mt-3'>
+        <div className='col-lg-12'> */}
+          <Carousel></Carousel>
+        {/* <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -53,9 +55,10 @@ function Home(props){
     <span class="visually-hidden">Next</span>
   </button>
   
-  </div>
-  </div>
-  </div>
+  </div> */}
+  {/* </div>
+  </div> */}
+  <div className='container'>
   <div className='row mt-2'>
     <div className='col-lg-12'>
     <h1>Categories</h1>
