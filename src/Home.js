@@ -111,7 +111,7 @@ function Home(props){
                 {
                     datafilter.map((food) => {
                         return(
-                            <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-4 mt-3 p-0 ">
+                            <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-4 mt-3 p-0 ">
                             {/* <h1 class="text-center mt-2 text-danger">{food.foodname}</h1>
                             <p class="text-center fs-3 text-dark mb-0">₹{food.foodprice}</p>
                             <hr class="border-danger border border-1 mt-0 mb-0"/>
