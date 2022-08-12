@@ -4,18 +4,19 @@ import "bootstrap/dist/js/bootstrap.min.js"
 import "bootstrap-icons/font/bootstrap-icons.css"
 import {BrowserRouter,Routes,Route} from "react-router-dom"
 import Navbar from './Navbar';
-import Home from './Home';
-import Cart from './Cart';
+import Home from './routes/Home';
+import Cart from './routes/Cart';
 import FoodMenu from './FoodMenu';
 import Register from './Register';
 import Login from './Login';
 import AddFoods from './AddFood';
 import { useEffect, useReducer, useState } from 'react';
 import axios from 'axios';
-import Wishlist from './Wishlist';
+import Wishlist from './routes/Wishlist';
 import Admin from './Admin';
 import Editfood from './Editfood';
 import Footer from './Footer';
+import Card from './Card';
 
 function reducer(state,action){
   console.log(action)
@@ -132,10 +133,11 @@ let Removewishlist=(list) => {
         <Route path="/login" element={<Login/>}></Route>
         <Route path="/home" element={<Home Fooditems={foodItems} Addcart={Addtocart} Addwishlist={Addwishlist} addwish={wishList}/>}></Route>
         <Route path="/cart" element={<Cart Addcartitems={state.cartitems} Removecartitems={RemoveFromCart} Total={state.total}/>}></Route>
-        <Route path="/foodmenu" element={<FoodMenu Fooditems={foodItems} Addcart={Addtocart}/>}></Route>
+        <Route path="/foodmenu" element={<FoodMenu Fooditems={foodItems} />}></Route>
         <Route path="/addmenu" element={<AddFoods/>}></Route>
         <Route path="/wishlist" element={<Wishlist addwish={wishList} Addcart={Addtocart} Removewishlist={Removewishlist}/>}></Route>
         <Route path="/admin" element={<Admin/>}></Route>
+        {/* <Route path="/card" element={<Card Addcart={Addtocart} Addwishlist={Addwishlist} addwish={wishList}/>}></Route> */}
         <Route path="/editfood/:id" element={<Editfood/>}></Route>
       </Routes>
       </main>

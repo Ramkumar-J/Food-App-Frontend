@@ -22,7 +22,7 @@ function Card(props) {
   return (
     <>
     {
-      foodItems.map(food => {
+      foodItems.map((food) => {
         return(
         // <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-4 mt-3 p-0 ">
         <div class="card cardsize">
@@ -33,9 +33,9 @@ function Card(props) {
       <p class="card-text text-center fs-5 text-dark mb-0">₹{food.foodprice}</p>
       {/* <p class="card-text text-warning fs-1 mt-0 mb-1 text-center">{food.foodinfo}</p> */}
       <button class="offset-3 col-6  btn btn-primary btn-sm fs-5 mt-2 card-btn" onClick={() => {props.Addcart(food)}}>Order Now</button>
-      <button className='btn btn-danger btn-sm rounded-circle wish' onClick={() =>props.Addwishlist(food)}  disabled={props.addwish.some(
+      <button className='btn btn-danger btn-sm rounded-circle wish' onClick={() =>{props.Addwishlist(food)}} disabled={props.addwish.some(
                         (obj) => obj._id === food._id
-                      )}>
+                      )} >
       <i class="bi bi-heart-fill"></i>
       </button>
     </div>
@@ -44,7 +44,7 @@ function Card(props) {
         )
       })
     }
-    </>
+  </>
 //     <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-4 mt-3 p-0 ">
 //       <div class="card cardsize">
 //   <img src={props.food.foodimage} class="card-img-top bg-secondary burgersize" alt="Image"/>

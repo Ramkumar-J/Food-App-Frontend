@@ -33,11 +33,11 @@ function Editfood() {
             }
             return errors;
         },
-        onSubmit:async(values) => {
+        onSubmit:async (values) => {
             try {
                 await axios.put(`http://localhost:3005/foodmenu/${params.id}`,values,{
                     headers:{
-                      Authorization:window.localStorage.getItem("foodapptoken"),
+                      Authorization:window.localStorage.getItem("foodapptoken"), 
               },
                   });
                 navigate("/admin");
@@ -59,7 +59,7 @@ function Editfood() {
                 let foodData=food.data;
                 formik.setValues(foodData);
             } catch (error) {
-                console.log("error");
+                console.log(error);
             }
         }
         editFooditem();
@@ -91,7 +91,7 @@ function Editfood() {
                     <label for="foodname">Food Name</label>
                     <input className="form-control" id="foodname" type={"text"} name="foodname" onChange={formik.handleChange} value={formik.values.foodname}></input>
                     {
-                        formik.touched.foodname && formik.errors.foodname ? (<span className="text-danger">{formik.errors.foodnmae}</span>) : null
+                        formik.touched.foodname && formik.errors.foodname ? (<span className="text-danger">{formik.errors.foodname}</span>) : null
                     }
                 </div>
                 </div>

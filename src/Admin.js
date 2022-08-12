@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import AddFoods from "./AddFood";
+// import AdminFoodcard from "./AdminFoodcard";
+
 
 function Admin() {
   const [Food, setFood] = useState([]);
@@ -62,10 +64,13 @@ function Admin() {
           </p>
         </div>
       </div>
-      <div className="row mt-2">
-        {Food.map((food) => {
+      {/* <AdminFoodcard Food={Food}></AdminFoodcard> */}
+       <div className="row mt-2">
+        {
+        Food.map((food) => {
           return (
             <div className="col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-4 mt-3 p-0 ">
+              {/* <AdminFoodcard></AdminFoodcard> */}
               <div className="card cardsize">
                 <img
                   src={food.foodimage}
@@ -93,11 +98,11 @@ function Admin() {
                   </div>
                 </div>
               </div>
-            </div>
-          );
-        })}
-      </div>
     </div>
+    );
+  })}
+      </div>
+      </div>
   );
 }
 
