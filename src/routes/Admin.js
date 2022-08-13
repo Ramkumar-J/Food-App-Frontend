@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import AddFoods from "./AddFood";
-// import AdminFoodcard from "./AdminFoodcard";
+import AddFoods from "../Components/AddFood";
+import AdminFoodcard from "../Components/AdminFoodcard";
 
 
 function Admin() {
@@ -64,7 +64,7 @@ function Admin() {
           </p>
         </div>
       </div>
-      {/* <AdminFoodcard Food={Food}></AdminFoodcard> */}
+      {/* <AdminFoodcard></AdminFoodcard> */}
        <div className="row mt-2">
         {
         Food.map((food) => {

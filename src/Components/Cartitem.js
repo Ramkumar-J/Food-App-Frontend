@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
 function Cartitem(props) {
-  let [count, setcount] = useState(1);
-  let increment = () => {
-    setcount(count + 1);
-  };
-  let decrement = () => {
-    setcount(count - 1);
-  };
+  // let [count, setcount] = useState(1);
+  // let increment = () => {
+  //   setcount(count + 1);
+  // };
+  // let decrement = () => {
+  //   setcount(count - 1);
+  // };
   return (
     <div class="card mb-3 cartitem-bg">
       <div class="row g-0">
@@ -22,9 +22,10 @@ function Cartitem(props) {
           <div class="card-body">
             <h3 class="card-title fw-bold">{props.addcartitem.foodname}</h3>
             <p class="card-text fs-4 fw-bold">
-              ₹{props.addcartitem.foodprice * count}
+            ₹{props.addcartitem.foodprice}
+              {/* ₹{props.addcartitem.foodprice * count} */}
             </p>
-            <button
+            {/* <button
               className="btn btn-secondary btn-sm fs-5 me-2"
               onClick={decrement}
             >
@@ -36,9 +37,9 @@ function Cartitem(props) {
               onClick={increment}
             >
               +
-            </button>
+            </button> */}
             <button
-              class="btn btn-primary bg-primary rounded-pill ms-5 position-absolute top-1"
+              class="btn btn-danger rounded-pill position-absolute top-1"
               onClick={() => {
                 props.Removecartitems(props.addcartitem);
               }}

@@ -1,6 +1,6 @@
 import React from "react";
-import Cartitem from "../Cartitem";
-import CheckoutForm from "../CheckoutForm";
+import Cartitem from "../Components/Cartitem";
+import CheckoutForm from "../Components/CheckoutForm";
 
 function Cart(props) {
   return (

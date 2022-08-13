@@ -9,7 +9,7 @@ function Navbar(props){
     }
     return(
         <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
-            <a className="navbar-brand fw-bold fs-2 ms-5 text-danger fst-italic" href="#">San🍔Burg</a>
+            <Link className="navbar-brand fw-bold fs-2 ms-5 text-danger fst-italic" to="/home">San🍔Burg</Link>
             {/* <div className="collapse navbar-collapse"> */}
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNav">
                 <span className="navbar-toggler-icon"></span>

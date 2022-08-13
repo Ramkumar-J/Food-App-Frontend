@@ -3,19 +3,19 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import "bootstrap/dist/js/bootstrap.min.js"
 import "bootstrap-icons/font/bootstrap-icons.css"
 import {BrowserRouter,Routes,Route} from "react-router-dom"
-import Navbar from './Navbar';
-import Home from './routes/Home';
-import Cart from './routes/Cart';
+import Navbar from './Components/Navbar';
+import Home from './Routes/Home';
+import Cart from './Routes/Cart';
 import FoodMenu from './FoodMenu';
-import Register from './Register';
-import Login from './Login';
-import AddFoods from './AddFood';
+import Register from './Routes/Register';
+import Login from './Routes/Login';
+import AddFoods from './Components/AddFood';
 import { useEffect, useReducer, useState } from 'react';
 import axios from 'axios';
-import Wishlist from './routes/Wishlist';
-import Admin from './Admin';
-import Editfood from './Editfood';
-import Footer from './Footer';
+import Wishlist from './Routes/Wishlist';
+import Admin from './Routes/Admin';
+import Editfood from './Components/Editfood';
+import Footer from './Components/Footer';
 import Card from './Card';
 
 function reducer(state,action){
@@ -129,6 +129,7 @@ let Removewishlist=(list) => {
       </header>
       <main className=''> 
       <Routes>
+        <Route path="/" element={<Login/>}></Route>
         <Route path="/register" element={<Register/>}></Route>
         <Route path="/login" element={<Login/>}></Route>
         <Route path="/home" element={<Home Fooditems={foodItems} Addcart={Addtocart} Addwishlist={Addwishlist} addwish={wishList}/>}></Route>
