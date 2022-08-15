@@ -14,9 +14,10 @@ import { useEffect, useReducer, useState } from 'react';
 import axios from 'axios';
 import Wishlist from './Routes/Wishlist';
 import Admin from './Routes/Admin';
-import Editfood from './Components/Editfood';
+// import Editfood from './Components/Editfood';
 import Footer from './Components/Footer';
 import Card from './Card';
+import EditFoodinfo from './Components/EditFoodinfo';
 
 function reducer(state,action){
   console.log(action)
@@ -139,7 +140,8 @@ let Removewishlist=(list) => {
         <Route path="/wishlist" element={<Wishlist addwish={wishList} Addcart={Addtocart} Removewishlist={Removewishlist}/>}></Route>
         <Route path="/admin" element={<Admin/>}></Route>
         {/* <Route path="/card" element={<Card Addcart={Addtocart} Addwishlist={Addwishlist} addwish={wishList}/>}></Route> */}
-        <Route path="/editfood/:id" element={<Editfood/>}></Route>
+        <Route path="/editfood/:id" element={<EditFoodinfo/>}></Route>
+        {/* <Route path="/editfood/:id" element={<Editfood/>}></Route> */}
       </Routes>
       </main>
       {/* <hr></hr> */}

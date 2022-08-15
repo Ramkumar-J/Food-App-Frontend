@@ -6,41 +6,41 @@ import AdminFoodcard from "../Components/AdminFoodcard";
 
 
 function Admin() {
-  const [Food, setFood] = useState([]);
+  // const [Food, setFood] = useState([]);
 
-  useEffect(() => {
-    async function getFooditems() {
-      try {
-        let foods = await axios.get("http://localhost:3005/foodmenu", {
-          headers: {
-            Authorization: window.localStorage.getItem("foodapptoken"),
-          },
-        });
-        console.log(foods);
-        setFood(foods.data);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    getFooditems();
-  }, []);
+  // useEffect(() => {
+  //   async function getFooditems() {
+  //     try {
+  //       let foods = await axios.get("http://localhost:3005/foodmenu", {
+  //         headers: {
+  //           Authorization: window.localStorage.getItem("foodapptoken"),
+  //         },
+  //       });
+  //       console.log(foods);
+  //       setFood(foods.data);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   }
+  //   getFooditems();
+  // }, []);
 
-  let deletefood = async (id) => {
-    try {
-      let ask = window.confirm(
-        "Are you sure, do you want to delete this data?"
-      );
-      if (ask) {
-        await axios.delete(`http://localhost:3005/foodmenu/${id}`, {
-          headers: {
-            Authorization: window.localStorage.getItem("foodapptoken"),
-          },
-        });
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  // let deletefood = async (id) => {
+  //   try {
+  //     let ask = window.confirm(
+  //       "Are you sure, do you want to delete this data?"
+  //     );
+  //     if (ask) {
+  //       await axios.delete(`http://localhost:3005/foodmenu/${id}`, {
+  //         headers: {
+  //           Authorization: window.localStorage.getItem("foodapptoken"),
+  //         },
+  //       });
+  //     }
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
   return (
     <div className="container">
       <div className="row mt-3">
@@ -64,13 +64,13 @@ function Admin() {
           </p>
         </div>
       </div>
-      {/* <AdminFoodcard></AdminFoodcard> */}
-       <div className="row mt-2">
+      <AdminFoodcard></AdminFoodcard>
+       {/* <div className="row mt-2">
         {
         Food.map((food) => {
           return (
             <div className="col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-4 mt-3 p-0 ">
-              {/* <AdminFoodcard></AdminFoodcard> */}
+              <AdminFoodcard></AdminFoodcard>
               <div className="card cardsize">
                 <img
                   src={food.foodimage}
@@ -101,7 +101,7 @@ function Admin() {
     </div>
     );
   })}
-      </div>
+      </div> */}
       </div>
   );
 }

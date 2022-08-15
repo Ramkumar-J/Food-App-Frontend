@@ -29,7 +29,7 @@ function Home(props) {
             >
               <img
                 className="img-fluid rounded-circle h-50 w-100 bg-secondary"
-                src="https://healthyrecipesblogs.com/wp-content/uploads/2013/02/tandoori-chicken-featured-2021.jpg"
+                src="https://images.unsplash.com/photo-1546069901-d5bfd2cbfb1f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
               ></img>
               <p className="fs-5 fw-bold text-center text-dark mb-0">All</p>
             </button>
