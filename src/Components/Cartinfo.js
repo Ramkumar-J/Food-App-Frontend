@@ -2,12 +2,18 @@ import React, { useState } from "react";
 import CheckoutForm from "./CheckoutForm";
 
 function Cartinfo(props) {
-  let [count, setcount] = useState(1);
-  let increment = () => {
-    setcount(count + 1);
+  // let [cart, setcart] = useState(props.Addcartitems);
+  let [count, setcount] = useState(0);
+  let handleincrement = (id) => {
+    props.Addcartitems.map((item) => id === item._id ? setcount(count + 1):count)
+    // setcart(cart => 
+    //   cart.map((item) => id === item.id ? (...item,setcount:item.count+1) : item)
+    //   )
+    // setcount(count + 1);
   };
-  let decrement = () => {
-    setcount(count - 1);
+  let handledecrement = (id) => {
+    props.Addcartitems.map((item) => id === item._id ? setcount(count - 1):count)
+    // setcount(count - 1);
   };
   return (
     <div className="container">
@@ -16,10 +22,10 @@ function Cartinfo(props) {
         <h3 className="m-0 p-0">Cart Items({props.Addcartitems.length})</h3>
         {props.Addcartitems.length > 0 ? (
           props.Addcartitems.map((addcartitem) => {
-            <div class="card mb-3 cartitem-bg">
+            // <div class="card mb-3 cartitem-bg">
             {/* //   <div class="row g-0"> */}
             return (
-              {/* //  <div class="card mb-3 cartitem-bg"> */}
+              <div class="card mb-3 cartitem-bg">
               <div class="row g-0">
                 <div class="col-sm-4 col-md-4 col-lg-4">
                   <img
@@ -37,14 +43,14 @@ function Cartinfo(props) {
                     </p>
                     <button
                       className="btn btn-secondary btn-sm fs-5 me-2"
-                      onClick={decrement}
+                      onClick={() => {handledecrement(addcartitem._id)}}
                     >
                       -
                     </button>
                     <span className="ms-2">{count}</span>
                     <button
                       className="btn btn-secondary btn-sm ms-3 fs-5 me-5"
-                      onClick={increment}
+                      onClick={() => {handleincrement(addcartitem._id)}}
                     >
                       +
                     </button>
@@ -58,12 +64,12 @@ function Cartinfo(props) {
                     </button>
                   </div>
                 </div>
-              {/* </div>
-            </div> */}
+              </div>
             </div>
+            
             );
             
-            </div>
+            
           })
         ) : (
           <h1 className="mt-2 text-info fw-bold">No Items in Cart</h1>
