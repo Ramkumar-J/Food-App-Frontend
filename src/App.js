@@ -18,6 +18,7 @@ import Admin from './Routes/Admin';
 import Footer from './Components/Footer';
 import Card from './Card';
 import EditFoodinfo from './Components/EditFoodinfo';
+import ViewMenu from './ViewMenu';
 
 function reducer(state,action){
   console.log(action)
@@ -141,6 +142,7 @@ let Removewishlist=(list) => {
         <Route path="/admin" element={<Admin/>}></Route>
         {/* <Route path="/card" element={<Card Addcart={Addtocart} Addwishlist={Addwishlist} addwish={wishList}/>}></Route> */}
         <Route path="/editfood/:id" element={<EditFoodinfo/>}></Route>
+        <Route path="/foodmenu/:category" element={<ViewMenu/>}></Route>
         {/* <Route path="/editfood/:id" element={<Editfood/>}></Route> */}
       </Routes>
       </main>

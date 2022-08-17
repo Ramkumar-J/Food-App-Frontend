@@ -5,15 +5,15 @@ function Cartinfo(props) {
   // let [cart, setcart] = useState(props.Addcartitems);
   let [count, setcount] = useState(0);
   let handleincrement = (id) => {
-    props.Addcartitems.map((item) => id === item._id ? setcount(count + 1):count)
-    // setcart(cart => 
-    //   cart.map((item) => id === item.id ? (...item,setcount:item.count+1) : item)
-    //   )
-    // setcount(count + 1);
+    props.Addcartitems.map(item => item._id !== id ?   setcount(count + 1) : count )
+      // setcount(count + 1);
+    
+   
   };
   let handledecrement = (id) => {
-    props.Addcartitems.map((item) => id === item._id ? setcount(count - 1):count)
-    // setcount(count - 1);
+    if(props.Addcartitems._id === id){
+      setcount(count - 1);
+    }
   };
   return (
     <div className="container">
@@ -85,7 +85,7 @@ function Cartinfo(props) {
             <p className="fs-4 fw-bold">Grand Total</p>
           </div>
           <div className="col-5 col-sm-5 col-md-5 col-lg-5">
-            <p className="fs-5">₹{props.Total}</p>
+            <p className="fs-5">₹{props.Total * count}</p>
             <p className="fs-5">₹22.00</p>
             <p className="fs-5">₹13.00</p>
             <hr></hr>
