@@ -3,20 +3,20 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 
 function ViewMenu(props) {
-    // let params=useParams();
-    // let[foodmenu,setFoodmenu]=useState([]);
-    // useEffect(() => {
-    //     async function getFooditem(){
-    //         try {
-    //             let foodsdata=await axios.get(`http://localhost:3005/foodmenu/${params.category}`);
-    //             console.log(foodsdata);
-    //             setFoodmenu(foodsdata.data);
-    //         } catch (error) {
-    //             console.log(error);
-    //         }
-    //     }
-    //     getFooditem();
-    // },[])
+    let params=useParams();
+    let[foodmenu,setFoodmenu]=useState([]);
+    useEffect(() => {
+        async function getFooditem(){
+            try {
+                let foodsdata=await axios.get(`http://localhost:3005/foodmenu/${params.category}`);
+                // console.log(foodsdata);
+                setFoodmenu(foodsdata.data);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        getFooditem();
+    },[])
   return (
     <div class="container">
     <div class="row">
