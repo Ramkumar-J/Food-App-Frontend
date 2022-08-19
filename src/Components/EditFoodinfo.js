@@ -9,7 +9,11 @@ function EditFoodinfo() {
     useEffect(() => {
         async function editfoodDetail(){
             try {
-                let foodDetail=await axios.get(`http://localhost:3005/foodmenu/${params.id}`);
+                let foodDetail=await axios.get(`http://localhost:3005/foodmenu/${params.id}`, {
+                    headers: {
+                      Authorization: window.localStorage.getItem("foodapptoken"),
+                    },
+                  });
                 // formik.setValues(foodDetail.data);
             } catch (error) {
                 console.log(error);
@@ -46,7 +50,11 @@ function EditFoodinfo() {
                 },
                 onSubmit:async(values) => {
                     try {
-                        await axios.put(`http://localhost:3005/foodmenu/${params.id}`,values);
+                        await axios.put(`http://localhost:3005/foodmenu/${params.id}`,values, {
+                            headers: {
+                              Authorization: window.localStorage.getItem("foodapptoken"),
+                            },
+                          });
                         navigate("/admin");
                     } catch (error) {
                         console.log(error);

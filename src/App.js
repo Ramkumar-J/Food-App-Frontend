@@ -122,6 +122,15 @@ let Removewishlist=(list) => {
   wishList.splice(index,1);
   setNewwishList([...wishList])
 }
+// useEffect(() => {
+//   if(window.localStorage.getItem("myKey")) {
+//     setNewwishList(JSON.parse(window.localStorage.getItem("myKey")))
+//   }
+// }, []);
+
+// useEffect(() => {
+//   window.localStorage.setItem("myKey", JSON.stringify(wishList));
+// }, [wishList]);
 
   return (
     <BrowserRouter>

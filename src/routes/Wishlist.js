@@ -1,6 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 function Wishlist(props) {
+  let[newWish,oldWish]=useState(props.addwish)
+  useEffect(() => {
+    // if(window.localStorage.getItem("myKey")) {
+      let wishData=window.localStorage.getItem("myKey");
+      if(wishData){
+        oldWish((JSON.parse(wishData)));
+      }
+      
+    // }
+  }, []);
+
+  useEffect(() => {
+    window.localStorage.setItem("myKey", JSON.stringify(newWish));
+  }, [newWish]);
+
   return (
     <div class="container">
       <div class="row">
