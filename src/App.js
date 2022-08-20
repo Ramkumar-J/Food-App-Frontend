@@ -131,6 +131,16 @@ let Removewishlist=(list) => {
 // useEffect(() => {
 //   window.localStorage.setItem("myKey", JSON.stringify(wishList));
 // }, [wishList]);
+useEffect(() => {
+  let wishdata=sessionStorage.getItem("wishkey");
+  if(wishdata){
+    setNewwishList(JSON.parse(wishdata));
+  }
+},[])
+
+useEffect(() => {
+  sessionStorage.setItem("wishkey", JSON.stringify(wishList))
+});
 
   return (
     <BrowserRouter>

@@ -2,19 +2,31 @@ import React, { useEffect, useState } from "react";
 
 function Wishlist(props) {
   let[newWish,oldWish]=useState(props.addwish)
-  useEffect(() => {
-    // if(window.localStorage.getItem("myKey")) {
-      let wishData=window.localStorage.getItem("myKey");
-      if(wishData){
-        oldWish((JSON.parse(wishData)));
-      }
-      
-    // }
-  }, []);
 
   useEffect(() => {
-    window.localStorage.setItem("myKey", JSON.stringify(newWish));
-  }, [newWish]);
+    const data=localStorage.getItem("mywish");
+    console.log(data);
+    if(data){
+      oldWish(JSON.parse(data));
+    }
+  },[])
+
+  useEffect(() => {
+    localStorage.setItem("mywish",JSON.stringify(newWish));
+  },[newWish])
+  // useEffect(() => {
+  //   // if(window.localStorage.getItem("myKey")) {
+  //     let wishData=window.localStorage.getItem("myKey");
+  //     if(wishData){
+  //       oldWish(JSON.parse(wishData));
+  //     }
+      
+  //   // }
+  // }, []);
+
+  // useEffect(() => {
+  //   window.localStorage.setItem("myKey", JSON.stringify(newWish));
+  // }, []);
 
   return (
     <div class="container">
