@@ -54,13 +54,18 @@ function reducer(state,action){
      return state;
 }
 
+const cartList=JSON.parse(window.localStorage.getItem("cart") || "")
+
+const cartitemTotal=JSON.parse(window.localStorage.getItem("cartTotal") || 0)
+
+const WishlitData=JSON.parse(localStorage.getItem("wish") || "[]")
 
 function App() {
   
   let[foodItems,setFoodItems]=useState([]);
   // let[cartitems,setNewcartitems]=useState([]);
   // let[total,setTotal]=useState(0);
-  let[wishList,setNewwishList]=useState([]);
+  let[wishList,setNewwishList]=useState(WishlitData);
   useEffect(() => {
       async function getFooditems(){
           try {
@@ -77,7 +82,7 @@ function App() {
       }
       getFooditems();
   },[])
-  let[state,dispatch]=useReducer(reducer,{cartitems:[],total:0})
+  let[state,dispatch]=useReducer(reducer,{cartitems:cartList,total:cartitemTotal})
   let Addtocart=(item) => {
    dispatch({type:"Add_To_Cart",item})
     // setNewcartitems([...cartitems,item]);
@@ -131,16 +136,24 @@ let Removewishlist=(list) => {
 // useEffect(() => {
 //   window.localStorage.setItem("myKey", JSON.stringify(wishList));
 // }, [wishList]);
-useEffect(() => {
-  let wishdata=sessionStorage.getItem("wishkey");
-  if(wishdata){
-    setNewwishList(JSON.parse(wishdata));
-  }
-},[])
+// useEffect(() => {
+//   let wishdata=localStorage.getItem("wishkey");
+//   if(wishdata){
+//     setNewwishList(JSON.parse(wishdata));
+//   }
+// },[])
 
 useEffect(() => {
-  sessionStorage.setItem("wishkey", JSON.stringify(wishList))
-});
+  window.localStorage.setItem("cart",JSON.stringify(state.cartitems))
+},[state.cartitems]);
+
+useEffect(() => {
+  window.localStorage.setItem("cartTotal",state.total)
+},[state.total]);
+
+useEffect(() => {
+  localStorage.setItem("wish", JSON.stringify(wishList))
+},[wishList]);
 
   return (
     <BrowserRouter>

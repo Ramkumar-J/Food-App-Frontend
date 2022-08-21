@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from "react";
 
 function Wishlist(props) {
-  let[newWish,oldWish]=useState(props.addwish)
+  // let[newWish,oldWish]=useState(props.addwish)
 
-  useEffect(() => {
-    const data=localStorage.getItem("mywish");
-    console.log(data);
-    if(data){
-      oldWish(JSON.parse(data));
-    }
-  },[])
+  // useEffect(() => {
+  //   const data=localStorage.getItem("wishkey");
+  //   console.log(data);
+  //   if(data){
+  //     oldWish(JSON.parse(data));
+  //   }
+  // },[])
 
-  useEffect(() => {
-    localStorage.setItem("mywish",JSON.stringify(newWish));
-  },[newWish])
+  // useEffect(() => {
+  //   localStorage.setItem("mywish",JSON.stringify(newWish));
+  // },[newWish])
   // useEffect(() => {
   //   // if(window.localStorage.getItem("myKey")) {
   //     let wishData=window.localStorage.getItem("myKey");

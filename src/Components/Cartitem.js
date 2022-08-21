@@ -1,6 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+
+// const dataCart=JSON.parse(window.localStorage.getItem("cart") || "[]")
 
 function Cartitem(props) {
+  // let [cartItem,setCartItem]=useState(dataCart)
   // let [count, setcount] = useState(1);
   // let handleincrement = (id) => {
   //   // props.Addcartitems.map(item => item._id !== id ? setcount(count + 1) : count )
@@ -11,6 +14,10 @@ function Cartitem(props) {
   // let handledecrement = (id) => {
   //     setcount(count - 1);
   // };
+// useEffect(() => {
+//   window.localStorage.setItem("cart",JSON.stringify(cartItem))
+// },[cartItem]);
+
   return (
    <div class="card mb-3">
       <div class="row">
