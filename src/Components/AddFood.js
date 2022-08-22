@@ -78,7 +78,7 @@ function AddFoods() {
             <input
               className="form-control"
               id="foodimage"
-              type={"text"}
+              type={"file"}
               name="foodimage"
               accept="image/*"
               onChange={formik.handleChange}

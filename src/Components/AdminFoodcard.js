@@ -37,6 +37,16 @@ function AdminFoodcard(){
           console.log(error);
         }
       };
+
+     
+        // const reader = new FileReader();
+        // reader.addEventListener("load", () => {
+        //   Food.foodimage = reader.result;
+        // });
+        // // reader.readAsDataURL(this.files[0]);
+        // document.getElementById("file-id").files[0].name; 
+     
+      
       return(
     <div className="row mt-2">
     {
@@ -48,6 +58,7 @@ function AdminFoodcard(){
               src={food.foodimage}
               className="card-img-top burgersize"
               alt="Image"
+              id="display-image"
             />
             <hr className="border-danger border border-1 mt-0 mb-0" />
             <div className="card-body">
