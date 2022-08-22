@@ -10,7 +10,7 @@ import FoodMenu from './FoodMenu';
 import Register from './Routes/Register';
 import Login from './Routes/Login';
 import AddFoods from './Components/AddFood';
-import { useEffect, useReducer, useState } from 'react';
+import { useContext, useEffect, useReducer, useState } from 'react';
 import axios from 'axios';
 import Wishlist from './Routes/Wishlist';
 import Admin from './Routes/Admin';
@@ -19,6 +19,8 @@ import Footer from './Components/Footer';
 import Card from './Card';
 import EditFoodinfo from './Components/EditFoodinfo';
 import ViewMenu from './ViewMenu';
+import FoodContext, { FoodProvider } from './Components/Context';
+import MenuContext from './Components/Context';
 
 function reducer(state,action){
   console.log(action)
@@ -61,7 +63,6 @@ const cartitemTotal=JSON.parse(window.localStorage.getItem("cartTotal") || 0)
 const WishlitData=JSON.parse(localStorage.getItem("wish") || "[]")
 
 function App() {
-  
   let[foodItems,setFoodItems]=useState([]);
   // let[cartitems,setNewcartitems]=useState([]);
   // let[total,setTotal]=useState(0);
@@ -156,17 +157,23 @@ useEffect(() => {
 },[wishList]);
 
   return (
+    // <MenuContext.Provider value={{foodItems,setFoodItems}}>
     <BrowserRouter>
     <div className="App">
-      <header className=''>
+      <Routes>
+      <Route path="/" element={<Login/>}></Route>
+        <Route path="/register" element={<Register/>}></Route>
+        <Route path="/login" element={<Login/>}></Route>
+      </Routes>
+      <header className='container-fluid bg-dark'>
         <Navbar Addcartitems={state.cartitems}></Navbar>
       </header>
       <main className=''> 
       <Routes>
-        <Route path="/" element={<Login/>}></Route>
+        {/* <Route path="/" element={<Login/>}></Route>
         <Route path="/register" element={<Register/>}></Route>
-        <Route path="/login" element={<Login/>}></Route>
-        <Route path="/home" element={<Home Fooditems={foodItems} Addcart={Addtocart} Addwishlist={Addwishlist} addwish={wishList}/>}></Route>
+        <Route path="/login" element={<Login/>}></Route> */}
+        <Route path="/home" element={<Home  Fooditems={foodItems} Addcart={Addtocart} Addwishlist={Addwishlist} addwish={wishList}/>}></Route>
         <Route path="/cart" element={<Cart Addcartitems={state.cartitems} Removecartitems={RemoveFromCart} Total={state.total}/>}></Route>
         <Route path="/foodmenu" element={<FoodMenu Fooditems={foodItems} />}></Route>
         <Route path="/addmenu" element={<AddFoods/>}></Route>
@@ -184,6 +191,7 @@ useEffect(() => {
       </footer>
     </div>
     </BrowserRouter>
+    // </MenuContext.Provider>
   );
 }
 

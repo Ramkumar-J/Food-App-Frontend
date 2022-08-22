@@ -1,11 +1,14 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Categories from "../Categories";
 import Carousel from "../Components/Carousel";
+import MenuContext from "../Components/Context";
 
 
 function Home(props) {
+  // const value=useContext(MenuContext);
+  // const [foodItems,setFoodItems]=value;
   // let menulist=[
   //   {
   //     image:"https://healthyrecipesblogs.com/wp-content/uploads/2013/02/tandoori-chicken-featured-2021.jpg",

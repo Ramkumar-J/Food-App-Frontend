@@ -8,8 +8,8 @@ function Navbar(props){
         navigate("/login");
     }
     return(
-        <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
-            <Link className="navbar-brand fw-bold fs-2 ms-5 text-danger fst-italic" to="/home">San🍔Burg</Link>
+        <nav className="container navbar navbar-expand-lg  navbar-dark">
+            <Link className="navbar-brand fw-bold fs-1 ms-5 text-danger fst-italic" to="/home">San🍔Burg</Link>
             {/* <div className="collapse navbar-collapse"> */}
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNav">
                 <span className="navbar-toggler-icon"></span>
@@ -54,13 +54,13 @@ function Navbar(props){
                         </ul>
                         {/* <Link className="nav-link" to="/admin"><i class="bi bi-shield-lock-fill"></i><span className="ms-1">Admin</span></Link> */}
                     </li>
-                    <li className="nav-item ms-2">
+                    {/* <li className="nav-item ms-2">
                     <div className="btn-group">
                     <Link className="nav-link" to="/login"><button className="btn btn-success">Login</button></Link>
                     <Link className="nav-link ms-2" to="/register"><button className="btn btn-primary">Register</button></Link>
-                    {/* <a className="nav-link" href="#"><button className="btn btn-danger">Logout</button></a> */}
+                    <a className="nav-link" href="#"><button className="btn btn-danger">Logout</button></a>
                     </div>
-                    </li>
+                    </li> */}
                 </ul> 
                 {/* <div className="btn-group">
                     <Link className="nav-link" to="/login"><button className="btn btn-success">Login</button></Link>
