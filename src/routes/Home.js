@@ -1,12 +1,29 @@
 import axios from "axios";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Categories from "../Categories";
 import Carousel from "../Components/Carousel";
-import MenuContext from "../Components/Context";
+
 
 
 function Home(props) {
+  let[foodItems,setFoodItems]=useState([]);
+  useEffect(() => {
+    async function getFooditems(){
+        try {
+            let foods=await axios.get("http://localhost:3005/foodmenu",{
+              headers:{
+                Authorization:window.localStorage.getItem("foodapptoken"),
+        },
+            });
+            console.log(foods);
+            setFoodItems(foods.data);
+        } catch (error) {
+            alert("Something went wrong")
+        }
+    }
+    getFooditems();
+},[])
   // const value=useContext(MenuContext);
   // const [foodItems,setFoodItems]=value;
   // let menulist=[
@@ -54,12 +71,13 @@ function Home(props) {
   //       getFooditem();
   //   },[])
 
-  let [datafilter, setFilter] = useState(props.Fooditems);
+  let [datafilter, setFilter] = useState(foodItems);
   let filterProduct = (cat) => {
-    const updatedlist = datafilter.filter((e) => {
-      return e.category === cat;
+    const updatedlist = foodItems.filter((e) => {
+      return e.category === cat; 
     });
     setFilter(updatedlist);
+    console.log(updatedlist);
   };
   return (
     <>
@@ -76,7 +94,7 @@ function Home(props) {
           <div className="col-6 col-sm-6 col-md-4 col-lg-2">
             <button
               className="btn btn-transparent"
-              onClick={() => setFilter(props.Fooditems)}
+              onClick={() => setFilter(foodItems)}
             >
               <img
                 className="img-fluid rounded-circle h-50 w-100 bg-secondary"

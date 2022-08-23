@@ -19,8 +19,8 @@ import Footer from './Components/Footer';
 import Card from './Card';
 import EditFoodinfo from './Components/EditFoodinfo';
 import ViewMenu from './ViewMenu';
-import FoodContext, { FoodProvider } from './Components/Context';
-import MenuContext from './Components/Context';
+import { FooddataProvider } from './Context/FoodContext';
+
 
 function reducer(state,action){
   console.log(action)
@@ -63,26 +63,26 @@ const cartitemTotal=JSON.parse(window.localStorage.getItem("cartTotal") || 0)
 const WishlitData=JSON.parse(localStorage.getItem("wish") || "[]")
 
 function App() {
-  let[foodItems,setFoodItems]=useState([]);
+  // let[foodItems,setFoodItems]=useState([]);
   // let[cartitems,setNewcartitems]=useState([]);
   // let[total,setTotal]=useState(0);
   let[wishList,setNewwishList]=useState(WishlitData);
-  useEffect(() => {
-      async function getFooditems(){
-          try {
-              let foods=await axios.get("http://localhost:3005/foodmenu",{
-                headers:{
-                  Authorization:window.localStorage.getItem("foodapptoken"),
-          },
-              });
-              console.log(foods);
-              setFoodItems(foods.data);
-          } catch (error) {
-              alert("Something went wrong")
-          }
-      }
-      getFooditems();
-  },[])
+  // useEffect(() => {
+  //     async function getFooditems(){
+  //         try {
+  //             let foods=await axios.get("http://localhost:3005/foodmenu",{
+  //               headers:{
+  //                 Authorization:window.localStorage.getItem("foodapptoken"),
+  //         },
+  //             });
+  //             console.log(foods);
+  //             setFoodItems(foods.data);
+  //         } catch (error) {
+  //             alert("Something went wrong")
+  //         }
+  //     }
+  //     getFooditems();
+  // },[])
   let[state,dispatch]=useReducer(reducer,{cartitems:cartList,total:cartitemTotal})
   let Addtocart=(item) => {
    dispatch({type:"Add_To_Cart",item})
@@ -165,6 +165,7 @@ useEffect(() => {
         <Route path="/register" element={<Register/>}></Route>
         <Route path="/login" element={<Login/>}></Route>
       </Routes>
+      {/* <FooddataProvider> */}
       <header className='container-fluid bg-dark'>
         <Navbar Addcartitems={state.cartitems}></Navbar>
       </header>
@@ -173,9 +174,9 @@ useEffect(() => {
         {/* <Route path="/" element={<Login/>}></Route>
         <Route path="/register" element={<Register/>}></Route>
         <Route path="/login" element={<Login/>}></Route> */}
-        <Route path="/home" element={<Home  Fooditems={foodItems} Addcart={Addtocart} Addwishlist={Addwishlist} addwish={wishList}/>}></Route>
+        <Route path="/home" element={<Home  Addcart={Addtocart} Addwishlist={Addwishlist} addwish={wishList}/>}></Route>
         <Route path="/cart" element={<Cart Addcartitems={state.cartitems} Removecartitems={RemoveFromCart} Total={state.total}/>}></Route>
-        <Route path="/foodmenu" element={<FoodMenu Fooditems={foodItems} />}></Route>
+        <Route path="/foodmenu" element={<FoodMenu  />}></Route>
         <Route path="/addmenu" element={<AddFoods/>}></Route>
         <Route path="/wishlist" element={<Wishlist addwish={wishList} Addcart={Addtocart} Removewishlist={Removewishlist}/>}></Route>
         <Route path="/admin" element={<Admin/>}></Route>
@@ -189,6 +190,7 @@ useEffect(() => {
       <footer>
         <Footer></Footer>
       </footer>
+      {/* </FooddataProvider> */}
     </div>
     </BrowserRouter>
     // </MenuContext.Provider>

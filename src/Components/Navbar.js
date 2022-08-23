@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import FoodContext from "../Context/FoodContext";
 
 function Navbar(props){
+// const {state.cartitems} = useContext(FoodContext);
     let navigate=useNavigate()
     let handleLogout=() => {
         window.localStorage.removeItem("foodapptoken");
