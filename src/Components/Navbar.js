@@ -2,8 +2,9 @@ import React, { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import FoodContext from "../Context/FoodContext";
 
-function Navbar(props){
-// const {state.cartitems} = useContext(FoodContext);
+
+function Navbar(){
+    const {cartitems} = useContext(FoodContext);
     let navigate=useNavigate()
     let handleLogout=() => {
         window.localStorage.removeItem("foodapptoken");
@@ -11,7 +12,7 @@ function Navbar(props){
     }
     return(
         <nav className="container navbar navbar-expand-lg  navbar-dark">
-            <Link className="navbar-brand fw-bold fs-1 ms-5 text-danger fst-italic" to="/home">San🍔Burg</Link>
+            <Link className="navbar-brand fw-bold fs-2 ms-5 text-danger fst-italic" to="/home">San🍔Burg</Link>
             {/* <div className="collapse navbar-collapse"> */}
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNav">
                 <span className="navbar-toggler-icon"></span>
@@ -31,7 +32,7 @@ function Navbar(props){
                     <hr className="mt-0 mb-0"></hr>
                     <li className="nav-item ms-2">
                         <Link className="nav-link position-relative" to="/cart"><i class="bi bi-cart-plus-fill fs-5"></i><span className="fs-4 ms-1">Cart</span>
-                        <span class="badge position-absolute top-2 start-25 translate-middle bg-danger p-2 rounded-circle mt-1 countcart">{props.Addcartitems.length}</span>
+                        <span class="badge position-absolute top-2 start-25 translate-middle bg-danger p-2 rounded-circle mt-1 countcart">{cartitems.length}</span>
                         </Link>
                     </li>
                     <hr className="mt-0 mb-0"></hr>

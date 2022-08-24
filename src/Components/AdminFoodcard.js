@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 function AdminFoodcard(){
     const [Food, setFood] = useState([]);
-
     useEffect(() => {
       async function getFooditems() {
         try {

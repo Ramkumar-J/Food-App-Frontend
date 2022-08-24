@@ -1,6 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import FoodContext from "../Context/FoodContext";
 
-function Wishlist(props) {
+
+function Wishlist() {
+  const {cartitems,setNewcartitems,total,setTotal,wishList,setNewwishList} = useContext(FoodContext);
+  // let Addwishlist=(list) => {
+  //   setNewwishList([...wishList,list]);
+  // }
+  
+  let Removewishlist=(list) => {
+    let index=wishList.findIndex(obj => obj._id === list._id);
+    wishList.splice(index,1);
+    setNewwishList([...wishList])
+  }
+
+  let Addtocart=(item) => {
+    //  dispatch({type:"Add_To_Cart",item})
+      setNewcartitems([...cartitems,item]);
+      setTotal(total + parseInt(item.foodprice));
+      }
+
   // let[newWish,oldWish]=useState(props.addwish)
 
   // useEffect(() => {
@@ -31,7 +50,7 @@ function Wishlist(props) {
   return (
     <div class="container">
       <div class="row">
-        {props.addwish.map((wish) => {
+        {wishList.map((wish) => {
           return (
             <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4 mt-3">
               <div class="card cardsize">
@@ -52,7 +71,7 @@ function Wishlist(props) {
                     <button
                       class="offset-3 col-6  btn btn-primary btn-sm fs-5  card-btn"
                       onClick={() => {
-                        props.Addcart(wish);
+                        Addtocart(wish);
                       }}
                     >
                       Order Now
@@ -60,7 +79,7 @@ function Wishlist(props) {
                     <button
                       className="btn btn-danger btn-sm ms-5 h-50 mt-0"
                       onClick={() => {
-                        props.Removewishlist(wish);
+                        Removewishlist(wish);
                       }}
                     >
                       X

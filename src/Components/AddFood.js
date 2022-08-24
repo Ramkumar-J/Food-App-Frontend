@@ -82,8 +82,12 @@ function AddFoods() {
               name="foodimage"
               accept="image/*"
               onChange={formik.handleChange}
+              // onChange={(e) => formik.setFieldValue("foodimage",e.target.files[0])}
               value={formik.values.foodimage}
             ></input>
+           {
+            console.log(formik.values.foodimage)
+           }
             {formik.touched.foodimage && formik.errors.foodimage ? (
               <span className="text-danger">{formik.errors.foodimage}</span>
             ) : null}

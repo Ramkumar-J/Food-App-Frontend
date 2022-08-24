@@ -1,12 +1,14 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Categories from "../Categories";
 import Carousel from "../Components/Carousel";
+import FoodContext from "../Context/FoodContext";
 
 
 
-function Home(props) {
+function Home() {
+  const {cartitems,setNewcartitems,total,setTotal,wishList,setNewwishList} = useContext(FoodContext);
   let[foodItems,setFoodItems]=useState([]);
   useEffect(() => {
     async function getFooditems(){
@@ -24,6 +26,17 @@ function Home(props) {
     }
     getFooditems();
 },[])
+
+let Addtocart=(item) => {
+  //  dispatch({type:"Add_To_Cart",item})
+    setNewcartitems([...cartitems,item]);
+    setTotal(total + parseInt(item.foodprice));
+    }
+
+let Addwishlist=(list) => {
+  setNewwishList([...wishList,list]);
+}
+
   // const value=useContext(MenuContext);
   // const [foodItems,setFoodItems]=value;
   // let menulist=[
@@ -191,15 +204,15 @@ function Home(props) {
                     <button
                       class="offset-3 col-6  btn btn-primary btn-sm fs-5 mt-2 card-btn"
                       onClick={() => {
-                        props.Addcart(food)
+                        Addtocart(food)
                       }}
                     >
                       Order Now
                     </button>
                     <button
                       className="btn btn-danger btn-sm rounded-circle wish"
-                      onClick={() => props.Addwishlist(food)}
-                      disabled={props.addwish.some(
+                      onClick={() => Addwishlist(food)}
+                      disabled={wishList.some(
                         (obj) => obj._id === food._id
                       )}
                     >

@@ -10,7 +10,7 @@ import FoodMenu from './FoodMenu';
 import Register from './Routes/Register';
 import Login from './Routes/Login';
 import AddFoods from './Components/AddFood';
-import { useContext, useEffect, useReducer, useState } from 'react';
+import { useEffect, useReducer, useState } from 'react';
 import axios from 'axios';
 import Wishlist from './Routes/Wishlist';
 import Admin from './Routes/Admin';
@@ -19,26 +19,29 @@ import Footer from './Components/Footer';
 import Card from './Card';
 import EditFoodinfo from './Components/EditFoodinfo';
 import ViewMenu from './ViewMenu';
-import { FooddataProvider } from './Context/FoodContext';
+import FoodContext from './Context/FoodContext';
 
 
-function reducer(state,action){
-  console.log(action)
-     switch (action.type) {
+
+
+
+// function reducer(state,action){
+//   console.log(action)
+//      switch (action.type) {
       
-      case "Add_To_Cart":
-        return{
-        ...state,cartitems:[...state.cartitems,action.item],
-    total:state.total + parseInt(action.item.foodprice)
-        }
+//       case "Add_To_Cart":
+//         return{
+//         ...state,cartitems:[...state.cartitems,action.item],
+//     total:state.total + parseInt(action.item.foodprice)
+//         }
         
-    case "Remove_From_Cart":
-         let removeCartitem=state.cartitems.filter(obj => action.item._id !==obj._id);
-      // state.cartitems.splice(remove,1);
-      return{
-        cartitems:[...removeCartitem],
-    total:state.total - parseInt(action.item.foodprice)
-        }
+//     case "Remove_From_Cart":
+//          let removeCartitem=state.cartitems.filter(obj => action.item._id !==obj._id);
+//       // state.cartitems.splice(remove,1);
+//       return{
+//         cartitems:[...removeCartitem],
+//     total:state.total - parseInt(action.item.foodprice)
+//         }
         // case "Add_To_Wishlist":
         //   return{
         //   ...state,wishList:[...state.wishList,action.list]
@@ -52,21 +55,21 @@ function reducer(state,action){
   //       return{
   //         wishList:[...updated]
   //         } 
-     }
-     return state;
-}
+//      }
+//      return state;
+// }
 
-const cartList=JSON.parse(window.localStorage.getItem("cart") || "")
+const cartList=JSON.parse(window.localStorage.getItem("cart") || "[]")
 
 const cartitemTotal=JSON.parse(window.localStorage.getItem("cartTotal") || 0)
 
-const WishlitData=JSON.parse(localStorage.getItem("wish") || "[]")
+const WishlistData=JSON.parse(localStorage.getItem("wish") || "[]")
 
 function App() {
   // let[foodItems,setFoodItems]=useState([]);
-  // let[cartitems,setNewcartitems]=useState([]);
-  // let[total,setTotal]=useState(0);
-  let[wishList,setNewwishList]=useState(WishlitData);
+  let[cartitems,setNewcartitems]=useState(cartList);
+  let[total,setTotal]=useState(cartitemTotal);
+  let[wishList,setNewwishList]=useState(WishlistData);
   // useEffect(() => {
   //     async function getFooditems(){
   //         try {
@@ -83,20 +86,20 @@ function App() {
   //     }
   //     getFooditems();
   // },[])
-  let[state,dispatch]=useReducer(reducer,{cartitems:cartList,total:cartitemTotal})
-  let Addtocart=(item) => {
-   dispatch({type:"Add_To_Cart",item})
-    // setNewcartitems([...cartitems,item]);
-    // setTotal(total + parseInt(item.foodprice));
-    }
+  // let[state,dispatch]=useReducer(reducer,{cartitems:cartList,total:cartitemTotal})
+  // let Addtocart=(item) => {
+  // //  dispatch({type:"Add_To_Cart",item})
+  //   setNewcartitems([...cartitems,item]);
+  //   setTotal(total + parseInt(item.foodprice));
+  //   }
     
-    let RemoveFromCart=(item) => {
-      dispatch({type:"Remove_From_Cart",item})
+    // let RemoveFromCart=(item) => {
+    //   // dispatch({type:"Remove_From_Cart",item})
     //   let remove=cartitems.findIndex(obj => item._id===obj._id);
     //   cartitems.splice(remove,1);
     //   setNewcartitems([...cartitems]);
     //  setTotal(total - parseInt(item.foodprice));
-    }
+    // }
     
     // let Addwishlist=(list) => {
     //   dispatch({type:"Add_To_Wishlist",list})
@@ -119,15 +122,15 @@ function App() {
 //  setTotal(total - parseInt(item.foodprice));
 // }
 
-let Addwishlist=(list) => {
-  setNewwishList([...wishList,list]);
-}
+// let Addwishlist=(list) => {
+//   setNewwishList([...wishList,list]);
+// }
 
-let Removewishlist=(list) => {
-  let index=wishList.findIndex(obj => obj._id === list._id);
-  wishList.splice(index,1);
-  setNewwishList([...wishList])
-}
+// let Removewishlist=(list) => {
+//   let index=wishList.findIndex(obj => obj._id === list._id);
+//   wishList.splice(index,1);
+//   setNewwishList([...wishList])
+// }
 // useEffect(() => {
 //   if(window.localStorage.getItem("myKey")) {
 //     setNewwishList(JSON.parse(window.localStorage.getItem("myKey")))
@@ -145,19 +148,19 @@ let Removewishlist=(list) => {
 // },[])
 
 useEffect(() => {
-  window.localStorage.setItem("cart",JSON.stringify(state.cartitems))
-},[state.cartitems]);
+  window.localStorage.setItem("cart",JSON.stringify(cartitems))
+},[cartitems]);
 
 useEffect(() => {
-  window.localStorage.setItem("cartTotal",state.total)
-},[state.total]);
+  window.localStorage.setItem("cartTotal",total)
+},[total]);
 
 useEffect(() => {
   localStorage.setItem("wish", JSON.stringify(wishList))
 },[wishList]);
 
   return (
-    // <MenuContext.Provider value={{foodItems,setFoodItems}}>
+    <FoodContext.Provider value={{cartitems,setNewcartitems,total,setTotal,wishList,setNewwishList}}>
     <BrowserRouter>
     <div className="App">
       <Routes>
@@ -165,20 +168,19 @@ useEffect(() => {
         <Route path="/register" element={<Register/>}></Route>
         <Route path="/login" element={<Login/>}></Route>
       </Routes>
-      {/* <FooddataProvider> */}
       <header className='container-fluid bg-dark'>
-        <Navbar Addcartitems={state.cartitems}></Navbar>
+        <Navbar></Navbar>
       </header>
       <main className=''> 
       <Routes>
         {/* <Route path="/" element={<Login/>}></Route>
         <Route path="/register" element={<Register/>}></Route>
         <Route path="/login" element={<Login/>}></Route> */}
-        <Route path="/home" element={<Home  Addcart={Addtocart} Addwishlist={Addwishlist} addwish={wishList}/>}></Route>
-        <Route path="/cart" element={<Cart Addcartitems={state.cartitems} Removecartitems={RemoveFromCart} Total={state.total}/>}></Route>
+        <Route path="/home" element={<Home  />}></Route>
+        <Route path="/cart" element={<Cart />}></Route>
         <Route path="/foodmenu" element={<FoodMenu  />}></Route>
         <Route path="/addmenu" element={<AddFoods/>}></Route>
-        <Route path="/wishlist" element={<Wishlist addwish={wishList} Addcart={Addtocart} Removewishlist={Removewishlist}/>}></Route>
+        <Route path="/wishlist" element={<Wishlist />}></Route>
         <Route path="/admin" element={<Admin/>}></Route>
         {/* <Route path="/card" element={<Card Addcart={Addtocart} Addwishlist={Addwishlist} addwish={wishList}/>}></Route> */}
         <Route path="/editfood/:id" element={<EditFoodinfo/>}></Route>
@@ -190,10 +192,9 @@ useEffect(() => {
       <footer>
         <Footer></Footer>
       </footer>
-      {/* </FooddataProvider> */}
     </div>
     </BrowserRouter>
-    // </MenuContext.Provider>
+    </FoodContext.Provider>
   );
 }
 
