@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Card from "./Card";
-import Cartitem from "./Cartitem";
+// import Cartitem from "./Cartitem";
 
 function FoodMenu(props){
     // let[foodItems,setFoodItems]=useState([]);
