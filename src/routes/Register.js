@@ -40,13 +40,13 @@ function Register(){
     })
     return(
         <div className="container register-container">
-            <div className="row border border-2 register">
+            <div className="row border border-2 register-card">
                 <div className="col-lg-12">
-            {/* <div className="row">
+            <div className="row">
                 <div className="col-lg-12">
                     <img className="img-fluid logo-image" src="https://img.icons8.com/color/70/hamburger.png"></img>
                     </div>
-            </div> */}
+            </div>
                     <div className="row mt-2 mb-0">
                 <div className="col-lg-12">
                     <h1 className="text-center fw-bold">Register</h1>

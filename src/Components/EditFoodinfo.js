@@ -27,7 +27,6 @@ function EditFoodinfo() {
                     foodname:"",
                     foodprice:"",
                     foodimage:"",
-                    foodinfo:"",
                 },
                 validate:(values) => {
                     const errors={};
@@ -43,9 +42,6 @@ function EditFoodinfo() {
                     if(!values.foodimage){
                         errors.foodimage="Food Image is Required";
                     }
-                    // if(!values.foodinfo){
-                    //     errors.foodinfo="Food Info is Required";
-                    // }
                     return errors;
                 },
                 onSubmit:async(values) => {
@@ -112,15 +108,6 @@ function EditFoodinfo() {
                         
                     </div>
                      </div>
-                     <div className="row mt-3">
-                     <div className="col-lg-12">
-                         <label for="foodsinfo">Food Info</label>
-                        <input className="form-control" id="foodsinfo" type={"text"} name="foodinfo" onChange={formik.handleChange} value={formik.values.foodinfo}></input>
-                         {/* {
-                             formik.touched.foodinfo && formik.errors.foodinfo ? (<span className="text-danger">{formik.errors.foodinfo}</span>) : null
-                         } */}
-                     </div>
-                </div>
                     <div className="row mt-3 mb-5">
                      <div className="col-lg-12">
                          <input className="form-control btn btn-primary"  type={"submit"} value="Submit"></input>

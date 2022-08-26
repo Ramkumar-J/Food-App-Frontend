@@ -31,49 +31,49 @@
 
 .slide-image{
   /* margin-left: 50px; */
-  width:100%;
+  /* width:100%;
   height: 550px !important;
-  opacity: 0.8;
+  opacity: 0.8; */
   /* margin-top: 80px; */
 }
 
 
 /* Food Card page - Categories */
-.cardsize{
+ .cardsize{
   /* height: auto;
-  width:360px  !important; */
-  /* margin-right:20px; */
+  width:360px  !important;
+  margin-right:20px;
   margin: 10px;
   font-family: 'Oleo Script', cursive;
-  /* background-image: url("https://i.pinimg.com/736x/60/11/20/60112018573a25fc933638ee1891efa4.jpg");
-  background-size: cover; */
+  background-image: url("https://i.pinimg.com/736x/60/11/20/60112018573a25fc933638ee1891efa4.jpg");
+  background-size: cover;
   background-color: rgb(253, 253, 253);
-  /* border: 5px solid rgb(197, 141, 141); */
+  border: 5px solid rgb(197, 141, 141);
   box-shadow: 10px 10px 10px rgb(99, 98, 98);
   border-radius: 20px;
-  position: relative;
-}
+  position: relative; */
+} 
 .burgersize{
-  height:200px !important;
+  /* height:200px !important;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  /* margin-left: 50px; */
+  margin-left: 50px;
   width:100%;
-  transition: transform .2s;
+  transition: transform .2s; */
 }
-.burgersize:hover {
+/* .burgersize:hover {
   transform: scale(1.1);
   cursor:pointer;
-}
-.card-btn:hover{
+} */
+/* .card-btn:hover{
   background-color: rgb(47, 124, 47) !important;
   transform: .1s;
-}
+} */
 
 /* Cart page */
 
 /* Register page */
-.register{
+.register-card{
   width:350px !important;
   /* margin-top: 100px !important; */
 }
@@ -119,19 +119,23 @@
 }
 
 .login-image{
-  height: 350px !important;
+  height: 400px !important;
   width: 100%;
 }
 
+.login-image:hover{
+  margin-left: 50px;
+}
+
 .wish{
-  position: absolute;
+  /* position: absolute;
   top:5px;
-  right: 5px;
+  right: 5px; */
   /* border-radius: 50%;
   border: 1px solid black circle; */
-  color: rgb(175, 26, 56);
+  /* color: rgb(175, 26, 56);
   cursor: pointer;
-  border-radius: 30%;
+  border-radius: 30%; */
 }
 
 .countcart{
@@ -142,22 +146,22 @@
   margin-left:-50px;
 } */
 
-.cartImage{
+/* .cart-cartitem_image{
   height: 180px !important;
   width: 180px !important;
-}
+} */
 
 .foot{
   font-family: 'Roboto', sans-serif !important;
   background-color: rgb(248, 248, 248)
 }
 
-.title{
+/* .title{
   color:crimson;
-}
+} */
 
 .caption{
-  font-size: 60px;
+  /* font-size: 60px; */
   /* background-color:aqua; */
   /* text-shadow: 20px 20px 10px black; */
 }
@@ -174,6 +178,151 @@
 }
 
 
-.head-bg{
+/* .head-bg{
   background-color: rgb(219, 142, 98);
+} */
+
+
+
+
+
+
+/* New CSS */
+.app-background{
+  background-color: #f8f8f8;
+}
+
+/* Carousel */
+.home-carousel_image{
+  width:100%;
+  height: 90vh !important;
+  opacity: 0.8;
+  background-color: gray;
+}
+
+.home-carousel_caption{
+  font-size: 60px;
+  color: #212529;
+  text-transform: uppercase;
+}
+
+.home-carousel_subcaption{
+  font-size: 40px;
+  color: #212529;
+}
+
+/* Category */
+.home-category_image{
+  border-radius: 50%;
+  background-color: gray;
+}
+
+.home-category_name{
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0px;
+  letter-spacing: 1px;
+  /* color: salmon; */
+} 
+
+/* Foodcard */
+.home-foodcard{
+  margin: 10px;
+  font-family: 'Oleo Script', cursive;
+  /* background-image: url("https://i.pinimg.com/736x/60/11/20/60112018573a25fc933638ee1891efa4.jpg");
+  background-size: cover; */
+  background-color: rgb(253, 253, 253);
+  /* border: px solid rgb(197, 141, 141); */
+  box-shadow: 10px 10px 10px rgb(99, 98, 98);
+  border-radius: 20px;
+  position: relative;
+}
+
+.home-foodcard_image{
+  height:200px !important;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  /* margin-left: 50px; */
+  width:100%;
+  transition: transform .2s;
+  background-color: gray;
+}
+
+.home-foodcard_image:hover{
+  transform: scale(1.1);
+  cursor:pointer;
+}
+
+.home-foodcard_name{
+  font-size: 30px;
+  color: crimson;
+  text-align: center;
+  margin-top: 0px;
+}
+
+.home-foodcard_price{
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+/* .home-foodcard_button{
+  font-size: 20px !important;
+  margin-top: 8px;
+} */
+
+.home-foodcard_cartbutton:hover{
+  background-color: rgb(47, 124, 47) !important;
+  transform: .1s;
+}
+
+.home-foodcard_wishbutton{
+  position: absolute;
+  top:5px;
+  right: 5px;
+  color: rgb(175, 26, 56);
+  cursor: pointer;
+  border-radius: 30%;
+}
+
+/* Cart Page */
+.cart-cartitem_image{
+  height: 180px !important;
+  width: 180px !important;
+}
+
+/* Responsiveness */
+
+@media (max-width:576px){
+  .home-carousel_caption{
+    font-size: 35px;
+    font-weight: bold;
+  }
+  .home-carousel_subcaption{
+    font-size: 25px;
+    font-weight: bold;
+  }
+  .home-carousel_image{
+    height: 50vh !important;
+  }
+  .home-category_name{
+    font-size: 18px;
+  }
+}
+
+@media (max-width:768px){
+ 
+}
+
+@media (max-width:992px){
+ 
+}
+
+@media (max-width:1200px){
+ 
+}
+
+@media (max-width:1400px){
+  
 }

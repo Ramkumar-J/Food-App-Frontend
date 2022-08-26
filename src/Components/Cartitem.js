@@ -21,14 +21,14 @@ function Cartitem(props) {
   return (
    <div class="card mb-3">
       <div class="row">
-        <div class="col-sm-4 col-md-4 col-lg-4">
+        <div class="col-5 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
           <img
             src={props.addcartitem.foodimage}
-            class="img-fluid rounded-start cartImage"
+            class="img-fluid rounded-start cart-cartitem_image"
             alt="..."
           />
         </div>
-        <div class="col-sm-8 col-md-8 col-lg-8">
+        <div class="col-7 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
           <div class="card-body">
             <h3 class="card-title fw-bold">{props.addcartitem.foodname}</h3>
             <p class="card-text fs-4 fw-bold">
@@ -53,7 +53,7 @@ function Cartitem(props) {
               +
             </button> */}
             <button
-              class="btn btn-danger rounded-pill position-absolute top-1"
+              class="btn btn-danger rounded-pill"
               onClick={() => {
                 props.Removecartitems(props.addcartitem);
               }}

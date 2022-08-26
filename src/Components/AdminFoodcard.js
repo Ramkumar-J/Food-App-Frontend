@@ -36,14 +36,6 @@ function AdminFoodcard(){
           console.log(error);
         }
       };
-
-     
-        // const reader = new FileReader();
-        // reader.addEventListener("load", () => {
-        //   Food.foodimage = reader.result;
-        // });
-        // // reader.readAsDataURL(this.files[0]);
-        // document.getElementById("file-id").files[0].name; 
      
       
       return(
@@ -52,19 +44,19 @@ function AdminFoodcard(){
     Food.map((food) => {
       return (
         <div className="col-sm-12 col-md-6 col-lg-3 col-xl-3 col-xxl-4 mt-3 p-0 ">
-          <div className="card cardsize">
+          <div className="card home-foodcard">
             <img
               src={food.foodimage}
-              className="card-img-top burgersize"
+              className="card-img-top home-foodcard_image"
               alt="Image"
               id="display-image"
             />
             <hr className="border-danger border border-1 mt-0 mb-0" />
             <div className="card-body">
-              <h2 className="card-title text-center mt-0 text-secondary">
+              <h2 className="card-title text-secondary home-foodcard_name">
                 {food.foodname}
               </h2>
-              <p className="card-text text-center fs-5 text-dark mb-0">
+              <p className="card-text home-foodcard_price">
                 ₹{food.foodprice}
               </p>
               <div className="foodmenu-icons d-flex justify-content-between">

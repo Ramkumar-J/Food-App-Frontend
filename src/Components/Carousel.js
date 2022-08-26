@@ -34,37 +34,37 @@ function Carousel() {
           <div class="carousel-item active">
             <img
               src="assets/131333-food-desktop-wallpaper.jpg"
-              class="d-block img-fluid bg-secondary slide-image"
+              class="d-block img-fluid home-carousel_image"
               alt="..."
             />
             <div class="carousel-caption">
-              <h5 className="caption text-dark">YUMMY PIZZA</h5>
-              <p className="fs-1 text-dark">Starts from Rs,150</p>
+              <h5 className="home-carousel_caption">Yummy Pizza</h5>
+              <p className="home-carousel_subcaption">Starts from Rs,150</p>
             </div>
           </div>
           <div class="carousel-item">
             <img
               src="assets/photo-1580294785554-728a44dfc5c9.jpg"
-              class="d-block img-fluid bg-secondary slide-image"
+              class="d-block img-fluid home-carousel_image"
               alt="..."
             />
             <div class="carousel-caption">
-              <h1 className="caption text-uppercase text-dark">Fresh Juices</h1>
-              <p className="fs-1 text-dark">Konjam Chill Pannu Maapi</p>
+              <h1 className="home-carousel_caption">Fresh Juices</h1>
+              <p className="home-carousel_subcaption">Konjam Chill Pannu Maapi</p>
             </div>
           </div>
 
           <div class="carousel-item">
             <img
               src="assets/photo-1581821873113-5a5371959ccf.jpg"
-              class="d-block img-fluid bg-secondary slide-image"
+              class="d-block img-fluid home-carousel_image"
               alt="..."
             />
             <div class="carousel-caption">
-              <h5 className="caption text-uppercase text-dark">
+              <h5 className="home-carousel_caption">
                 Special Cakes
               </h5>
-              <p className="fs-1 text-dark">with Special Offers of 20%</p>
+              <p className="home-carousel_subcaption">with Special Offers of 20%</p>
             </div>
           </div>
         </div>

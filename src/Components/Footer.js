@@ -2,7 +2,7 @@ import React from 'react'
 
 function Footer() {
   return (
-    <div className='container-fluid foot'>
+    <footer className='container-fluid foot'>
       <div className='container'>
       <div className='row mt-3'>
         <div className='col-lg-12'>
@@ -82,7 +82,7 @@ function Footer() {
         <hr></hr>
         <small className='text-secondary'>By continuing past this page, you agree to our Terms of Service, Cookie Policy, Privacy Policy and Content Policies. All trademarks are properties of their respective owners. 2022 © SanBurg™ Ltd. All rights reserved.</small>
         </div>
-      </div>
+      </footer>
   )
 }
 

@@ -67,7 +67,10 @@ function Login() {
                     {
                         formik.touched.password && formik.errors.password ? (<div className="text-danger">{formik.errors.password}</div>) : null
                     }
-                    <p className="mt-2">You are Not registered, <Link className="text-danger fs-5" to="/register">Register</Link></p>
+                    <p className="mt-2 mb-0">You are Not registered, <Link className="text-danger fs-5" to="/register">Register</Link></p>
+                    <p className="mt-0 mb-0 text-secondary">For demo, you can use</p>
+                    <p className="mt-0 mb-0 text-secondary">Email:person1@gmail.com</p>
+                    <p className="mt-0 mb-0 text-secondary">Password:person1@123</p>
                     </div>
                     </div>
                     <div className="row mt-3 mb-3">

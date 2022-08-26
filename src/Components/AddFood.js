@@ -5,18 +5,18 @@ import axios from "axios";
 import { Upload } from "upload-js";
 
 function AddFoods() {
-  const upload = new Upload({ apiKey: "free" });
-  const uploadFile = upload.createFileInputHandler({
-    // onProgress: ({ progress }) => {
-    //   console.log(`${progress}% complete`)
-    // },
-    onUploaded: ({ fileUrl }) => {
-      alert(`File uploaded!\n${fileUrl}`);
-    },
-    onError: (error) => {
-      alert(`Error!\n${error.message}`);
-    }
-  });
+  // const upload = new Upload({ apiKey: "free" });
+  // const uploadFile = upload.createFileInputHandler({
+  //   // onProgress: ({ progress }) => {
+  //   //   console.log(`${progress}% complete`)
+  //   // },
+  //   onUploaded: ({ fileUrl }) => {
+  //     alert(`File uploaded!\n${fileUrl}`);
+  //   },
+  //   onError: (error) => {
+  //     alert(`Error!\n${error.message}`);
+  //   }
+  // });
   let navigate = useNavigate();
   let formik = useFormik({
     initialValues: {
@@ -24,7 +24,6 @@ function AddFoods() {
       foodname: "",
       foodprice: "",
       foodimage: "",
-      foodinfo: "",
     },
     validate: (values) => {
       const errors = {};
@@ -37,11 +36,8 @@ function AddFoods() {
       if (!values.foodprice) {
         errors.foodprice = "Food Price is Required";
       }
-      // if (!values.foodimage) {
-      //   errors.foodimage = "Food Image is Required";
-      // }
-      if (!values.foodinfo) {
-        errors.foodinfo = "Food Info is Required";
+      if (!values.foodimage) {
+        errors.foodimage = "Food Image is Required";
       }
       return errors;
     },
@@ -95,20 +91,20 @@ function AddFoods() {
             <input
               className="form-control"
               id="foodimage"
-              type={"file"}
+              type={"text"}
               name="foodimage"
               // accept="image/*"
-              // onChange={formik.handleChange("foodimage")}
+              onChange={formik.handleChange}
               // onChange={(e) => formik.setFieldValue("foodimage",e.target.files[0])}
               value={formik.values.foodimage}
-              onchange={(e) => uploadFile(e)}
+              // onchange={(e) => uploadFile(e)}
             ></input>
            {/* {
             console.log(formik.values.foodimage)
            } */}
-            {/* {formik.touched.foodimage && formik.errors.foodimage ? (
+            {formik.touched.foodimage && formik.errors.foodimage ? (
               <span className="text-danger">{formik.errors.foodimage}</span>
-            ) : null} */}
+            ) : null}
           </div>
         </div>
         <div className="row mt-3">
@@ -138,22 +134,6 @@ function AddFoods() {
             ></input>
             {formik.touched.foodprice && formik.errors.foodprice ? (
               <span className="text-danger">{formik.errors.foodprice}</span>
-            ) : null}
-          </div>
-        </div>
-        <div className="row mt-3">
-          <div className="col-lg-12">
-            <label for="foodinfo">Food Info</label>
-            <input
-              className="form-control"
-              id="foodinfo"
-              type={"text"}
-              name="foodinfo"
-              onChange={formik.handleChange}
-              value={formik.values.foodinfo}
-            ></input>
-            {formik.touched.foodinfo && formik.errors.foodinfo ? (
-              <span className="text-danger">{formik.errors.foodinfo}</span>
             ) : null}
           </div>
         </div>

@@ -7,7 +7,6 @@ import FoodContext from "../Context/FoodContext";
 function Cart() {
   const {cartitems,setNewcartitems,total,setTotal} = useContext(FoodContext);
   let RemoveFromCart=(item) => {
-    // dispatch({type:"Remove_From_Cart",item})
     let remove=cartitems.findIndex(obj => item._id===obj._id);
     cartitems.splice(remove,1);
     setNewcartitems([...cartitems]);
@@ -25,15 +24,10 @@ function Cart() {
   //     setcount(count - 1);
   // };
   return (
-    // <Cartinfo
-    // Addcartitems={props.Addcartitems}
-    //               Removecartitems={props.Removecartitems}
-    //               Total={props.Total}
-    //             ></Cartinfo>
     <div className="container">
       <div className="row mt-5">
-        <div className="col-sm-12 col-md-6 col-lg-6">
-          <h3 className="m-0 p-0">Cart Items({cartitems.length})</h3>
+        <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+          <h2 className="text-info">Cart Items({cartitems.length})</h2>
           {cartitems.length > 0 ? (
             cartitems.map((addcartitem) => {
               return (
@@ -50,7 +44,8 @@ function Cart() {
             <h1 className="mt-2 text-info fw-bold">No Items in Cart</h1>
           )}
         </div>
-        <div className="col-sm-12 col-md-6 col-lg-6">
+        <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+        <h2 className="text-info">Cart Total</h2>
           <div class="row">
             <div className="col-7 col-sm-7 col-md-7 col-lg-7">
               <p className="fs-5">Item Total</p>
@@ -71,7 +66,7 @@ function Cart() {
             <div className="col-12 col-sm-12 col-md-12 col-lg-12">
               <button
                 type="button"
-                class="btn btn-primary"
+                class="btn btn-primary w-100"
                 data-bs-toggle="modal"
                 data-bs-target="#staticBackdrop"
               >

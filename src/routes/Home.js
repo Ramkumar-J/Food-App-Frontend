@@ -1,15 +1,12 @@
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import Categories from "../Categories";
 import Carousel from "../Components/Carousel";
 import FoodContext from "../Context/FoodContext";
 
 
 
 function Home() {
-  const {cartitems,setNewcartitems,total,setTotal,wishList,setNewwishList} = useContext(FoodContext);
-  let[foodItems,setFoodItems]=useState([]);
+  const {foodItems,setFoodItems,cartitems,setNewcartitems,total,setTotal,wishList,setNewwishList} = useContext(FoodContext);
   useEffect(() => {
     async function getFooditems(){
         try {
@@ -28,7 +25,6 @@ function Home() {
 },[])
 
 let Addtocart=(item) => {
-  //  dispatch({type:"Add_To_Cart",item})
     setNewcartitems([...cartitems,item]);
     setTotal(total + parseInt(item.foodprice));
     }
@@ -37,60 +33,12 @@ let Addwishlist=(list) => {
   setNewwishList([...wishList,list]);
 }
 
-  // const value=useContext(MenuContext);
-  // const [foodItems,setFoodItems]=value;
-  // let menulist=[
-  //   {
-  //     image:"https://healthyrecipesblogs.com/wp-content/uploads/2013/02/tandoori-chicken-featured-2021.jpg",
-  //     category:"All"
-  //   },
-  //   {
-  //     image:"assets/Burger-category.avif",
-  //     category:"Burger"
-  //   },
-  //   {
-  //     image:"assets/Pizza-category.avif",
-  //     category:"Pizza"
-  //   },
-  //   {
-  //     image:"https://media.diageocms.com/fit-in/688x688/filters:quality(85)/filters:format(jpg)/media/g2pn1yud/barcom_serve_image_942628_woowoo.jpg",
-  //     category:"Juice"
-  //   },
-  //   {
-  //     image:"https://purobakery.com/wp-content/uploads/2022/03/red-velvet-cake-1-600x600.jpg",
-  //     category:"Cakes"
-  //   },
-  //   {
-  //     image:"https://content3.jdmagicbox.com/comp/hyderabad/d9/040pxx40.xx40.140619105314.i7d9/catalogue/arun-ice-cream-dealers-habsiguda-hyderabad-ice-cream-parlours-32xcq.jpgg",
-  //     category:"Ice creams"
-  //   },
-  // ]
-  // let params=useParams();
-  //   let[foodmenu,setFoodmenu]=useState([]);
-  //   useEffect(() => {
-  //       async function getFooditem(){
-  //           try {
-  //               let foodsdata=await axios.get(`http://localhost:3005/home/foodmenu/${params.category}`,{
-  //                   headers:{
-  //                     Authorization:window.localStorage.getItem("foodapptoken"),
-  //             },
-  //                 });
-  //               console.log(foodsdata);
-  //               setFoodmenu(foodsdata.data);
-  //           } catch (error) {
-  //               console.log("error");
-  //           }
-  //       }
-  //       getFooditem();
-  //   },[])
-
   let [datafilter, setFilter] = useState(foodItems);
   let filterProduct = (cat) => {
     const updatedlist = foodItems.filter((e) => {
       return e.category === cat; 
     });
     setFilter(updatedlist);
-    console.log(updatedlist);
   };
   return (
     <>
@@ -101,108 +49,102 @@ let Addwishlist=(list) => {
             <h1>Categories</h1>
           </div>
         </div>
-        {/* <Categories></Categories> */}
         <div className="row mt-2">
-          
-          <div className="col-6 col-sm-6 col-md-4 col-lg-2">
+          <div className="col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2 col-xxl-2">
             <button
               className="btn btn-transparent"
               onClick={() => setFilter(foodItems)}
             >
               <img
-                className="img-fluid rounded-circle h-50 w-100 bg-secondary"
+                className="img-fluid home-category_image"
                 src="https://images.unsplash.com/photo-1546069901-d5bfd2cbfb1f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
               ></img>
-              <p className="fs-5 fw-bold text-center text-dark mb-0">All</p>
+              <p className="home-category_name">All</p>
             </button>
           </div>
-          <div className="col-6 col-sm-6 col-md-4 col-lg-2">
+          <div className="col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2 col-xxl-2">
             <button
               className="btn btn-transparent"
               onClick={() => filterProduct("Burger")}
             >
               <img
-                className="img-fluid rounded-circle h-50 w-100 bg-secondary"
+                className="img-fluid home-category_image"
                 src="assets/Burger-category.avif"
               ></img>
-              <p className="fs-5 fw-bold text-center text-dark mb-0">Burger</p>
+              <p className="home-category_name">Burger</p>
             </button>
           </div>
-          <div className="col-6 col-sm-6 col-md-4 col-lg-2">
+          <div className="col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2 col-xxl-2">
             <button
               className="btn btn-transparent"
               onClick={() => filterProduct("Pizza")}
             >
               <img
-                className="img-fluid rounded-circle h-50 w-100 bg-secondary"
+                className="img-fluid home-category_image"
                 src="assets/Pizza-category.avif"
               ></img>
-              <p className="fs-5 fw-bold text-center text-dark mb-0">Pizza</p>
+              <p className="home-category_name">Pizza</p>
             </button>
           </div>
-          <div className="col-6 col-sm-6 col-md-4 col-lg-2">
+          <div className="col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2 col-xxl-2">
             <button
               className="btn btn-transparent"
               onClick={() => filterProduct("Juice")}
             >
               <img
-                className="img-fluid rounded-circle h-50 w-100 bg-secondary"
+                className="img-fluid home-category_image"
                 src="https://media.diageocms.com/fit-in/688x688/filters:quality(85)/filters:format(jpg)/media/g2pn1yud/barcom_serve_image_942628_woowoo.jpg"
               ></img>
-              <p className="fs-5 fw-bold text-center text-dark mb-0">Juice</p>
+              <p className="home-category_name">Juice</p>
             </button>
           </div>
-          <div className="col-6 col-sm-6 col-md-4 col-lg-2">
+          <div className="col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2 col-xxl-2">
             <button
               className="btn btn-transparent"
               onClick={() => filterProduct("Cakes")}
             >
               <img
-                className="img-fluid rounded-circle h-50 w-100 bg-secondary"
+                className="img-fluid home-category_image"
                 src="https://purobakery.com/wp-content/uploads/2022/03/red-velvet-cake-1-600x600.jpg"
               ></img>
-              <p className="fs-5 fw-bold text-center text-dark mb-0">Cakes</p>
+              <p className="home-category_name">Cakes</p>
             </button>
           </div>
-          <div className="col-6 col-sm-6 col-md-4 col-lg-2">
+          <div className="col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2 col-xxl-2">
             <button
               className="btn btn-transparent"
               onClick={() => filterProduct("Ice creams")}
             >
               <img
-                className="img-fluid rounded-circle h-50 w-100 bg-secondary"
+                className="img-fluid home-category_image"
                 src="https://content3.jdmagicbox.com/comp/hyderabad/d9/040pxx40.xx40.140619105314.i7d9/catalogue/arun-ice-cream-dealers-habsiguda-hyderabad-ice-cream-parlours-32xcq.jpg"
               ></img>
-              <p className="fs-5 fw-bold text-center text-dark mb-0">
+              <p className="home-category_name">
                 Ice creams
               </p>
             </button>
           </div>
         </div>
-        {/* <Card></Card> */}
         <div class="row">
           {datafilter.map((food) => {
-            console.log(food);
             return (
-              <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-4 mt-3 p-0 ">
-                {/* <Card Food={food}></Card> */}
-                <div class="card cardsize">
+              <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-4 mt-3 p-0">
+                <div class="card home-foodcard">
                   <img
                     src={food.foodimage}
-                    class="card-img-top bg-secondary burgersize"
+                    class="card-img-top home-foodcard_image"
                     alt="Image"
                   />
                   <hr class="border-danger border border-1 mt-0 mb-0" />
                   <div class="card-body">
-                    <h2 class="card-title text-center mt-0 title">
+                    <h2 class="card-title home-foodcard_name">
                       {food.foodname}
                     </h2>
-                    <p class="card-text text-center fs-5 text-dark mb-0">
+                    <p class="card-text home-foodcard_price">
                       ₹{food.foodprice}
                     </p>
-                    {/* <p class="card-text text-warning fs-1 mt-0 mb-1 text-center">{food.foodinfo}</p> */}
                     <button
-                      class="offset-3 col-6  btn btn-primary btn-sm fs-5 mt-2 card-btn"
+                      class="offset-3 col-6 btn btn-primary btn-sm fs-5 mt-2 home-foodcard_cartbutton"
                       onClick={() => {
                         Addtocart(food)
                       }}
@@ -210,7 +152,7 @@ let Addwishlist=(list) => {
                       Order Now
                     </button>
                     <button
-                      className="btn btn-danger btn-sm rounded-circle wish"
+                      className="btn btn-danger btn-sm rounded-circle home-foodcard_wishbutton"
                       onClick={() => Addwishlist(food)}
                       disabled={wishList.some(
                         (obj) => obj._id === food._id
