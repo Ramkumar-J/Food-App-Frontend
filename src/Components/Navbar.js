@@ -11,11 +11,11 @@ function Navbar(){
         navigate("/login");
     }
     return(
-        <header className='container-fluid bg-dark'>
-        <nav className="container navbar navbar-expand-lg  navbar-dark">
-            <Link className="navbar-brand fw-bold fs-2 ms-5 text-danger fst-italic" to="/home">San🍔Burg</Link>
+        <header className='container-fluid bg-dark navbar-dimension'>
+        <nav className="container navbar navbar-expand-lg navbar-dark">
+            <Link className="navbar-brand" to="/home">San🍔Burg</Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNav">
-                <span className="navbar-toggler-icon"></span>
+                <span className="navbar-toggler-icon text-primary"></span>
             </button>
                 <div className="collapse navbar-collapse" id="myNav">
                 <ul className="navbar-nav ms-auto text-dark">
@@ -39,11 +39,12 @@ function Navbar(){
                   data-bs-toggle="dropdown"
                   aria-expanded="false"><i class="bi bi-person-circle fs-4"></i></a>
                         <ul className="dropdown-menu" aria-labelledby="mynavDropdown">
-                            <li className="">
-                            <Link className="dropdown-item" to="/admin">Admin</Link>
+                            <li>
+                            <Link className="dropdown-item text-primary" to="/admin">Admin</Link>
                             </li>
-                            <li className="">
-                            <button className="dropdown-item btn btn-danger" onClick={handleLogout}>Logout</button>
+                            <hr className="mt-0 mb-0"></hr>
+                            <li>
+                            <button className="dropdown-item text-danger" onClick={handleLogout}>Logout</button>
                             </li>
                         </ul>
                     </li>
@@ -51,7 +52,6 @@ function Navbar(){
                     <div className="btn-group">
                     <Link className="nav-link" to="/login"><button className="btn btn-success">Login</button></Link>
                     <Link className="nav-link ms-2" to="/register"><button className="btn btn-primary">Register</button></Link>
-                    <a className="nav-link" href="#"><button className="btn btn-danger">Logout</button></a>
                     </div>
                     </li> */}
                 </ul> 

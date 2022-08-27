@@ -55,15 +55,14 @@ function App() {
         setNewwishList,
       }}
     >
-      <BrowserRouter>
+      {/* <BrowserRouter> */}
         <div className="App app-background">
+        <BrowserRouter>
+          <Navbar></Navbar>
           <Routes>
             <Route path="/" element={<Login />}></Route>
             <Route path="/register" element={<Register />}></Route>
             <Route path="/login" element={<Login />}></Route>
-          </Routes>
-          <Navbar></Navbar>
-          <Routes>
             <Route path="/home" element={<Home />}></Route>
             <Route path="/cart" element={<Cart />}></Route>
             <Route path="/wishlist" element={<Wishlist />}></Route>
@@ -71,9 +70,10 @@ function App() {
             <Route path="/addmenu" element={<AddFoods />}></Route>
             <Route path="/editfood/:id" element={<EditFoodinfo />}></Route>
           </Routes>
+           </BrowserRouter>
           <Footer></Footer>
         </div>
-      </BrowserRouter>
+      {/* </BrowserRouter> */}
     </FoodContext.Provider>
   );
 }

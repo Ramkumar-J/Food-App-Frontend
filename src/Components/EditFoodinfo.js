@@ -59,8 +59,8 @@ function EditFoodinfo() {
              });
         
   return (
-    <div className="container add-food">
-               <div className="row addfood-bg">
+    <div className="container editfood-page">
+               <div className="row editfood-card">
                    <div className="col-lg-12">
                         <form onSubmit={formik.handleSubmit}>
                          <div className="row mt-5">

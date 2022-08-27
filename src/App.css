@@ -78,7 +78,7 @@
   /* margin-top: 100px !important; */
 }
 
-.register-container{
+.register-page{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -86,13 +86,13 @@
   width: 100%;
 }
 
-.logo-image{
+.register-logo{
   margin-left: 120px;
 }
 
 
 /* Add Food Page */
-.add-food{
+/* .admin-editfood_page{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -100,14 +100,14 @@
   width: 100%;
 }
 
-.addfood-bg{
+.admin-editfood_card{
   background-color: rgb(238, 238, 238);
   font-size:20px;
   padding: 20px;
   border-radius: 20px;
   width:400px;
   box-shadow: 20px 20px 15px rgb(190, 190, 190);
-}
+} */
 
 
 
@@ -118,14 +118,14 @@
   border: 1px solid #aaaaaa;
 }
 
-.login-image{
+/* .login-image{
   height: 400px !important;
   width: 100%;
 }
 
 .login-image:hover{
   margin-left: 50px;
-}
+} */
 
 .wish{
   /* position: absolute;
@@ -190,6 +190,28 @@
 /* New CSS */
 .app-background{
   background-color: #f8f8f8;
+}
+
+/* Navbar */
+/* .navbar-dimension{
+  height: 70px;
+} */
+
+.navbar-brand{
+  font-style: italic;
+  font-size: 35px !important;
+  font-weight: bold;
+  /* margin-left: 36px; */
+  color:rgb(35, 219, 210) !important;
+  letter-spacing: 2px;
+}
+
+.nav-link{
+  color: rgb(219, 176, 35) !important;
+}
+
+.nav-link:hover{
+  color: rgb(35, 219, 210) !important;
 }
 
 /* Carousel */
@@ -291,6 +313,49 @@
   height: 180px !important;
   width: 180px !important;
 }
+
+/* Register Page */
+.register-card{
+  width:350px !important;
+  /* margin-top: 100px !important; */
+}
+
+.register-page{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+/* Login Page */
+.login-image{
+  height: 400px !important;
+  width: 100%;
+}
+
+.login-image:hover{
+  margin-left: 50px;
+}
+
+/* Admin page */
+.admin-editfood_page{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+}
+
+.admin-editfood_card{
+  background-color: rgb(238, 238, 238);
+  font-size:20px;
+  padding: 20px;
+  border-radius: 20px;
+  width:400px;
+  box-shadow: 20px 20px 15px rgb(190, 190, 190);
+}
+
 
 /* Responsiveness */
 

@@ -39,12 +39,12 @@ function Register(){
         
     })
     return(
-        <div className="container register-container">
+        <div className="container register-page">
             <div className="row border border-2 register-card">
                 <div className="col-lg-12">
             <div className="row">
                 <div className="col-lg-12">
-                    <img className="img-fluid logo-image" src="https://img.icons8.com/color/70/hamburger.png"></img>
+                    <img className="img-fluid register-logo" src="https://img.icons8.com/color/70/hamburger.png"></img>
                     </div>
             </div>
                     <div className="row mt-2 mb-0">
