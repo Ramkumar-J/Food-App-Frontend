@@ -5,7 +5,7 @@ import FoodContext from "../Context/FoodContext";
 
 function Navbar(){
     const {cartitems} = useContext(FoodContext);
-    let navigate=useNavigate()
+    let navigate=useNavigate();
     let handleLogout=() => {
         window.localStorage.removeItem("foodapptoken");
         navigate("/login");
