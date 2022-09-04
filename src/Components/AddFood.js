@@ -45,7 +45,7 @@ function AddFoods() {
       // let data=new FormData();
       // data.append("foodimage", values.foodimage);
       try {
-        await axios.post("http://localhost:3005/foodmenu", values, {
+        await axios.post("https://sanburg-foodapp-nodeapp.herokuapp.com/foodmenu", values, {
           headers: {
             Authorization: window.localStorage.getItem("foodapptoken"),
           },

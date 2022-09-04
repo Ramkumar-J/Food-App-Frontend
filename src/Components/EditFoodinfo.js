@@ -9,7 +9,7 @@ function EditFoodinfo() {
     useEffect(() => {
         async function editfoodDetail(){
             try {
-                let foodDetail=await axios.get(`http://localhost:3005/foodmenu/${params.id}`, {
+                let foodDetail=await axios.get(`https://sanburg-foodapp-nodeapp.herokuapp.com/foodmenu/${params.id}`, {
                     headers: {
                       Authorization: window.localStorage.getItem("foodapptoken"),
                     },
@@ -46,7 +46,7 @@ function EditFoodinfo() {
                 },
                 onSubmit:async(values) => {
                     try {
-                        await axios.put(`http://localhost:3005/foodmenu/${params.id}`,values, {
+                        await axios.put(`https://sanburg-foodapp-nodeapp.herokuapp.com/foodmenu/${params.id}`,values, {
                             headers: {
                               Authorization: window.localStorage.getItem("foodapptoken"),
                             },
@@ -59,8 +59,8 @@ function EditFoodinfo() {
              });
         
   return (
-    <div className="container editfood-page">
-               <div className="row editfood-card">
+    <div className="container admin-editfood_page">
+               <div className="row admin-editfood_card">
                    <div className="col-lg-12">
                         <form onSubmit={formik.handleSubmit}>
                          <div className="row mt-5">

@@ -30,7 +30,7 @@ function Register(){
         },
         onSubmit:async (values) => {
             try {
-                await axios.post("http://localhost:3005/register",values);
+                await axios.post("https://sanburg-foodapp-nodeapp.herokuapp.com/register",values);
                 navigate("/login");
             } catch (error) {
                 alert("Somethimg went wrong");

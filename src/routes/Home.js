@@ -10,7 +10,7 @@ function Home() {
   useEffect(() => {
     async function getFooditems(){
         try {
-            let foods=await axios.get("http://localhost:3005/foodmenu",{
+            let foods=await axios.get("https://sanburg-foodapp-nodeapp.herokuapp.com/foodmenu",{
               headers:{
                 Authorization:window.localStorage.getItem("foodapptoken"),
         },

@@ -17,18 +17,14 @@ import EditFoodinfo from "./Components/EditFoodinfo";
 import FoodContext from "./Context/FoodContext";
 
 function App() {
-  const cartList = JSON.parse(
-    window.localStorage.getItem("cart") || "[]"
-    );
-  const cartitemTotal = JSON.parse(
+  const cartList = JSON.parse(window.localStorage.getItem("cart") || "[]");
+  const cartitemtotal = JSON.parse(
     window.localStorage.getItem("cartTotal") || 0
   );
-  const WishlistData = JSON.parse(
-    window.localStorage.getItem("wish") || "[]"
-    );
+  const WishlistData = JSON.parse(window.localStorage.getItem("wish") || "[]");
   let [foodItems, setFoodItems] = useState([]);
   let [cartitems, setNewcartitems] = useState(cartList);
-  let [total, setTotal] = useState(cartitemTotal);
+  let [total, setTotal] = useState(cartitemtotal);
   let [wishList, setNewwishList] = useState(WishlistData);
   useEffect(() => {
     window.localStorage.setItem("cart", JSON.stringify(cartitems));
@@ -55,8 +51,7 @@ function App() {
         setNewwishList,
       }}
     >
-      {/* <BrowserRouter> */}
-        <div className="App app-background">
+      <div className="App app-background">
         <BrowserRouter>
           <Navbar></Navbar>
           <Routes>
@@ -70,10 +65,9 @@ function App() {
             <Route path="/addmenu" element={<AddFoods />}></Route>
             <Route path="/editfood/:id" element={<EditFoodinfo />}></Route>
           </Routes>
-           </BrowserRouter>
           <Footer></Footer>
-        </div>
-      {/* </BrowserRouter> */}
+        </BrowserRouter>
+      </div>
     </FoodContext.Provider>
   );
 }

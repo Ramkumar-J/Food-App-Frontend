@@ -6,7 +6,7 @@ function AdminFoodcard(){
     useEffect(() => {
       async function getFooditems() {
         try {
-          let foods = await axios.get("http://localhost:3005/foodmenu", {
+          let foods = await axios.get("https://sanburg-foodapp-nodeapp.herokuapp.com/foodmenu", {
             headers: {
               Authorization: window.localStorage.getItem("foodapptoken"),
             },
@@ -26,7 +26,7 @@ function AdminFoodcard(){
             "Are you sure, do you want to delete this data?"
           );
           if (ask) {
-            await axios.delete(`http://localhost:3005/foodmenu/${id}`, {
+            await axios.delete(`https://sanburg-foodapp-nodeapp.herokuapp.com/foodmenu/${id}`, {
               headers: {
                 Authorization: window.localStorage.getItem("foodapptoken"),
               },

@@ -27,7 +27,7 @@ function CheckoutForm() {
     },
     onSubmit: async (values) => {
       try {
-        await axios.post("http://localhost:3005/checkout", values, {
+        await axios.post("https://sanburg-foodapp-nodeapp.herokuapp.com/checkout", values, {
           headers: {
             Authorization: window.localStorage.getItem("foodapptoken"),
           },
