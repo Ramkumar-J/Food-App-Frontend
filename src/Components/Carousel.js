@@ -35,7 +35,7 @@ function Carousel() {
             <img
               src="assets/131333-food-desktop-wallpaper.jpg"
               class="d-block img-fluid home-carousel_image"
-              alt="..."
+              alt="Carousel Image"
             />
             <div class="carousel-caption">
               <h5 className="home-carousel_caption">Yummy Pizza</h5>
@@ -46,11 +46,11 @@ function Carousel() {
             <img
               src="assets/photo-1580294785554-728a44dfc5c9.jpg"
               class="d-block img-fluid home-carousel_image"
-              alt="..."
+              alt="Carousel Image"
             />
             <div class="carousel-caption">
               <h1 className="home-carousel_caption">Fresh Juices</h1>
-              <p className="home-carousel_subcaption">Konjam Chill Pannu Maapi</p>
+              <p className="home-carousel_subcaption">Chill Bro</p>
             </div>
           </div>
 
@@ -58,13 +58,13 @@ function Carousel() {
             <img
               src="assets/photo-1581821873113-5a5371959ccf.jpg"
               class="d-block img-fluid home-carousel_image"
-              alt="..."
+              alt="Carousel Image"
             />
             <div class="carousel-caption">
-              <h5 className="home-carousel_caption">
-                Special Cakes
-              </h5>
-              <p className="home-carousel_subcaption">with Special Offers of 20%</p>
+              <h5 className="home-carousel_caption">Special Cakes</h5>
+              <p className="home-carousel_subcaption">
+                with Special Offers of 20%
+              </p>
             </div>
           </div>
         </div>

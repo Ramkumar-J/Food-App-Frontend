@@ -5,20 +5,19 @@ import Cartitem from "../Components/Cartitem";
 import FoodContext from "../Context/FoodContext";
 
 function Cart() {
-  const {cartitems,setNewcartitems,total,setTotal} = useContext(FoodContext);
-  let RemoveFromCart=(item) => {
-    let remove=cartitems.findIndex(obj => item._id===obj._id);
-    cartitems.splice(remove,1);
+  const { cartitems, setNewcartitems, total, setTotal } =
+    useContext(FoodContext);
+  let RemoveFromCart = (item) => {
+    let remove = cartitems.findIndex((obj) => item._id === obj._id);
+    cartitems.splice(remove, 1);
     setNewcartitems([...cartitems]);
-   setTotal(total - parseInt(item.foodprice));
-  }
-  
-  
+    setTotal(total - parseInt(item.foodprice));
+  };
+
   // let [count, setcount] = useState(1);
   // let handleincrement = (id) => {
   //     setcount(count + 1);
-    
-   
+
   // };
   // let handledecrement = (id) => {
   //     setcount(count - 1);
@@ -45,7 +44,7 @@ function Cart() {
           )}
         </div>
         <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-        <h2 className="text-info">Cart Total</h2>
+          <h2 className="text-info">Cart Total</h2>
           <div class="row">
             <div className="col-7 col-sm-7 col-md-7 col-lg-7">
               <p className="fs-5">Item Total</p>

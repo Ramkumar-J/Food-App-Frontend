@@ -33,4 +33,4 @@ function PageContainer() {
   )
 }
 
-export default PageContainer
+export default PageContainer;

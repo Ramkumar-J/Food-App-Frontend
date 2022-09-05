@@ -45,13 +45,17 @@ function AddFoods() {
       // let data=new FormData();
       // data.append("foodimage", values.foodimage);
       try {
-        await axios.post("https://sanburg-foodapp-nodeapp.herokuapp.com/foodmenu", values, {
-          headers: {
-            Authorization: window.localStorage.getItem("foodapptoken"),
-          },
-          // Body:data
-        });
-      
+        await axios.post(
+          "https://sanburg-foodapp-nodeapp.herokuapp.com/foodmenu",
+          values,
+          {
+            headers: {
+              Authorization: window.localStorage.getItem("foodapptoken"),
+            },
+            // Body:data
+          }
+        );
+
         navigate("/admin");
       } catch (error) {
         console.log(error);
@@ -99,7 +103,7 @@ function AddFoods() {
               value={formik.values.foodimage}
               // onchange={(e) => uploadFile(e)}
             ></input>
-           {/* {
+            {/* {
             console.log(formik.values.foodimage)
            } */}
             {formik.touched.foodimage && formik.errors.foodimage ? (

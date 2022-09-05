@@ -27,11 +27,15 @@ function CheckoutForm() {
     },
     onSubmit: async (values) => {
       try {
-        await axios.post("https://sanburg-foodapp-nodeapp.herokuapp.com/checkout", values, {
-          headers: {
-            Authorization: window.localStorage.getItem("foodapptoken"),
-          },
-        });
+        await axios.post(
+          "https://sanburg-foodapp-nodeapp.herokuapp.com/checkout",
+          values,
+          {
+            headers: {
+              Authorization: window.localStorage.getItem("foodapptoken"),
+            },
+          }
+        );
         console.log(values);
       } catch (error) {
         console.log(error);
@@ -134,13 +138,13 @@ function CheckoutForm() {
                   Close
                 </button>
                 <input
-                disabled={!formik.errors }
+                  disabled={!formik.errors}
                   type={"submit"}
                   class="btn btn-success"
                   value="Submit"
                   onClick={handleToast}
                 ></input>
-              <ToastContainer />
+                <ToastContainer />
               </div>
             </form>
           </div>

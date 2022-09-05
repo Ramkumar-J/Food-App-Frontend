@@ -1,20 +1,26 @@
 import React, { useContext } from "react";
 import FoodContext from "../Context/FoodContext";
 
-
 function Wishlist() {
-  const {cartitems,setNewcartitems,total,setTotal,wishList,setNewwishList} = useContext(FoodContext);
+  const {
+    cartitems,
+    setNewcartitems,
+    total,
+    setTotal,
+    wishList,
+    setNewwishList,
+  } = useContext(FoodContext);
 
-  let Removewishlist=(list) => {
-    let index=wishList.findIndex(obj => obj._id === list._id);
-    wishList.splice(index,1);
-    setNewwishList([...wishList])
-  }
+  let Removewishlist = (list) => {
+    let index = wishList.findIndex((obj) => obj._id === list._id);
+    wishList.splice(index, 1);
+    setNewwishList([...wishList]);
+  };
 
-  let Addtocart=(item) => {
-      setNewcartitems([...cartitems,item]);
-      setTotal(total + parseInt(item.foodprice));
-      }
+  let Addtocart = (item) => {
+    setNewcartitems([...cartitems, item]);
+    setTotal(total + parseInt(item.foodprice));
+  };
 
   return (
     <div class="container">
@@ -30,12 +36,8 @@ function Wishlist() {
                 />
                 <hr class="border-danger border border-1 mt-0 mb-0" />
                 <div class="card-body">
-                  <h2 class="card-title home-foodcard_name">
-                    {wish.foodname}
-                  </h2>
-                  <p class="card-text home-foodcard_price">
-                    ₹{wish.foodprice}
-                  </p>
+                  <h2 class="card-title home-foodcard_name">{wish.foodname}</h2>
+                  <p class="card-text home-foodcard_price">₹{wish.foodprice}</p>
                   <div className="d-flex flex-row mt-3">
                     <button
                       class="offset-3 col-6 btn btn-primary btn-sm fs-5 home-foodcard_cartbutton"

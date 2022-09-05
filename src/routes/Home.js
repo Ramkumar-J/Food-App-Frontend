@@ -3,40 +3,50 @@ import React, { useContext, useEffect, useState } from "react";
 import Carousel from "../Components/Carousel";
 import FoodContext from "../Context/FoodContext";
 
-
-
 function Home() {
-  const {foodItems,setFoodItems,cartitems,setNewcartitems,total,setTotal,wishList,setNewwishList} = useContext(FoodContext);
+  const {
+    foodItems,
+    setFoodItems,
+    cartitems,
+    setNewcartitems,
+    total,
+    setTotal,
+    wishList,
+    setNewwishList,
+  } = useContext(FoodContext);
   useEffect(() => {
-    async function getFooditems(){
-        try {
-            let foods=await axios.get("https://sanburg-foodapp-nodeapp.herokuapp.com/foodmenu",{
-              headers:{
-                Authorization:window.localStorage.getItem("foodapptoken"),
-        },
-            });
-            console.log(foods);
-            setFoodItems(foods.data);
-        } catch (error) {
-            alert("Something went wrong")
-        }
+    async function getFooditems() {
+      try {
+        let foods = await axios.get(
+          "https://sanburg-foodapp-nodeapp.herokuapp.com/foodmenu",
+          {
+            headers: {
+              Authorization: window.localStorage.getItem("foodapptoken"),
+            },
+          }
+        );
+        console.log(foods);
+        setFoodItems(foods.data);
+      } catch (error) {
+        alert("Something went wrong");
+      }
     }
     getFooditems();
-},[])
+  }, []);
 
-let Addtocart=(item) => {
-    setNewcartitems([...cartitems,item]);
+  let Addtocart = (item) => {
+    setNewcartitems([...cartitems, item]);
     setTotal(total + parseInt(item.foodprice));
-    }
+  };
 
-let Addwishlist=(list) => {
-  setNewwishList([...wishList,list]);
-}
+  let Addwishlist = (list) => {
+    setNewwishList([...wishList, list]);
+  };
 
   let [datafilter, setFilter] = useState(foodItems);
   let filterProduct = (cat) => {
     const updatedlist = foodItems.filter((e) => {
-      return e.category === cat; 
+      return e.category === cat;
     });
     setFilter(updatedlist);
   };
@@ -119,9 +129,7 @@ let Addwishlist=(list) => {
                 className="img-fluid home-category_image"
                 src="https://content3.jdmagicbox.com/comp/hyderabad/d9/040pxx40.xx40.140619105314.i7d9/catalogue/arun-ice-cream-dealers-habsiguda-hyderabad-ice-cream-parlours-32xcq.jpg"
               ></img>
-              <p className="home-category_name">
-                Ice creams
-              </p>
+              <p className="home-category_name">Ice creams</p>
             </button>
           </div>
         </div>
@@ -146,7 +154,7 @@ let Addwishlist=(list) => {
                     <button
                       class="offset-3 col-6 btn btn-primary btn-sm fs-5 mt-2 home-foodcard_cartbutton"
                       onClick={() => {
-                        Addtocart(food)
+                        Addtocart(food);
                       }}
                     >
                       Order Now
@@ -154,9 +162,7 @@ let Addwishlist=(list) => {
                     <button
                       className="btn btn-danger btn-sm rounded-circle home-foodcard_wishbutton"
                       onClick={() => Addwishlist(food)}
-                      disabled={wishList.some(
-                        (obj) => obj._id === food._id
-                      )}
+                      disabled={wishList.some((obj) => obj._id === food._id)}
                     >
                       <i class="bi bi-heart-fill"></i>
                     </button>
