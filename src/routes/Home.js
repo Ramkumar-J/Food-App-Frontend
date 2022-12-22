@@ -18,7 +18,7 @@ function Home() {
     async function getFooditems() {
       try {
         let foods = await axios.get(
-          "https://sanburg-foodapp-nodeapp.herokuapp.com/foodmenu",
+          "https://food-app-backend-two.vercel.app/foodmenu",
           {
             headers: {
               Authorization: window.localStorage.getItem("foodapptoken"),

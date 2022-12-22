@@ -10,7 +10,7 @@ function EditFoodinfo() {
     async function editfoodDetail() {
       try {
         let foodDetail = await axios.get(
-          `https://sanburg-foodapp-nodeapp.herokuapp.com/foodmenu/${params.id}`,
+          `https://food-app-backend-two.vercel.app/foodmenu/${params.id}`,
           {
             headers: {
               Authorization: window.localStorage.getItem("foodapptoken"),

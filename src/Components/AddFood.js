@@ -46,7 +46,7 @@ function AddFoods() {
       // data.append("foodimage", values.foodimage);
       try {
         await axios.post(
-          "https://sanburg-foodapp-nodeapp.herokuapp.com/foodmenu",
+          "https://food-app-backend-two.vercel.app/foodmenu",
           values,
           {
             headers: {

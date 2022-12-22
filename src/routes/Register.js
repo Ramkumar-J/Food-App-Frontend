@@ -31,7 +31,7 @@ function Register() {
     onSubmit: async (values) => {
       try {
         await axios.post(
-          "https://sanburg-foodapp-nodeapp.herokuapp.com/register",
+          "https://food-app-backend-two.vercel.app/register",
           values
         );
         navigate("/login");

@@ -28,7 +28,7 @@ function Login() {
     onSubmit: async (values) => {
       try {
         let signin = await axios.post(
-          "https://sanburg-foodapp-nodeapp.herokuapp.com/login",
+          "https://food-app-backend-two.vercel.app/login",
           values
         );
         window.localStorage.setItem("foodapptoken", signin.data.token);
@@ -41,7 +41,7 @@ function Login() {
   return (
     <div className="container login-page">
       <div className="row border border-2">
-        <div className="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+        <div className="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
           <div className="row mt-2 mb-0">
             <div className="col-lg-12">
               <h1 className="text-center fw-bold">Login</h1>
@@ -104,7 +104,7 @@ function Login() {
             </div>
           </form>
         </div>
-        <div className="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+        <div className="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
           <div className="row">
             <div className="col-lg-12 p-0">
               <img

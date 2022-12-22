@@ -187,9 +187,13 @@
   .home-category_name{
     font-size: 18px;
   }
+  .login-image{
+    height: 200px !important;
+    width: 100%;
+  }
 }
 
-@media (max-width:768px){
+/* @media (max-width:768px){
  
 }
 
@@ -203,4 +207,4 @@
 
 @media (max-width:1400px){
   
-}
+} */

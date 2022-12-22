@@ -7,7 +7,7 @@ function AdminFoodcard() {
     async function getFooditems() {
       try {
         let foods = await axios.get(
-          "https://sanburg-foodapp-nodeapp.herokuapp.com/foodmenu",
+          "https://food-app-backend-two.vercel.app/foodmenu",
           {
             headers: {
               Authorization: window.localStorage.getItem("foodapptoken"),
@@ -30,7 +30,7 @@ function AdminFoodcard() {
       );
       if (ask) {
         await axios.delete(
-          `https://sanburg-foodapp-nodeapp.herokuapp.com/foodmenu/${id}`,
+          `https://food-app-backend-two.vercel.app/foodmenu/${id}`,
           {
             headers: {
               Authorization: window.localStorage.getItem("foodapptoken"),

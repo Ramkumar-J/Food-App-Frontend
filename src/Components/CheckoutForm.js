@@ -28,7 +28,7 @@ function CheckoutForm() {
     onSubmit: async (values) => {
       try {
         await axios.post(
-          "https://sanburg-foodapp-nodeapp.herokuapp.com/checkout",
+          "https://food-app-backend-two.vercel.app/checkout",
           values,
           {
             headers: {
