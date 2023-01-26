@@ -22,7 +22,6 @@ function Register() {
       ) {
         errors.email = "Invalid email address";
       }
-
       if (!values.password) {
         errors.password = "Password Required";
       }
@@ -45,7 +44,7 @@ function Register() {
       <div className="row border border-2 register-card">
         <div className="col-lg-12">
           <div className="row">
-            <div className="col-lg-12">
+            <div className="col-lg-12 register-logo-container">
               <img
                 className="img-fluid register-logo"
                 src="https://img.icons8.com/color/70/hamburger.png"

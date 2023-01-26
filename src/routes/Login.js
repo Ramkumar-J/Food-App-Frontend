@@ -41,7 +41,7 @@ function Login() {
   return (
     <div className="container login-page">
       <div className="row border border-2">
-        <div className="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+        <div className="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 login-card">
           <div className="row mt-2 mb-0">
             <div className="col-lg-12">
               <h1 className="text-center fw-bold">Login</h1>
@@ -104,12 +104,14 @@ function Login() {
             </div>
           </form>
         </div>
-        <div className="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-          <div className="row">
-            <div className="col-lg-12 p-0">
+        <div className="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 m-0 p-0">
+          <div className="row m-0 p-0">
+            <div className="col-lg-12 m-0 p-0">
               <img
-                className="img-fluid login-image"
+                className="login-image"
                 src="https://cdn.igp.com/f_auto,q_auto,t_prodm/products/p-classic-black-forest-cake-half-kg--108742-m.jpg"
+                height='400'
+                width="100%"
               ></img>
             </div>
           </div>

@@ -10,9 +10,9 @@ function Navbar() {
     navigate("/login");
   };
   return (
-    <header className="container-fluid bg-dark navbar-dimension">
-      <nav className="container navbar navbar-expand-lg navbar-dark">
-        <Link className="navbar-brand" to="/home">
+    <header className="container-fluid bg-dark">
+      <nav className="container navbar navbar-expand-md navbar-dark">
+        <Link className="heading" to="/home">
           San🍔Burg
         </Link>
         <button
@@ -26,32 +26,29 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="myNav">
           <ul className="navbar-nav ms-auto text-dark">
             <li className="nav-item ms-2">
-              <Link className="nav-link" to="/home">
+              <Link className="nav-link text-warning" to="/home">
                 <i class="bi bi-house-door-fill fs-5"></i>
                 <span className="fs-4 ms-1">Home</span>
               </Link>
-            </li>
-            <hr className="mt-0 mb-0"></hr>
+            </li>           
             <li className="nav-item ms-2">
-              <Link className="nav-link position-relative" to="/cart">
+              <Link className="nav-link text-warning position-relative" to="/cart">
                 <i class="bi bi-cart-plus-fill fs-5"></i>
                 <span className="fs-4 ms-1">Cart</span>
                 <span class="badge position-absolute top-2 start-25 translate-middle bg-danger p-2 rounded-circle mt-1 countcart">
                   {cartitems.length}
                 </span>
               </Link>
-            </li>
-            <hr className="mt-0 mb-0"></hr>
+            </li>           
             <li className="nav-item ms-2">
-              <Link className="nav-link fs-4 position-relative" to="/wishlist">
+              <Link className="nav-link text-warning fs-4 position-relative" to="/wishlist">
                 <i class="bi bi-heart-fill fs-5"></i>
                 <span className="fs-4 ms-1">Wishlist</span>
               </Link>
             </li>
-            <hr className="mt-0 mb-0"></hr>
             <li className="nav-item dropdown ms-2">
               <a
-                className="nav-link dropdown-toggle"
+                className="nav-link text-warning dropdown-toggle"
                 href="#"
                 id="mynavDropdown"
                 role="button"
@@ -66,7 +63,6 @@ function Navbar() {
                     Admin
                   </Link>
                 </li>
-                <hr className="mt-0 mb-0"></hr>
                 <li>
                   <button
                     className="dropdown-item text-danger"

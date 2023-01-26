@@ -60,7 +60,7 @@ function Home() {
           </div>
         </div>
         <div className="row mt-2">
-          <div className="col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2 col-xxl-2">
+          <div className="col-4 col-sm-4 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
             <button
               className="btn btn-transparent"
               onClick={() => setFilter(foodItems)}
@@ -72,7 +72,7 @@ function Home() {
               <p className="home-category_name">All</p>
             </button>
           </div>
-          <div className="col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2 col-xxl-2">
+          <div className="col-4 col-sm-4 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
             <button
               className="btn btn-transparent"
               onClick={() => filterProduct("Burger")}
@@ -84,7 +84,7 @@ function Home() {
               <p className="home-category_name">Burger</p>
             </button>
           </div>
-          <div className="col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2 col-xxl-2">
+          <div className="col-4 col-sm-4 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
             <button
               className="btn btn-transparent"
               onClick={() => filterProduct("Pizza")}
@@ -96,7 +96,7 @@ function Home() {
               <p className="home-category_name">Pizza</p>
             </button>
           </div>
-          <div className="col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2 col-xxl-2">
+          <div className="col-4 col-sm-4 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
             <button
               className="btn btn-transparent"
               onClick={() => filterProduct("Juice")}
@@ -108,7 +108,7 @@ function Home() {
               <p className="home-category_name">Juice</p>
             </button>
           </div>
-          <div className="col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2 col-xxl-2">
+          <div className="col-4 col-sm-4 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
             <button
               className="btn btn-transparent"
               onClick={() => filterProduct("Cakes")}
@@ -120,7 +120,7 @@ function Home() {
               <p className="home-category_name">Cakes</p>
             </button>
           </div>
-          <div className="col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2 col-xxl-2">
+          <div className="col-4 col-sm-4 col-md-2 col-lg-2 col-xl-2 col-xxl-2">
             <button
               className="btn btn-transparent"
               onClick={() => filterProduct("Ice creams")}
@@ -142,6 +142,7 @@ function Home() {
                     src={food.foodimage}
                     class="card-img-top home-foodcard_image"
                     alt="Image"
+                    height={200}
                   />
                   <hr class="border-danger border border-1 mt-0 mb-0" />
                   <div class="card-body">

@@ -34,7 +34,7 @@ function Carousel() {
           <div class="carousel-item active">
             <img
               src="assets/131333-food-desktop-wallpaper.jpg"
-              class="d-block img-fluid home-carousel_image"
+              class="d-block bg-secondary home-carousel_image"
               alt="Carousel Image"
             />
             <div class="carousel-caption">
@@ -45,7 +45,7 @@ function Carousel() {
           <div class="carousel-item">
             <img
               src="assets/photo-1580294785554-728a44dfc5c9.jpg"
-              class="d-block img-fluid home-carousel_image"
+              class="d-block bg-secondary home-carousel_image"
               alt="Carousel Image"
             />
             <div class="carousel-caption">
@@ -57,7 +57,7 @@ function Carousel() {
           <div class="carousel-item">
             <img
               src="assets/photo-1581821873113-5a5371959ccf.jpg"
-              class="d-block img-fluid home-carousel_image"
+              class="d-block bg-secondary home-carousel_image"
               alt="Carousel Image"
             />
             <div class="carousel-caption">
