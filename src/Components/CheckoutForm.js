@@ -38,7 +38,7 @@ function CheckoutForm() {
               Authorization: window.localStorage.getItem("foodapptoken"),
             },
           }
-        )
+        );
         let OrderToast = () => {
           return (
             <div>
@@ -46,16 +46,17 @@ function CheckoutForm() {
                 className="img-fluid w-25"
                 src="https://st3.depositphotos.com/15870672/36104/v/380/depositphotos_361046324-stock-illustration-cartoon-character-food-delivery-man.jpg?forcejpeg=true"
               ></img>
-              <span className="text-secondary ms-0">One step away to taste your Food</span>
+              <span className="text-secondary ms-0">
+                One step away to taste your Food
+              </span>
             </div>
           );
         };
-          toast.success(<OrderToast></OrderToast>, {
-            position: toast.POSITION.TOP_RIGHT,
-          });
-        ;
+        toast.success(<OrderToast></OrderToast>, {
+          position: toast.POSITION.TOP_RIGHT,
+        });
         console.log(values);
-        alert("Order Placed Successfully")
+        alert("Order Placed Successfully");
       } catch (error) {
         console.log(error);
       }
@@ -124,19 +125,25 @@ function CheckoutForm() {
               {formik.touched.paymentmethod && formik.errors.paymentmethod ? (
                 <div className="text-danger">{formik.errors.paymentmethod}</div>
               ) : null}
-              {
-                formik.values.paymentmethod === 'Card' ? <input
-                className="form-control mt-2 mb-1"
-                type={"number"}
-                placeholder="Card number"
-                name="cardnumber"
-                onChange={formik.handleChange}
-                value={formik.values.cardnumber}
-              ></input> :""
-              }
-              {formik.values.paymentmethod === 'Card' ? formik.touched.cardnumber && formik.errors.cardnumber ? (
-                <div className="text-danger">{formik.errors.cardnumber}</div>
-              ) : null:""}
+              {formik.values.paymentmethod === "Card" ? (
+                <input
+                  className="form-control mt-2 mb-1"
+                  type={"number"}
+                  placeholder="Card number"
+                  name="cardnumber"
+                  onChange={formik.handleChange}
+                  value={formik.values.cardnumber}
+                ></input>
+              ) : (
+                ""
+              )}
+              {formik.values.paymentmethod === "Card" ? (
+                formik.touched.cardnumber && formik.errors.cardnumber ? (
+                  <div className="text-danger">{formik.errors.cardnumber}</div>
+                ) : null
+              ) : (
+                ""
+              )}
               <div class="modal-footer">
                 <button
                   type="button"
@@ -150,7 +157,7 @@ function CheckoutForm() {
                   class="btn btn-success"
                   value="Submit"
                 ></input>
-                <ToastContainer></ToastContainer>  
+                <ToastContainer></ToastContainer>
               </div>
             </form>
           </div>

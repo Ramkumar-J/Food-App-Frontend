@@ -64,6 +64,11 @@ function Navbar() {
                   </Link>
                 </li>
                 <li>
+                  <Link className="dropdown-item text-primary" to="/login">
+                    Login
+                  </Link>
+                </li>
+                <li>
                   <button
                     className="dropdown-item text-danger"
                     onClick={handleLogout}

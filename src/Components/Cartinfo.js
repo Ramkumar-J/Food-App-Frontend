@@ -16,7 +16,7 @@ function Cartinfo(props) {
     }
   };
   return (
-    <div className="container">
+    <section className="container">
       <div className="row mt-5">
         <div className="col-sm-12 col-md-6 col-lg-6">
           <h3 className="m-0 p-0">Cart Items({props.Addcartitems.length})</h3>
@@ -112,7 +112,7 @@ function Cartinfo(props) {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

@@ -47,7 +47,7 @@ function EditFoodinfo() {
     },
   });
   return (
-    <div className="container admin-editfood_page">
+    <section className="container admin-editfood_page">
       <div className="row admin-editfood_card">
         <div className="col-lg-12">
           <form onSubmit={formik.handleSubmit}>
@@ -138,7 +138,7 @@ function EditFoodinfo() {
           </form>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

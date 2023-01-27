@@ -63,7 +63,7 @@ function AddFoods() {
     },
   });
   return (
-    <div className="container">
+    <section className="container">
       <form onSubmit={formik.handleSubmit}>
         <div className="row mt-3">
           <div className="col-lg-6">
@@ -151,7 +151,7 @@ function AddFoods() {
           </div>
         </div>
       </form>
-    </div>
+    </section>
   );
 }
 

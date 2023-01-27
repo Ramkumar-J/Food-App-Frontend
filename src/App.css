@@ -6,7 +6,6 @@
   box-sizing: border-box;
   font-family: 'Oleo Script', cursive;
 }
-
 .app-background{
   background-color: #f8f8f8;
 }
@@ -15,7 +14,6 @@
 .register-card{
   width:400px;
 }
-
 .register-page,.login-page{
   display: flex;
   justify-content: center;
@@ -23,11 +21,9 @@
   height: 100vh;
   width: 100%;
 }
-
 .register-logo-container{
 text-align: center;
 }
-
 
 /* Login Page */
 .login-image:hover{
@@ -44,14 +40,6 @@ text-align: center;
   text-decoration: none;
 }
 
-/* .nav-link{
-  color: rgb(219, 176, 35) !important;
-}
-
-.nav-link:hover{
-  color: rgb(35, 219, 210) !important;
-} */
-
 /* Carousel */
 .home-carousel_image{
   width:100%;
@@ -59,13 +47,11 @@ text-align: center;
   opacity: 0.8;
   background-color: gray;
 }
-
 .home-carousel_caption{
   font-size: 60px;
   color: #212529;
   text-transform: uppercase;
 }
-
 .home-carousel_subcaption{
   font-size: 40px;
   color: #212529;
@@ -76,7 +62,6 @@ text-align: center;
   border-radius: 50%;
   background-color: gray;
 }
-
 .home-category_name{
   font-size: 25px;
   font-weight: bold;
@@ -89,41 +74,33 @@ text-align: center;
 .home-foodcard{
   margin: 10px;
   font-family: 'Oleo Script', cursive;
-  /* background-image: url("https://i.pinimg.com/736x/60/11/20/60112018573a25fc933638ee1891efa4.jpg");
-  background-size: cover; */
   background-color: rgb(253, 253, 253);
   box-shadow: 10px 10px 10px rgb(99, 98, 98);
   border-radius: 20px;
   position: relative;
 }
-
 .home-foodcard_image{
-  /* height:200px !important; */
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   width:100%;
   transition: transform .2s;
   background-color: gray;
 }
-
 .home-foodcard_image:hover{
   transform: scale(1.1);
   cursor:pointer;
 }
-
 .home-foodcard_name{
   font-size: 30px;
   color: crimson;
   text-align: center;
   margin-top: 0px;
 }
-
 .home-foodcard_price{
   font-size: 22px;
   text-align: center;
   margin-bottom: 0px;
 }
-
 .home-foodcard_cartbutton:hover{
   background-color: rgb(47, 124, 47) !important;
   transform: .1s;
@@ -137,12 +114,6 @@ text-align: center;
   cursor: pointer;
   border-radius: 30%;
 }
-
-/* Cart Page */
-/* .cart-cartitem_image{
-  height: 180px !important;
-  width: 180px;
-} */
 
 /* Admin page */
 .admin-editfood_page{
@@ -164,7 +135,6 @@ text-align: center;
 
 /* Footer */
 .footer-style{
-  /* font-family: 'Roboto', sans-serif !important; */
   background-color: rgb(248, 248, 248)
 }
 
@@ -173,9 +143,6 @@ text-align: center;
   .register-card{
     width:300px;
   }
-  /* .login-card{
-    width:400px !important;
-  } */
   .login-image{
     display: none;
   }
@@ -197,19 +164,3 @@ text-align: center;
   width:300px;
 }
 }
-
-/* @media (max-width:768px){
- 
-}
-
-@media (max-width:992px){
- 
-}
-
-@media (max-width:1200px){
- 
-}
-
-@media (max-width:1400px){
-  
-} */
