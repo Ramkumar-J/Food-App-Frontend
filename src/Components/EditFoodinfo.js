@@ -6,24 +6,6 @@ import { useNavigate, useParams } from "react-router-dom";
 function EditFoodinfo() {
   let params = useParams();
   let navigate = useNavigate();
-  useEffect(() => {
-    async function editfoodDetail() {
-      try {
-        let foodDetail = await axios.get(
-          `https://food-app-backend-two.vercel.app/foodmenu/${params.id}`,
-          {
-            headers: {
-              Authorization: window.localStorage.getItem("foodapptoken"),
-            },
-          }
-        );
-        // formik.setValues(foodDetail.data);
-      } catch (error) {
-        console.log(error);
-      }
-    }
-    editfoodDetail();
-  }, []);
   let formik = useFormik({
     initialValues: {
       category: "",
@@ -50,7 +32,7 @@ function EditFoodinfo() {
     onSubmit: async (values) => {
       try {
         await axios.put(
-          `https://sanburg-foodapp-nodeapp.herokuapp.com/foodmenu/${params.id}`,
+          `https://food-app-backend-two.vercel.app/foodmenu/${params.id}`,
           values,
           {
             headers: {
@@ -64,7 +46,6 @@ function EditFoodinfo() {
       }
     },
   });
-
   return (
     <div className="container admin-editfood_page">
       <div className="row admin-editfood_card">

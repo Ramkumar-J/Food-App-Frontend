@@ -23,6 +23,9 @@ function CheckoutForm() {
       if (!values.paymentmethod) {
         errors.paymentmethod = "Required";
       }
+      if (!values.cardnumber) {
+        errors.cardnumber = "Required";
+      }
       return errors;
     },
     onSubmit: async (values) => {
@@ -35,29 +38,29 @@ function CheckoutForm() {
               Authorization: window.localStorage.getItem("foodapptoken"),
             },
           }
-        );
+        )
+        let OrderToast = () => {
+          return (
+            <div>
+              <img
+                className="img-fluid w-25"
+                src="https://st3.depositphotos.com/15870672/36104/v/380/depositphotos_361046324-stock-illustration-cartoon-character-food-delivery-man.jpg?forcejpeg=true"
+              ></img>
+              <span className="text-secondary ms-0">One step away to taste your Food</span>
+            </div>
+          );
+        };
+          toast.success(<OrderToast></OrderToast>, {
+            position: toast.POSITION.TOP_RIGHT,
+          });
+        ;
         console.log(values);
+        alert("Order Placed Successfully")
       } catch (error) {
         console.log(error);
       }
     },
   });
-  let OrderToast = () => {
-    return (
-      <div>
-        <img
-          className="img-fluid w-25"
-          src="https://st3.depositphotos.com/15870672/36104/v/380/depositphotos_361046324-stock-illustration-cartoon-character-food-delivery-man.jpg?forcejpeg=true"
-        ></img>
-        <span className="text-secondary ms-0">Order Placed Successfully</span>
-      </div>
-    );
-  };
-  let handleToast = () => {
-    toast.success(<OrderToast></OrderToast>, {
-      position: toast.POSITION.TOP_RIGHT,
-    });
-  };
   return (
     <div
       class="modal fade"
@@ -115,20 +118,25 @@ function CheckoutForm() {
                 value={formik.values.paymentmethod}
               >
                 <option>Select a Payment method</option>
-                <option>Cash On Delivery</option>
+                {/* <option>Cash On Delivery</option> */}
                 <option>Card</option>
               </select>
               {formik.touched.paymentmethod && formik.errors.paymentmethod ? (
                 <div className="text-danger">{formik.errors.paymentmethod}</div>
               ) : null}
-              <input
+              {
+                formik.values.paymentmethod === 'Card' ? <input
                 className="form-control mt-2 mb-1"
                 type={"number"}
                 placeholder="Card number"
                 name="cardnumber"
                 onChange={formik.handleChange}
                 value={formik.values.cardnumber}
-              ></input>
+              ></input> :""
+              }
+              {formik.values.paymentmethod === 'Card' ? formik.touched.cardnumber && formik.errors.cardnumber ? (
+                <div className="text-danger">{formik.errors.cardnumber}</div>
+              ) : null:""}
               <div class="modal-footer">
                 <button
                   type="button"
@@ -138,13 +146,11 @@ function CheckoutForm() {
                   Close
                 </button>
                 <input
-                  disabled={!formik.errors}
                   type={"submit"}
                   class="btn btn-success"
                   value="Submit"
-                  onClick={handleToast}
                 ></input>
-                <ToastContainer />
+                <ToastContainer></ToastContainer>  
               </div>
             </form>
           </div>

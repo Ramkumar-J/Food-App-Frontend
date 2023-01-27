@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import FoodContext from "../Context/FoodContext";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function Wishlist() {
   const {
     cartitems,
@@ -21,7 +22,11 @@ function Wishlist() {
     setNewcartitems([...cartitems, item]);
     setTotal(total + parseInt(item.foodprice));
   };
-
+  let handleremovewishToast = () => {
+    toast.info("Food Removed From Wishlist", {
+      position: toast.POSITION.TOP_RIGHT,
+    });
+  };
   return (
     <div class="container">
       <div class="row">
@@ -33,6 +38,7 @@ function Wishlist() {
                   src={wish.foodimage}
                   class="card-img-top home-foodcard_image"
                   alt="Image"
+                  height={200}
                 />
                 <hr class="border-danger border border-1 mt-0 mb-0" />
                 <div class="card-body">
@@ -51,10 +57,12 @@ function Wishlist() {
                       className="btn btn-danger btn-sm ms-5 h-50 mt-0"
                       onClick={() => {
                         Removewishlist(wish);
+                        handleremovewishToast();
                       }}
                     >
                       X
                     </button>
+                    <ToastContainer></ToastContainer>
                   </div>
                 </div>
               </div>

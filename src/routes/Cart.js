@@ -13,15 +13,6 @@ function Cart() {
     setNewcartitems([...cartitems]);
     setTotal(total - parseInt(item.foodprice));
   };
-
-  // let [count, setcount] = useState(1);
-  // let handleincrement = (id) => {
-  //     setcount(count + 1);
-
-  // };
-  // let handledecrement = (id) => {
-  //     setcount(count - 1);
-  // };
   return (
     <div className="container">
       <div className="row mt-5">
@@ -33,9 +24,6 @@ function Cart() {
                 <Cartitem
                   addcartitem={addcartitem}
                   Removecartitems={RemoveFromCart}
-                  // handleincrement={handleincrement}
-                  // handledecrement={handledecrement}
-                  // count={count}
                 ></Cartitem>
               );
             })

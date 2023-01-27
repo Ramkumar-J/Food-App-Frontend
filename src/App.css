@@ -139,10 +139,10 @@ text-align: center;
 }
 
 /* Cart Page */
-.cart-cartitem_image{
+/* .cart-cartitem_image{
   height: 180px !important;
-  width: 180px !important;
-}
+  width: 180px;
+} */
 
 /* Admin page */
 .admin-editfood_page{
@@ -164,7 +164,7 @@ text-align: center;
 
 /* Footer */
 .footer-style{
-  font-family: 'Roboto', sans-serif !important;
+  /* font-family: 'Roboto', sans-serif !important; */
   background-color: rgb(248, 248, 248)
 }
 
@@ -193,10 +193,9 @@ text-align: center;
   .home-category_name{
     font-size: 18px;
   }
-  /* .login-image{
-    height: 200px !important;
-    width: 100%;
-  } */
+  .admin-editfood_card{
+  width:300px;
+}
 }
 
 /* @media (max-width:768px){

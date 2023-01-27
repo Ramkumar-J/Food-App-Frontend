@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import Carousel from "../Components/Carousel";
 import FoodContext from "../Context/FoodContext";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Home() {
   const {
@@ -50,10 +52,21 @@ function Home() {
     });
     setFilter(updatedlist);
   };
+
+  let handlecartToast = () => {
+    toast.success("Food Added In Cart", {
+      position: toast.POSITION.TOP_RIGHT,
+    });
+  };
+  let handlewishToast = () => {
+    toast.success("Food Added In Wishlist", {
+      position: toast.POSITION.TOP_RIGHT,
+    });
+  };
   return (
     <>
       <Carousel></Carousel>
-      <div className="container">
+      <section className="container">
         <div className="row mt-2">
           <div className="col-lg-12">
             <h1>Categories</h1>
@@ -67,7 +80,8 @@ function Home() {
             >
               <img
                 className="img-fluid home-category_image"
-                src="https://images.unsplash.com/photo-1546069901-d5bfd2cbfb1f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                src="assets/All-category.avif"
+                alt="All Foods"
               ></img>
               <p className="home-category_name">All</p>
             </button>
@@ -80,6 +94,7 @@ function Home() {
               <img
                 className="img-fluid home-category_image"
                 src="assets/Burger-category.avif"
+                alt="Burger Items"
               ></img>
               <p className="home-category_name">Burger</p>
             </button>
@@ -92,6 +107,7 @@ function Home() {
               <img
                 className="img-fluid home-category_image"
                 src="assets/Pizza-category.avif"
+                alt="Pizza Items"
               ></img>
               <p className="home-category_name">Pizza</p>
             </button>
@@ -103,7 +119,8 @@ function Home() {
             >
               <img
                 className="img-fluid home-category_image"
-                src="https://media.diageocms.com/fit-in/688x688/filters:quality(85)/filters:format(jpg)/media/g2pn1yud/barcom_serve_image_942628_woowoo.jpg"
+                src="assets/Juice-category.jpg"
+                alt="Juice Items"
               ></img>
               <p className="home-category_name">Juice</p>
             </button>
@@ -115,7 +132,8 @@ function Home() {
             >
               <img
                 className="img-fluid home-category_image"
-                src="https://purobakery.com/wp-content/uploads/2022/03/red-velvet-cake-1-600x600.jpg"
+                src="assets/Cakes-category.jpg"
+                alt="Cake Items"
               ></img>
               <p className="home-category_name">Cakes</p>
             </button>
@@ -127,7 +145,8 @@ function Home() {
             >
               <img
                 className="img-fluid home-category_image"
-                src="https://content3.jdmagicbox.com/comp/hyderabad/d9/040pxx40.xx40.140619105314.i7d9/catalogue/arun-ice-cream-dealers-habsiguda-hyderabad-ice-cream-parlours-32xcq.jpg"
+                src="assets/Icecream-category.jpg"
+                alt="Icecream Items"
               ></img>
               <p className="home-category_name">Ice creams</p>
             </button>
@@ -141,7 +160,7 @@ function Home() {
                   <img
                     src={food.foodimage}
                     class="card-img-top home-foodcard_image"
-                    alt="Image"
+                    alt="Food Image"
                     height={200}
                   />
                   <hr class="border-danger border border-1 mt-0 mb-0" />
@@ -156,24 +175,30 @@ function Home() {
                       class="offset-3 col-6 btn btn-primary btn-sm fs-5 mt-2 home-foodcard_cartbutton"
                       onClick={() => {
                         Addtocart(food);
+                        handlecartToast();
                       }}
                     >
                       Order Now
                     </button>
+                    <ToastContainer></ToastContainer>
                     <button
                       className="btn btn-danger btn-sm rounded-circle home-foodcard_wishbutton"
-                      onClick={() => Addwishlist(food)}
+                      onClick={() => {
+                        Addwishlist(food);
+                        handlewishToast();
+                      }}
                       disabled={wishList.some((obj) => obj._id === food._id)}
                     >
                       <i class="bi bi-heart-fill"></i>
                     </button>
+                    <ToastContainer></ToastContainer>
                   </div>
                 </div>
               </div>
             );
           })}
         </div>
-      </div>
+      </section>
     </>
   );
 }

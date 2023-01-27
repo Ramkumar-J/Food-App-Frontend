@@ -2,7 +2,7 @@ import React from "react";
 
 function Carousel() {
   return (
-    <div className="container-fluid p-0">
+    <section className="container-fluid p-0">
       <div
         id="carouselExampleIndicators"
         class="carousel slide"
@@ -87,7 +87,7 @@ function Carousel() {
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-    </div>
+    </section>
   );
 }
 

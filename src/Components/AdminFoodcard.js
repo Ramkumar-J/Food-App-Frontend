@@ -54,6 +54,7 @@ function AdminFoodcard() {
                 className="card-img-top home-foodcard_image"
                 alt="Food Image"
                 id="display-image"
+                height={200}
               />
               <hr className="border-danger border border-1 mt-0 mb-0" />
               <div className="card-body">
@@ -64,7 +65,7 @@ function AdminFoodcard() {
                   ₹{food.foodprice}
                 </p>
                 <div className="foodmenu-icons d-flex justify-content-between">
-                  <Link to={`/editfood/${food._id}`}>
+                  <Link to={`/editfood/${food._id}`} className="mt-2">
                     <i className="bi bi-pencil-square fs-4 text-info ms-3"></i>
                   </Link>
                   <button
