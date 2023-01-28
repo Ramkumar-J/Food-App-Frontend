@@ -40,7 +40,7 @@ function Register() {
     },
   });
   return (
-    <div className="container register-page">
+    <section className="container register-page">
       <div className="row border border-2 register-card">
         <div className="col-lg-12">
           <div className="row">
@@ -123,7 +123,7 @@ function Register() {
           </form>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

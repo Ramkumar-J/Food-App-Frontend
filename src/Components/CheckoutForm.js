@@ -47,7 +47,7 @@ function CheckoutForm() {
                 src="https://st3.depositphotos.com/15870672/36104/v/380/depositphotos_361046324-stock-illustration-cartoon-character-food-delivery-man.jpg?forcejpeg=true"
               ></img>
               <span className="text-secondary ms-0">
-                One step away to taste your Food
+                Order Placed Successfully
               </span>
             </div>
           );
@@ -63,7 +63,7 @@ function CheckoutForm() {
     },
   });
   return (
-    <div
+    <section
       class="modal fade"
       id="staticBackdrop"
       data-bs-backdrop="static"
@@ -163,7 +163,7 @@ function CheckoutForm() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

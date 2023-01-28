@@ -2,6 +2,8 @@ import axios from "axios";
 import { useFormik } from "formik";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Login() {
   let navigate = useNavigate();
@@ -34,12 +36,15 @@ function Login() {
         window.localStorage.setItem("foodapptoken", signin.data.token);
         navigate("/home");
       } catch (error) {
-        alert("Credential not found");
+        toast.error("Credential Not Found", {
+          position: toast.POSITION.TOP_RIGHT,
+        });
+        alert("Credential Not Found");
       }
     },
   });
   return (
-    <div className="container login-page">
+    <section className="container login-page">
       <div className="row border border-2">
         <div className="col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 login-card">
           <div className="row mt-2 mb-0">
@@ -100,6 +105,7 @@ function Login() {
                   type={"submit"}
                   value="Login"
                 ></input>
+                <ToastContainer></ToastContainer>
               </div>
             </div>
           </form>
@@ -110,14 +116,14 @@ function Login() {
               <img
                 className="login-image"
                 src="https://cdn.igp.com/f_auto,q_auto,t_prodm/products/p-classic-black-forest-cake-half-kg--108742-m.jpg"
-                height='400'
+                height="400"
                 width="100%"
               ></img>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

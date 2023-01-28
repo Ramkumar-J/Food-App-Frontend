@@ -14,7 +14,7 @@ function Cart() {
     setTotal(total - parseInt(item.foodprice));
   };
   return (
-    <div className="container">
+    <section className="container">
       <div className="row mt-5">
         <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
           <h2 className="text-info">Cart Items({cartitems.length})</h2>
@@ -64,7 +64,7 @@ function Cart() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

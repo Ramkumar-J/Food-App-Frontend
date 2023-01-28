@@ -28,7 +28,7 @@ function Wishlist() {
     });
   };
   return (
-    <div class="container">
+    <section class="container">
       <div class="row">
         {wishList.map((wish) => {
           return (
@@ -70,7 +70,7 @@ function Wishlist() {
           );
         })}
       </div>
-    </div>
+    </section>
   );
 }
 

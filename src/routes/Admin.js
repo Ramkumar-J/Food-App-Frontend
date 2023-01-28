@@ -4,7 +4,7 @@ import AdminFoodcard from "../Components/AdminFoodcard";
 
 function Admin() {
   return (
-    <div className="container">
+    <section className="container">
       <div className="row mt-3">
         <div className="col-lg-12">
           <h1 className="text-center text-primary">Add New Foods</h1>
@@ -27,7 +27,7 @@ function Admin() {
         </div>
       </div>
       <AdminFoodcard></AdminFoodcard>
-    </div>
+    </section>
   );
 }
 

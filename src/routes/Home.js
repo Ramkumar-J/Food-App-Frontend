@@ -30,7 +30,7 @@ function Home() {
         console.log(foods);
         setFoodItems(foods.data);
       } catch (error) {
-        alert("Something went wrong");
+        alert("Kindly Login Please");
       }
     }
     getFooditems();
@@ -145,7 +145,7 @@ function Home() {
             >
               <img
                 className="img-fluid home-category_image"
-                src="assets/Icecream-category.jpg"
+                src="assets/Icecream-category.webp"
                 alt="Icecream Items"
               ></img>
               <p className="home-category_name">Ice creams</p>
