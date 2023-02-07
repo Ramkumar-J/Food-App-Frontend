@@ -55,7 +55,6 @@ function AddFoods() {
             // Body:data
           }
         );
-
         navigate("/admin");
       } catch (error) {
         console.log(error);
