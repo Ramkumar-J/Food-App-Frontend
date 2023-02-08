@@ -13,9 +13,9 @@ function EditFoodinfo() {
     foodimage: "",
   });
   useEffect(() => {
-    getQuoteById();
+    getfoodData();
   }, []);
-  const getQuoteById = async () => {
+  const getfoodData = async () => {
     try {
       const response = await axios.get(
         `https://food-app-backend-two.vercel.app/foodmenu/${params.id}`,
@@ -127,6 +127,7 @@ function EditFoodinfo() {
                   name="category"
                   value={foodData.category}
                   onChange={(e) => handlefoodData({ category: e.target.value })}
+                  required
                 >
                   <option>Choose a Category</option>
                   <option>Burger</option>
@@ -147,6 +148,7 @@ function EditFoodinfo() {
                   name="foodname"
                   value={foodData.foodname}
                   onChange={(e) => handlefoodData({ foodname: e.target.value })}
+                  required
                 ></input>
               </div>
             </div>
@@ -162,6 +164,7 @@ function EditFoodinfo() {
                   onChange={(e) =>
                     handlefoodData({ foodprice: e.target.value })
                   }
+                  required
                 ></input>
               </div>
             </div>
@@ -181,6 +184,7 @@ function EditFoodinfo() {
                   onChange={(e) =>
                     handlefoodData({ foodimage: e.target.value })
                   }
+                  required
                 ></input>
               </div>
             </div>
